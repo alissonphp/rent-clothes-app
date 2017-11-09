@@ -10,43 +10,51 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { ItemsComponent } from './items/items.component';
+import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
 
 export const AppRoutes: Routes = [
-    {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-    },
     {
         path: 'login',
         component: LoginComponent
     },
     {
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'dpt-admin',
+        component: DptAdminComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            },
+            {
+                path: 'dashboard',
+                component: DashboardComponent
+            },
+            {
+                path: 'items',
+                component: ItemsComponent
+            },
+            {
+                path: 'clients',
+                component: ClientsComponent
+            },
+            {
+                path: 'orders',
+                component: OrdersComponent
+            },
+            {
+                path: 'users',
+                component: UsersComponent
+            },
+            {
+                path: 'maps',
+                component: MapsComponent
+            },
+            {
+                path: 'notifications',
+                component: NotificationsComponent
+            },
+        ]
     },
-    {
-        path: 'items',
-        component: ItemsComponent
-    },
-    {
-        path: 'clients',
-        component: ClientsComponent
-    },
-    {
-        path: 'orders',
-        component: OrdersComponent
-    },
-    {
-        path: 'users',
-        component: UsersComponent
-    },
-    {
-        path: 'maps',
-        component: MapsComponent
-    },
-    {
-        path: 'notifications',
-        component: NotificationsComponent
-    },
+
 ]

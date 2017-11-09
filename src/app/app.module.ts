@@ -23,6 +23,7 @@ import { ItemsComponent } from './items/items.component';
 import { ClientsComponent } from './clients/clients.component';
 import { OrdersComponent } from './orders/orders.component';
 import { UsersComponent } from './users/users.component';
+import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UsersComponent } from './users/users.component';
     ItemsComponent,
     ClientsComponent,
     OrdersComponent,
-    UsersComponent
+    UsersComponent,
+    DptAdminComponent
   ],
   imports: [
     BrowserModule,
