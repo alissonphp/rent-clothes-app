@@ -1,6 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule, JsonpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
+
 import { RouterModule } from '@angular/router';
+
+import { Ng2Webstorage } from 'ngx-webstorage';
+import { httpFactory } from './support/http.factory';
 
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
@@ -46,14 +52,22 @@ import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
+    Ng2Webstorage.forRoot({
+      prefix: 'dmpt',
+      caseSensitive: false
+    }),
+    HttpModule,
+    JsonpModule,
     SidebarModule,
     NavbarModule,
+    FormsModule,
     FooterModule,
     FixedPluginModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY'})
 
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

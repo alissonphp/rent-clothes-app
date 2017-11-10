@@ -1,3 +1,46 @@
-<p>
-  login works!
-</p>
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" data-color="" data-image="../assets/img/login-bg.jpg">
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <form ngNativeValidate (ngSubmit)="onSubmit()">
+                            <div class="card" data-background="color" data-color="blue">
+                                <div class="card-header">
+                                    <img class="logo-header img-responsive" src="../assets/img/damiipratii-logo-primary.png" alt="">
+                                    <h3 class="card-title">Credenciamento</h3>
+                                </div>
+                                <div class="card-content">
+                                    <div class="form-group">
+                                        <label>E-mail</label>
+                                        <input class="form-control input-no-border" [(ngModel)]="user.email" name="email" required placeholder="Seu e-mail" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Senha</label>
+                                        <input class="form-control input-no-border" [(ngModel)]="user.pass" name="pass" placeholder="Senha" required type="password">
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button class="btn btn-fill btn-wd" type="submit">Entrar</button>
+                                    <div class="forgot">
+                                        <a href="">Esqueceu sua senha?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer-transparent">
+            <div class="container">
+                <div class="copyright">
+                    © 2017, Damiipratii
+                </div>
+            </div>
+        </footer>
+        <div class="full-page-background" style="background-image: url(../assets/img/login-bg.jpg) "></div>
+    </div>
+</div>

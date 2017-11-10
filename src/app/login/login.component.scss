@@ -1,0 +1,93 @@
+.card {
+    z-index: 9999;
+    label {
+        color: #000000;
+    }
+    input {
+        background: #F3F2EE;
+    }
+}
+
+img.logo-header {
+    padding: 45px;
+}
+
+.forgot {
+    margin-top: 10px;
+}
+
+.wrapper.wrapper-full-page {
+    height: auto;
+    min-height: 100vh;
+}
+
+.login-page>.content,
+.lock-page>.content {
+    padding-top: 20vh;
+}
+
+.card .card-header {
+    padding-top: 5px;
+    position: relative;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    z-index: 3;
+}
+
+.card .card-content {
+    padding: 15px 15px 10px 15px;
+}
+
+.card .card-footer {
+    padding: 0 15px 15px;
+    background-size: cover;
+    position: relative;
+    background-color: transparent;
+    background-attachment: fixed;
+    line-height: 20px;
+}
+
+.full-page>.content,
+.full-page>.footer {
+    position: relative;
+    z-index: 9999;
+}
+
+.full-page>.content {
+    min-height: calc(100vh - 70px);
+}
+
+.full-page:after,
+.full-page:before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.full-page[data-image]:after,
+.full-page.has-image:after {
+    opacity: .7;
+}
+
+.full-page:after {
+    background: #d1d1d1;
+    z-index: 3;
+    opacity: 1;
+}
+
+.full-page .full-page-background {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+}
