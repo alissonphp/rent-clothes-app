@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.validate()
     console.log(this.user)
     this.loginService.postLogin(this.user).subscribe(
-      res => console.log('ok'),
+      res => console.log(res),
       error => this.errorMsg = error
     )
   }

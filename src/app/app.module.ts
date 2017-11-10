@@ -67,6 +67,11 @@ import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
 
   ],
   providers: [
+    {
+      provide: Http,
+      useFactory: httpFactory,
+      deps: [XHRBackend, RequestOptions]
+    },
   ],
   bootstrap: [AppComponent]
 })
