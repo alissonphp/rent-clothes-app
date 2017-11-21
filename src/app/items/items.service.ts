@@ -10,7 +10,7 @@ export class ItemsService {
   constructor(private http: Http) { }
 
   all(): Observable<any> {
-    return this.http.get('v1/items/item')
+    return this.http.get('items/item')
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

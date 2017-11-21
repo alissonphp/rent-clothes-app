@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.validate()
-    console.log(this.user)
     this.loginService.login(this.user).subscribe(
       res => this.storeToken(res),
       error => this.errorMsg = error

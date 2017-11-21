@@ -10,6 +10,9 @@ import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
 import { ItemsComponent } from './items/items.component';
 import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
+import { CategoriesComponent } from 'app/items/categories/categories.component';
+import { ListComponent } from 'app/items/list/list.component';
+import { CreateCategoryComponent } from 'app/items/categories/create-category/create-category.component';
 
 export const AppRoutes: Routes = [
     {
@@ -31,7 +34,21 @@ export const AppRoutes: Routes = [
             },
             {
                 path: 'items',
-                component: ItemsComponent
+                component: ItemsComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListComponent
+                    },
+                    {
+                        path: 'categories',
+                        component: CategoriesComponent
+                    },
+                    {
+                        path: 'categories/create',
+                        component: CreateCategoryComponent
+                    }
+                ]
             },
             {
                 path: 'clients',

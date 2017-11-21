@@ -1,0 +1,22 @@
+<div class="header">
+    <h4 class="title">Listagem de Itens Cadastrados</h4>
+    <p class="category">218 itens</p>
+</div>
+<div class="content">
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{ item.id }}</td>
+                <td>{{ item.label }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

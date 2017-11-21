@@ -1,0 +1,42 @@
+<div class="header">
+    <h4 class="title">Categoria de Produtos
+        <a routerLink="create" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Nova
+        </a>
+    </h4>
+    <p class="category">4 total</p>
+
+</div>
+<div class="content">
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of categories">
+                <td>{{ c.id }}</td>
+                <td>{{ c.label }}</td>
+                <td>
+                    <a title="Editar" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a (click)="openModal(template, c.id)" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir a categoria? Ao confirmar os itens vinculados a ela serão excluídos!</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

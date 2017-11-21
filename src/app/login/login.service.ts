@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private http: Http) { }
 
   login(user): Observable<any> {
-    return this.http.post('v1/oauth/login/credentials', user)
+    return this.http.post('oauth/login/credentials', user)
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

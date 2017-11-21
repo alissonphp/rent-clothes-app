@@ -41,7 +41,7 @@ export class InterceptedHttp extends Http {
     }
 
     private updateUrl(req: string) {
-        return  environment.api + req;
+        return  environment.api + environment.version + '/' + req;
     }
 
     private getRequestOptionArgs(options?: RequestOptionsArgs): RequestOptionsArgs {

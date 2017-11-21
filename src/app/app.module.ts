@@ -6,6 +6,7 @@ import { HttpModule, JsonpModule, Http, XHRBackend, RequestOptions } from '@angu
 import { RouterModule } from '@angular/router';
 
 import { Ng2Webstorage } from 'ngx-webstorage';
+import { ModalModule } from 'ngx-bootstrap';
 import { httpFactory } from './support/http.factory';
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,9 @@ import { ClientsComponent } from './clients/clients.component';
 import { OrdersComponent } from './orders/orders.component';
 import { UsersComponent } from './users/users.component';
 import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
+import { CategoriesComponent } from './items/categories/categories.component';
+import { ListComponent } from './items/list/list.component';
+import { CreateCategoryComponent } from './items/categories/create-category/create-category.component';
 
 @NgModule({
   declarations: [
@@ -45,11 +49,15 @@ import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
     ClientsComponent,
     OrdersComponent,
     UsersComponent,
-    DptAdminComponent
+    DptAdminComponent,
+    CategoriesComponent,
+    ListComponent,
+    CreateCategoryComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
+    ModalModule.forRoot(),
     Ng2Webstorage.forRoot({
       prefix: 'dmpt',
       caseSensitive: false
