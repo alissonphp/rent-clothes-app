@@ -13,6 +13,8 @@ import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
 import { CategoriesComponent } from 'app/items/categories/categories.component';
 import { ListComponent } from 'app/items/list/list.component';
 import { CreateCategoryComponent } from 'app/items/categories/create-category/create-category.component';
+import { CreateItemsComponent } from './items/create-items/create-items.component';
+import { UploadImagesComponent } from 'app/items/upload-images/upload-images.component';
 
 export const AppRoutes: Routes = [
     {
@@ -39,6 +41,14 @@ export const AppRoutes: Routes = [
                     {
                         path: '',
                         component: ListComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateItemsComponent
+                    },
+                    {
+                        path: 'images/:id',
+                        component: UploadImagesComponent
                     },
                     {
                         path: 'categories',

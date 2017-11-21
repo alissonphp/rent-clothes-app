@@ -1,5 +1,9 @@
 <div class="header">
-    <h4 class="title">Listagem de Itens Cadastrados</h4>
+    <h4 class="title">Listagem de Itens Cadastrados
+        <a routerLink="create" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Novo
+        </a>
+    </h4>
     <p class="category">218 itens</p>
 </div>
 <div class="content">
@@ -9,6 +13,7 @@
                 <th>ID</th>
                 <th>Item</th>
                 <th>Preço</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +21,29 @@
                 <td>{{ item.id }}</td>
                 <td>{{ item.label }}</td>
                 <td>{{ item.price }}</td>
+                <td>
+                    <a title="Editar" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a [routerLink]="['images', item.id]" title="Tamanhos" class="btn btn-primary">
+                        <i class="fa fa-camera"></i>
+                    </a>
+                    <a title="Tamanhos" class="btn btn-primary">
+                        <i class="ti-ruler-alt-2"></i>
+                    </a>
+                    <a (click)="openModal(template, item.id)" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir o item?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

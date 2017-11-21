@@ -15,4 +15,16 @@ export class ItemsService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  save(data): Observable<any> {
+    return this.http.post('items/item', data)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete('items/'+id)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
 }

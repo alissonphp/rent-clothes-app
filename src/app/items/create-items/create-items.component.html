@@ -1,0 +1,66 @@
+<div class="header">
+    <h4 class="title">Novo Item</h4>
+</div>
+<div class="content">
+    <form (ngSubmit)="store()" name="create-item">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Item:</label>
+                    <input type="text" class="form-control" required [(ngModel)]="item.label" name="label">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select *ngIf="categories" required class="form-control" name="categorys_id" [(ngModel)]="item.categorys_id">
+                      <option *ngFor="let c of categories" value="c.id">{{ c.label }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Valor diário:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="item.price" name="price">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Valor da peça:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="item.price_unit" name="price_unit">
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group">
+                    <label>Descrição curta:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="item.short_description" name="short_description">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Situação:</label>
+                    <select class="form-control" [(ngModel)]="item.active" name="active">
+                      <option selected value="1">Ativo</option>
+                      <option value="0">Inativo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <textarea class="form-control" [(ngModel)]="item.description" name="description"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-12 text-center">
+                <a routerLink="../" class="btn btn-primary">
+                    <i class="fa fa-chevron-left"></i> Voltar
+                </a>
+                <button type="submit" class="btn btn-success"> <i class="fa fa-save"></i> Salvar</button>
+
+            </div>
+
+        </div>
+    </form>
+</div>

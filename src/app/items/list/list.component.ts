@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { ItemsService } from '../items.service';
 
 @Component({
@@ -12,10 +14,12 @@ export class ListComponent implements OnInit {
 
   items: any = [];
   errorMsg: any;
+  refId: number
   dtOptions: any = {};
   dtTrigger = new Subject();
+  modalRef: BsModalRef
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService, private modalService: BsModalService) { }
 
   ngOnInit() {
     this.dtOptions = {
@@ -42,4 +46,19 @@ export class ListComponent implements OnInit {
       error => this.errorMsg = error
     )
   }
+
+  openModal(template: TemplateRef<any>, id: number) {
+    this.refId = id;
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  }
+
+  confirmDelete() {
+    this.itemsService.delete(this.refId).subscribe(
+      res => {
+        console.log(res)
+       },
+      error => this.errorMsg = error
+    )
+  }
+
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 import { RouterModule } from '@angular/router';
 
@@ -33,6 +34,8 @@ import { DptAdminComponent } from './dpt-admin/dpt-admin.component';
 import { CategoriesComponent } from './items/categories/categories.component';
 import { ListComponent } from './items/list/list.component';
 import { CreateCategoryComponent } from './items/categories/create-category/create-category.component';
+import { CreateItemsComponent } from './items/create-items/create-items.component';
+import { UploadImagesComponent } from './items/upload-images/upload-images.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { CreateCategoryComponent } from './items/categories/create-category/crea
     DptAdminComponent,
     CategoriesComponent,
     ListComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    CreateItemsComponent,
+    FileSelectDirective,
+    UploadImagesComponent
   ],
   imports: [
     BrowserModule,
