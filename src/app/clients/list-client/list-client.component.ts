@@ -1,27 +1,28 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
+
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { ItemsService } from '../items.service';
+import { ClientsService } from './../clients.service';
 
 declare var $: any
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
-  providers: [ ItemsService ]
+  selector: 'app-list-client',
+  templateUrl: './list-client.component.html',
+  styleUrls: ['./list-client.component.css'],
+  providers: [ClientsService]
 })
-export class ListComponent implements OnInit {
+export class ListClientComponent implements OnInit {
 
-  items: any = [];
-  errorMsg: any;
-  refId: number
   dtOptions: any = {};
   dtTrigger = new Subject();
+  clients: any = [];
+  errorMsg
+  refId: any
   modalRef: BsModalRef
 
-  constructor(private itemsService: ItemsService, private modalService: BsModalService) { }
+  constructor(private clientService: ClientsService, private modalService: BsModalService) { }
 
   ngOnInit() {
     this.dtOptions = {
@@ -36,22 +37,22 @@ export class ListComponent implements OnInit {
         'excel',
       ]
     };
-    this.listAllItems();
+    this.all()
   }
 
-  listAllItems() {
-    this.itemsService.all().subscribe(
+  all() {
+    this.clientService.list().subscribe(
       res => {
-        this.items = res
+        this.clients = res
         this.dtTrigger.next();
       },
       error => this.errorMsg = error
     )
   }
 
-  openModal(template: TemplateRef<any>, id: number) {
-    this.refId = id;
-    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+  openModal(template: TemplateRef<any>, ref: any, size) {
+    this.refId = ref;
+    this.modalRef = this.modalService.show(template, {class: 'modal-' + size});
   }
 
   successMsg(type, data, icon) {
@@ -69,12 +70,12 @@ export class ListComponent implements OnInit {
   }
 
   confirmDelete() {
-    this.itemsService.delete(this.refId).subscribe(
+    this.clientService.delete(this.refId.id).subscribe(
       res => {
-        const index: number = this.items.indexOf(this.refId)
+        const index: number = this.clients.indexOf(this.refId)
         this.modalRef.hide()
-        this.successMsg('info','Item excluído!','ti-info-alt')
-        this.items.splice(index, 1)
+        this.successMsg('info','Cliente excluído!','ti-info-alt')
+        this.clients.splice(index, 1)
        },
       error => this.errorMsg = error
     )

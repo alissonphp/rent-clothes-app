@@ -38,6 +38,9 @@ import { CreateItemsComponent } from './items/create-items/create-items.componen
 import { UploadImagesComponent } from './items/upload-images/upload-images.component';
 import { ItemSizesComponent } from './items/item-sizes/item-sizes.component';
 import { ItemSizesCreateComponent } from './items/item-sizes/item-sizes-create/item-sizes-create.component';
+import { UpdateItemComponent } from './items/update-item/update-item.component';
+import { CreateClientComponent } from './clients/create-client/create-client.component';
+import { ListClientComponent } from './clients/list-client/list-client.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { ItemSizesCreateComponent } from './items/item-sizes/item-sizes-create/i
     FileSelectDirective,
     UploadImagesComponent,
     ItemSizesComponent,
-    ItemSizesCreateComponent
+    ItemSizesCreateComponent,
+    UpdateItemComponent,
+    CreateClientComponent,
+    ListClientComponent
   ],
   imports: [
     BrowserModule,

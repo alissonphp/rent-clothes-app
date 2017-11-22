@@ -20,6 +20,12 @@ export class ItemsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  update(data): Observable<any> {
+    return this.http.put('items/item/' + data.id, data)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   saveSize(size): Observable<any> {
     return this.http.post('items/size', size)
     .map((res: Response) => res.json())
@@ -31,9 +37,9 @@ export class ItemsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  delete(id: number): Observable<any> {
+  delete(id: number): any {
     return this.http.delete('items/item/' + id)
-    .map((res: Response) => res.json())
+    .map((res: Response) => res)
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 

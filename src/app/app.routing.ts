@@ -17,6 +17,9 @@ import { CreateItemsComponent } from './items/create-items/create-items.componen
 import { UploadImagesComponent } from 'app/items/upload-images/upload-images.component';
 import { ItemSizesComponent } from 'app/items/item-sizes/item-sizes.component';
 import { ItemSizesCreateComponent } from 'app/items/item-sizes/item-sizes-create/item-sizes-create.component';
+import { UpdateItemComponent } from 'app/items/update-item/update-item.component';
+import { ListClientComponent } from 'app/clients/list-client/list-client.component';
+import { CreateClientComponent } from 'app/clients/create-client/create-client.component';
 
 export const AppRoutes: Routes = [
     {
@@ -49,6 +52,10 @@ export const AppRoutes: Routes = [
                         component: CreateItemsComponent
                     },
                     {
+                        path: 'update/:id',
+                        component: UpdateItemComponent
+                    },
+                    {
                         path: 'images/:id',
                         component: UploadImagesComponent
                     },
@@ -72,7 +79,17 @@ export const AppRoutes: Routes = [
             },
             {
                 path: 'clients',
-                component: ClientsComponent
+                component: ClientsComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListClientComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateClientComponent
+                    }
+                ]
             },
             {
                 path: 'orders',

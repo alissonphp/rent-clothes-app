@@ -32,7 +32,6 @@ export class UploadImagesComponent implements OnInit {
 
   ngAfterViewInit() {
     this.options['authToken'] = 'Bearer ' + this.localStorageService.retrieve('token')
-    // this.options['itemAlias'] = 'itemImage'
     this.options['method'] = 'POST'
     this.options['url'] = environment.api + environment.version + '/items/item/images/upload/' + this.refId,
     this.uploader.setOptions(this.options);
