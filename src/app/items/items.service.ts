@@ -3,7 +3,6 @@ import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
-
 @Injectable()
 export class ItemsService {
 
@@ -21,8 +20,25 @@ export class ItemsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  saveSize(size): Observable<any> {
+    return this.http.post('items/size', size)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+  deleteSize(id: number): any {
+    return this.http.delete('items/size/' + id)
+    .map((res: Response) => res)
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   delete(id: number): Observable<any> {
-    return this.http.delete('items/'+id)
+    return this.http.delete('items/item/' + id)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  show(id: number): Observable<any> {
+    return this.http.get('items/item/' + id)
     .map((res: Response) => res.json())
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

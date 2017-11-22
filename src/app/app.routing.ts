@@ -15,6 +15,8 @@ import { ListComponent } from 'app/items/list/list.component';
 import { CreateCategoryComponent } from 'app/items/categories/create-category/create-category.component';
 import { CreateItemsComponent } from './items/create-items/create-items.component';
 import { UploadImagesComponent } from 'app/items/upload-images/upload-images.component';
+import { ItemSizesComponent } from 'app/items/item-sizes/item-sizes.component';
+import { ItemSizesCreateComponent } from 'app/items/item-sizes/item-sizes-create/item-sizes-create.component';
 
 export const AppRoutes: Routes = [
     {
@@ -49,6 +51,14 @@ export const AppRoutes: Routes = [
                     {
                         path: 'images/:id',
                         component: UploadImagesComponent
+                    },
+                    {
+                        path: 'sizes/:id',
+                        component: ItemSizesComponent
+                    },
+                    {
+                        path: 'sizes/create/:id',
+                        component: ItemSizesCreateComponent
                     },
                     {
                         path: 'categories',

@@ -1,0 +1,83 @@
+<div class="header">
+    <h4 class="title">Tamanhos do item
+        <a routerLink="../../" class="btn btn-primary pull-right">
+            <i class="fa fa-chevron-left"></i> Voltar
+        </a>
+        <a (click)="openModal(create, itemId, 'md')" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Adicionar
+        </a>
+    </h4>
+</div>
+<div class="content">
+    <table *ngIf="item" class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Código</th>
+                <th>Tamanho</th>
+                <th>Estoque</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of item.sizes">
+                <td>{{ s.id }}</td>
+                <td>{{ s.code }}</td>
+                <td>{{ s.size }}</td>
+                <td>{{ s.available }}</td>
+                <td>
+                    <a title="Editar" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a (click)="openModal(template, s, 'sm')" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir o tamanho?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>
+
+<ng-template #create>
+    <form (ngSubmit)="store()" name="create-item">
+        <div class="modal-header">
+            <h4 class="modal-title">Adicionar novo tamanho</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Código</label>
+                        <input type="text" name="code" [(ngModel)]="size.code" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tamanho</label>
+                        <input type="text" name="size" [(ngModel)]="size.size" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Unidades disponíveis</label>
+                        <input type="number" name="available" [(ngModel)]="size.available" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" (click)="modalRef.hide()" class="btn btn-default">Cancelar</button>
+        </div>
+    </form>
+</ng-template>

@@ -25,10 +25,10 @@
                     <a title="Editar" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a [routerLink]="['images', item.id]" title="Tamanhos" class="btn btn-primary">
+                    <a [routerLink]="['images', item.id]" title="Fotos" class="btn btn-primary">
                         <i class="fa fa-camera"></i>
                     </a>
-                    <a title="Tamanhos" class="btn btn-primary">
+                    <a [routerLink]="['sizes', item.id]" title="Tamanhos" class="btn btn-primary">
                         <i class="ti-ruler-alt-2"></i>
                     </a>
                     <a (click)="openModal(template, item.id)" title="Excluir" class="btn btn-danger">

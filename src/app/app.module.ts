@@ -36,6 +36,8 @@ import { ListComponent } from './items/list/list.component';
 import { CreateCategoryComponent } from './items/categories/create-category/create-category.component';
 import { CreateItemsComponent } from './items/create-items/create-items.component';
 import { UploadImagesComponent } from './items/upload-images/upload-images.component';
+import { ItemSizesComponent } from './items/item-sizes/item-sizes.component';
+import { ItemSizesCreateComponent } from './items/item-sizes/item-sizes-create/item-sizes-create.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { UploadImagesComponent } from './items/upload-images/upload-images.compo
     CreateCategoryComponent,
     CreateItemsComponent,
     FileSelectDirective,
-    UploadImagesComponent
+    UploadImagesComponent,
+    ItemSizesComponent,
+    ItemSizesCreateComponent
   ],
   imports: [
     BrowserModule,
