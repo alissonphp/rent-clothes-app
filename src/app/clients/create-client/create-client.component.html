@@ -1,3 +1,91 @@
-<p>
-  create-client works!
-</p>
+<div class="header">
+  <h4 class="title">Cadastro de Cliente</h4>
+</div>
+<div class="content">
+  <form (ngSubmit)="store()" name="create-item">
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>CPF:</label>
+          <input type="text" class="form-control" required [(ngModel)]="client.cpf" name="cpf">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label>Nome:</label>
+          <input type="text" class="form-control" required [(ngModel)]="client.name" name="name">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group">
+          <label>E-mail:</label>
+          <input type="email" required class="form-control" [(ngModel)]="client.email" name="email">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Telefone:</label>
+          <input type="tel" required class="form-control" [(ngModel)]="client.phone" name="phone">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>CEP:</label>
+          <input type="text" required maxlength="8" (blur)="getCep()" class="form-control" [(ngModel)]="client.zipcode" name="zipcode">
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="form-group">
+          <label>Endereço:</label>
+          <input type="text" required class="form-control" [(ngModel)]="client.address" name="address">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>Número:</label>
+          <input type="text" required class="form-control" [(ngModel)]="client.number" name="number">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Complemento:</label>
+          <input type="text" required class="form-control" [(ngModel)]="client.complement" name="complement">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Cidade:</label>
+          <input type="text" required class="form-control" [(ngModel)]="client.city" name="city">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="form-group">
+          <label>UF:</label>
+          <input type="text" required class="form-control" [(ngModel)]="client.uf" name="uf">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <a routerLink="../" class="btn btn-primary">
+          <i class="fa fa-chevron-left"></i> Voltar
+        </a>
+        <button type="submit" class="btn btn-success">
+          <i class="fa fa-save"></i> Salvar</button>
+
+      </div>
+    </div>
+  </form>
+</div>

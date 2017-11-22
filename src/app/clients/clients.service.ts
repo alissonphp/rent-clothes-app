@@ -19,4 +19,10 @@ export class ClientsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  cep(cep: any): Observable<any> {
+    return this.http.get('clients/cep/' + cep)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
 }
