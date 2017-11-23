@@ -20,6 +20,9 @@ import { ItemSizesCreateComponent } from 'app/items/item-sizes/item-sizes-create
 import { UpdateItemComponent } from 'app/items/update-item/update-item.component';
 import { ListClientComponent } from 'app/clients/list-client/list-client.component';
 import { CreateClientComponent } from 'app/clients/create-client/create-client.component';
+import { UpdadeClientComponent } from 'app/clients/updade-client/updade-client.component';
+import { ListOrdersComponent } from 'app/orders/list-orders/list-orders.component';
+import { ViewOrderComponent } from 'app/orders/view-order/view-order.component';
 
 export const AppRoutes: Routes = [
     {
@@ -88,12 +91,26 @@ export const AppRoutes: Routes = [
                     {
                         path: 'create',
                         component: CreateClientComponent
+                    },
+                    {
+                        path: 'update/:id',
+                        component: UpdadeClientComponent
                     }
                 ]
             },
             {
                 path: 'orders',
-                component: OrdersComponent
+                component: OrdersComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListOrdersComponent
+                    },
+                    {
+                        path: 'view/:id',
+                        component: ViewOrderComponent
+                    }
+                ]
             },
             {
                 path: 'users',

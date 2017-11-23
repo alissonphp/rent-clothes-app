@@ -41,6 +41,9 @@ import { ItemSizesCreateComponent } from './items/item-sizes/item-sizes-create/i
 import { UpdateItemComponent } from './items/update-item/update-item.component';
 import { CreateClientComponent } from './clients/create-client/create-client.component';
 import { ListClientComponent } from './clients/list-client/list-client.component';
+import { UpdadeClientComponent } from './clients/updade-client/updade-client.component';
+import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
+import { ViewOrderComponent } from './orders/view-order/view-order.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import { ListClientComponent } from './clients/list-client/list-client.component
     ItemSizesCreateComponent,
     UpdateItemComponent,
     CreateClientComponent,
-    ListClientComponent
+    ListClientComponent,
+    UpdadeClientComponent,
+    ListOrdersComponent,
+    ViewOrderComponent
   ],
   imports: [
     BrowserModule,

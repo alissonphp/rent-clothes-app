@@ -1,8 +1,8 @@
 <div class="header">
-    <h4 class="title">Cadastro de Cliente</h4>
+    <h4 class="title">Dados do Cliente</h4>
 </div>
 <div class="content">
-    <form (ngSubmit)="store()" name="create-item" novalidate>
+    <form (ngSubmit)="update()" name="create-item" novalidate>
 
         <div class="row">
             <div class="col-md-4">
@@ -79,11 +79,11 @@
 
         <div class="row">
             <div class="col-md-12 text-center">
-                <a routerLink="../" class="btn btn-primary">
+                <a routerLink="../../" class="btn btn-primary">
                     <i class="fa fa-chevron-left"></i> Voltar
                 </a>
                 <button type="submit" class="btn btn-success">
-          <i class="fa fa-save"></i> Salvar</button>
+          <i class="fa fa-refresh"></i> Atualizar</button>
 
             </div>
         </div>

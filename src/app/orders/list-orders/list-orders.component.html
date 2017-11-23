@@ -1,32 +1,33 @@
 <div class="header">
-    <h4 class="title">Clientes Cadastrados
-        <a routerLink="create" class="btn btn-success pull-right">
-            <i class="fa fa-plus"></i> Novo
-        </a>
+    <h4 class="title">Ordens de Locação
     </h4>
-    <p class="category">{{ clients.length }} clientes cadastrados </p>
+    <p class="category">{{ orders.length }} ordens no sistema </p>
 </div>
 <div class="content">
     <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
+                <th>Código</th>
+                <th>Cliente</th>
+                <th>Saída</th>
+                <th>Retorno Esperado</th>
+                <th>Registro</th>
+                <th>Situação</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let c of clients">
+            <tr *ngFor="let c of orders">
                 <td>{{ c.id }}</td>
-                <td>{{ c.name }}</td>
-                <td>{{ c.cpf }}</td>
-                <td>{{ c.email }}</td>
-                <td>{{ c.phone }}</td>
+                <td>{{ c.code }}</td>
+                <td>{{ c.client.name }}</td>
+                <td>{{ c.output | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.expected_return | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.created_at | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.status }}</td>
                 <td>
-                    <a [routerLink]="['update', c.id]" title="Editar" class="btn btn-primary">
+                    <a [routerLink]="['view', c.id]" title="Editar" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a (click)="openModal(template, c, 'sm')" title="Excluir" class="btn btn-danger">
@@ -40,7 +41,7 @@
 
 <ng-template #template>
     <div class="modal-body text-center">
-        <p>Deseja mesmo excluir o cliente "{{ refId.name }}"?</p>
+        <p>Deseja mesmo excluir a ordem "{{ refId.code }}"?</p>
         <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
         <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
     </div>
