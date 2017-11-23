@@ -26,6 +26,18 @@ export class ListOrdersComponent implements OnInit {
   constructor(private orderService: OrdersService, private modalService: BsModalService) { }
 
   ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 15,
+      dom: 'Bfrtip',
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.10.16/i18n/Portuguese-Brasil.json'
+      },
+      buttons: [
+        'print',
+        'excel',
+      ]
+    };
     this.all()
   }
 
