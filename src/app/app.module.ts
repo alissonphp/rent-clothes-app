@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { RouterModule } from '@angular/router';
 
@@ -68,7 +68,6 @@ import { UpdateUserComponent } from './users/update-user/update-user.component';
     ListComponent,
     CreateCategoryComponent,
     CreateItemsComponent,
-    FileSelectDirective,
     UploadImagesComponent,
     ItemSizesComponent,
     ItemSizesCreateComponent,
@@ -96,6 +95,7 @@ import { UpdateUserComponent } from './users/update-user/update-user.component';
     SidebarModule,
     NavbarModule,
     FormsModule,
+    FileUploadModule,
     FooterModule,
     FixedPluginModule
 
