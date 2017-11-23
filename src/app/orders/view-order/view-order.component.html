@@ -1,3 +1,130 @@
-<p>
-  view-order works!
-</p>
+<div class="header">
+    <p *ngIf="order" class="category">Damiipratii | OLC | # {{ order.code }} </p>
+</div>
+<div class="content" *ngIf="order">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="invoice-title">
+                <h2>Ordem de Locação</h2>
+                <h3 class="pull-right"># {{ order.code }}</h3>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <address>
+    				<strong>Cliente:</strong><br>
+              {{order.client.id}} # {{order.client.name}}<br>
+              {{order.client.address}}<br>
+              {{order.client.complement}}<br>
+              {{order.client.city}} / {{order.client.uf}}<br>
+              {{order.client.email}} / {{order.client.phone}}
+    				</address>
+                </div>
+
+                <div class="col-xs-6  text-right">
+                    <address>
+    					<strong>Situação Atual:</strong><br>
+    					{{ order.status }}<br>
+    					
+    				</address>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <address>
+    					<strong>Forma de Pagamento:</strong><br>
+    					Online Via UOL PagSeguro<br>
+    					
+    				</address>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <address>
+    					<strong>Data de abertura:</strong><br>
+              {{order.created_at | date: "dd/MM/yyyy 'às' H:m:s"}}<br>
+              <strong>Data de devolução esperada:</strong><br>
+    					{{order.expected_return | date: "dd/MM/yyyy"}}<br><br>
+    				</address>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Descritivo de itens</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td><strong>#</strong></td>
+                                    <td><strong>Item</strong></td>
+                                    <td class="text-center"><strong>Tamanho</strong></td>
+                                    <td class="text-center"><strong>Diária</strong></td>
+                                    <td class="text-center"><strong>Dias</strong></td>
+                                    <td class="text-right"><strong>Total</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                <tr *ngFor="let i of order.order_items">
+                                    <td>{{i.itemsize.code}}</td>
+                                    <td>{{i.itemsize.item.label}}</td>
+                                    <td class="text-center">{{i.itemsize.size}}</td>
+                                    <td class="text-center">{{i.itemsize.item.price | currency: "BRL"}}</td>
+                                    <td class="text-center">{{i.days}}</td>
+                                    <td class="text-right">{{i.subtotal | currency: "BRL"}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                    <td class="thick-line text-right">{{order.subtotal | currency: "BRL"}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line text-center"><strong>Desconto</strong></td>
+                                    <td class="text-right">{{order.discount | currency: "BRL"}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line text-center"><strong>Multa</strong></td>
+                                    <td class="text-right">{{order.fines | currency: "BRL"}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line text-center"><strong>Juros</strong></td>
+                                    <td class="text-right">{{order.interest | currency: "BRL"}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line"></td>
+                                    <td class="no-line text-center"><strong>Total</strong></td>
+                                    <td class="text-right"><strong>{{order.total | currency: "BRL"}}</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
