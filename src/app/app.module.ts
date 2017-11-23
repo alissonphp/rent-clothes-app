@@ -44,6 +44,9 @@ import { ListClientComponent } from './clients/list-client/list-client.component
 import { UpdadeClientComponent } from './clients/updade-client/updade-client.component';
 import { ListOrdersComponent } from './orders/list-orders/list-orders.component';
 import { ViewOrderComponent } from './orders/view-order/view-order.component';
+import { ListUsersComponent } from './users/list-users/list-users.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +77,10 @@ import { ViewOrderComponent } from './orders/view-order/view-order.component';
     ListClientComponent,
     UpdadeClientComponent,
     ListOrdersComponent,
-    ViewOrderComponent
+    ViewOrderComponent,
+    ListUsersComponent,
+    CreateUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

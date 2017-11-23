@@ -1,0 +1,45 @@
+<div class="header">
+    <h4 class="title">Usuários do sistema
+        <a routerLink="create" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Novo
+        </a>
+    </h4>
+    <p *ngIf="users" class="category">{{ users.length }} registrados </p>
+</div>
+<div class="content">
+    <table *ngIf="users" class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Regra de Acesso</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{ u.id }}</td>
+                <td>{{ u.name }}</td>
+                <td>{{ u.email }}</td>
+                <td>{{ u.roles[0].role | uppercase }}</td>
+                <td>
+                    <a [routerLink]="['update', u.id]" title="Visualizar" class="btn btn-primary">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <a (click)="openModal(template, u, 'sm')" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir o usuário "{{ refId.name | uppercase }}"? <span class="text-danger">Alerta: Todas as informações vinculadas a esse usuário serão excluídas!</span></p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

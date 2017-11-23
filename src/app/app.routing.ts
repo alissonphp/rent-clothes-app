@@ -23,6 +23,9 @@ import { CreateClientComponent } from 'app/clients/create-client/create-client.c
 import { UpdadeClientComponent } from 'app/clients/updade-client/updade-client.component';
 import { ListOrdersComponent } from 'app/orders/list-orders/list-orders.component';
 import { ViewOrderComponent } from 'app/orders/view-order/view-order.component';
+import { ListUsersComponent } from 'app/users/list-users/list-users.component';
+import { UpdateUserComponent } from 'app/users/update-user/update-user.component';
+import { CreateUserComponent } from 'app/users/create-user/create-user.component';
 
 export const AppRoutes: Routes = [
     {
@@ -114,7 +117,21 @@ export const AppRoutes: Routes = [
             },
             {
                 path: 'users',
-                component: UsersComponent
+                component: UsersComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListUsersComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateUserComponent
+                    },
+                    {
+                        path: 'update/:id',
+                        component: UpdateUserComponent
+                    }
+                ]
             },
             {
                 path: 'notifications',

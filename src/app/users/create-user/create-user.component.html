@@ -1,0 +1,58 @@
+<div class="header">
+    <h4 class="title">Cadastro de Usuário</h4>
+</div>
+<div class="content">
+    <form (ngSubmit)="store()" name="create-item" novalidate="novalidate">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" required [(ngModel)]="user.name" name="name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="email" class="form-control" required [(ngModel)]="user.email" name="email">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Senha:</label>
+                    <input type="password" required class="form-control" [(ngModel)]="user.password" name="password">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Repita a senha:</label>
+                    <input type="password" required class="form-control" [(ngModel)]="passVerify" name="passVerify">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Regra de acesso:</label>
+                    <select class="form-control" [(ngModel)]="user.role" name="role">
+                      <option value="1">Administrador</option>
+                      <option value="2">Vendedor</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a routerLink="../" class="btn btn-primary">
+                    <i class="fa fa-chevron-left"></i> Voltar
+                </a>
+                <button type="submit" [ngClass]="{'disabled' : user.password === undefined || (user.password != passVerify)}" class="btn btn-success">
+          <i class="fa fa-save"></i> Salvar</button>
+
+            </div>
+        </div>
+    </form>
+</div>

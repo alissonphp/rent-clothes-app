@@ -1,28 +1,25 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Subject } from 'rxjs/Rx';
-
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { UsersService } from 'app/users/users.service';
+import { Subject } from 'rxjs/Subject';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { ClientsService } from './../clients.service';
-
+import { BsModalService } from 'ngx-bootstrap/modal/bs-modal.service';
 declare var $: any
-
 @Component({
-  selector: 'app-list-client',
-  templateUrl: './list-client.component.html',
-  styleUrls: ['./list-client.component.css'],
-  providers: [ClientsService]
+  selector: 'app-list-users',
+  templateUrl: './list-users.component.html',
+  styleUrls: ['./list-users.component.css'],
+  providers: [UsersService]
 })
-export class ListClientComponent implements OnInit {
+export class ListUsersComponent implements OnInit {
 
   dtOptions: any = {};
   dtTrigger = new Subject();
-  clients: any = [];
+  users: any = [];
   errorMsg
   refId: any
   modalRef: BsModalRef
 
-  constructor(private clientService: ClientsService, private modalService: BsModalService) { }
+  constructor(private userService: UsersService, private modalService: BsModalService) { }
 
   ngOnInit() {
     this.dtOptions = {
@@ -41,10 +38,10 @@ export class ListClientComponent implements OnInit {
   }
 
   all() {
-    this.clientService.list().subscribe(
+    this.userService.list().subscribe(
       res => {
-        this.clients = res
-        this.dtTrigger.next();
+        this.users = res
+        this.dtTrigger.next()
       },
       error => this.errorMsg = error
     )
@@ -61,7 +58,7 @@ export class ListClientComponent implements OnInit {
       message: '<span class="text-center">' + data + '</span>'
     }, {
         type: type,
-        timer: 1500,
+        timer: 2000,
         placement: {
             from: 'top',
             align: 'center'
@@ -70,14 +67,18 @@ export class ListClientComponent implements OnInit {
   }
 
   confirmDelete() {
-    this.clientService.delete(this.refId.id).subscribe(
+    this.userService.delete(this.refId.id).subscribe(
       res => {
-        const index: number = this.clients.indexOf(this.refId)
+        const index: number = this.users.indexOf(this.refId)
         this.modalRef.hide()
-        this.successMsg('info', 'Cliente excluído!', 'ti-info-alt')
-        this.clients.splice(index, 1)
+        this.successMsg('info', 'Usuário excluído!', 'ti-info-alt')
+        this.users.splice(index, 1)
        },
-      error => this.errorMsg = error
+      error => {
+        this.errorMsg = error
+        this.modalRef.hide()
+        this.successMsg('danger', error, 'ti-alert')
+      }
     )
   }
 
