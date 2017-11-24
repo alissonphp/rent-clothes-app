@@ -1,0 +1,64 @@
+.dark-tooltip{ display:none; position:absolute; z-index:99999; text-decoration:none; font-weight:normal; height:auto; top:0; left:0; text-align: center; margin-top: -7px;}
+
+.dark-tooltip.small{ padding:4px; font-size:12px; max-width:100px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.dark-tooltip.medium{ padding:10px; font-size:14px; max-width:150px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.dark-tooltip.large{ padding:16px; font-size:16px; max-width:200px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+
+/* Tips */
+.dark-tooltip .tip{ transform: scale(1.01); -webkit-transform: scale(1.01); transform: scale(1.01); content: ""; position: absolute; width:0; height:0; border-style: solid; line-height: 0px; }
+
+.dark-tooltip.south .tip{ left:50%; top:100%;}
+.dark-tooltip.west .tip{ left:0; top:50%;}
+.dark-tooltip.north .tip{ left:50%; top:0; }
+.dark-tooltip.east .tip{ left:100%; top:50%;}
+
+.dark-tooltip.south.small .tip{ border-width: 7px 5px 0 5px; margin-left:-5px;}
+.dark-tooltip.south.medium .tip{ border-width: 8px 6px 0 6px; margin-left:-6px;}
+.dark-tooltip.south.large .tip{ border-width: 14px 12px 0 12px; margin-left:-12px;}
+
+.dark-tooltip.west.small .tip{ border-width: 5px 7px 5px 0; margin-left:-7px; margin-top:-5px;}
+.dark-tooltip.west.medium .tip{ border-width: 6px 8px 6px 0; margin-left:-8px; margin-top:-6px;}
+.dark-tooltip.west.large .tip{ border-width: 12px 14px 12px 0; margin-left:-14px; margin-top:-12px;}
+
+.dark-tooltip.north.small .tip{ border-width: 0 5px 7px 5px; margin-left:-5px; margin-top:-7px;}
+.dark-tooltip.north.medium .tip{ border-width: 0 6px 8px 6px; margin-left:-6px; margin-top:-8px;}
+.dark-tooltip.north.large .tip{ border-width: 0 12px 14px 12px; margin-left:-12px; margin-top:-14px;}
+
+.dark-tooltip.east.small .tip{ border-width: 5px 0 5px 7px; margin-top:-5px;}
+.dark-tooltip.east.medium .tip{ border-width: 6px 0 6px 8px; margin-top:-6px;}
+.dark-tooltip.east.large .tip{ border-width: 12px 0 12px 14px; margin-top:-12px;}
+
+/* confirm */
+.dark-tooltip ul.confirm{ list-style-type:none;margin-top:5px;display:inline-block;margin:0 auto; }
+.dark-tooltip ul.confirm li{ padding:10px;float:left;margin:5px;min-width:25px;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;}
+
+/* themes */
+.dark-tooltip.dark{ background-color:#1B1E24; color:#fff; }
+.dark-tooltip.light{ background-color:#ebedf3; color:#1B1E24; }
+
+.dark-tooltip.dark.south .tip{ border-color: #1B1E24 transparent transparent transparent; _border-color: #1B1E24 #000000 #000000 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.dark.west .tip{ border-color: transparent #1B1E24 transparent transparent; _border-color: #000000 #1B1E24 #000000 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.dark.north .tip{ border-color: transparent transparent #1B1E24 transparent; _border-color: #000000 #000000 #1B1E24 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.dark.east .tip{ border-color: transparent transparent transparent #1B1E24; _border-color: #000000 #000000 #000000 #1B1E24; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+
+.dark-tooltip.light.south .tip{ border-color: #ebedf3 transparent transparent transparent; _border-color: #ebedf3 #000000 #000000 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.light.west .tip{ border-color: transparent #ebedf3 transparent transparent; _border-color: #000000 #ebedf3 #000000 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.light.north .tip{ border-color: transparent transparent #ebedf3 transparent; _border-color: #000000 #000000 #ebedf3 #000000; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+.dark-tooltip.light.east .tip{ border-color: transparent transparent transparent #ebedf3; _border-color:#000000 #000000 #000000 #ebedf3 ; _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000'); }
+
+.dark-tooltip.dark ul.confirm li{ background-color:#416E85;}
+.dark-tooltip.dark ul.confirm li:hover{ background-color:#417E85;}
+
+.dark-tooltip.light ul.confirm li{ background-color:#C1DBDB;}
+.dark-tooltip.light ul.confirm li:hover{ background-color:#DCE8E8;}
+
+/* Modal */
+.darktooltip-modal-layer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: .7;
+	display: none;
+}

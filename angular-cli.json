@@ -28,7 +28,21 @@
             "../node_modules/moment/moment.js",
             "../node_modules/chartist/dist/chartist.js",
             "../node_modules/bootstrap-notify/bootstrap-notify.js",
-            "../node_modules/datatables.net/js/jquery.dataTables.js"
+            "../node_modules/datatables.net/js/jquery.dataTables.js",
+            "../src/assets/seiko/js/vendor/swiper/swiper.min.js",
+            "../src/assets/seiko/js/vendor/slick/slick.min.js",
+            "../src/assets/seiko/js/vendor/parallax/parallax.js",
+            "../src/assets/seiko/js/vendor/isotope/isotope.pkgd.min.js",
+            "../src/assets/seiko/js/vendor/magnificpopup/dist/jquery.magnific-popup.js",
+            "../src/assets/seiko/js/vendor/nouislider/nouislider.min.js",
+            "../src/assets/seiko/js/vendor/tocca/tocca.min.js",
+            "../src/assets/seiko/js/vendor/bootstrap-tabcollapse/bootstrap-tabcollapse.js",
+            "../src/assets/seiko/js/vendor/scrollLock/jquery-scrollLock.min.js",
+            "../src/assets/seiko/js/vendor/darktooltip/dist/jquery.darktooltip.js",
+            "../src/assets/seiko/js/vendor/imagesloaded/imagesloaded.pkgd.min.js",
+            "../src/assets/seiko/js/megamenu.min.js",
+            "../src/assets/seiko/js/tools.min.js",
+            "../src/assets/seiko/js/app.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {

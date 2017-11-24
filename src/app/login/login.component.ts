@@ -10,7 +10,7 @@ declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss', '../../assets/css/paper-dashboard.css'],
   providers: [ LoginService ]
 })
 export class LoginComponent implements OnInit {

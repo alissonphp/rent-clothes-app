@@ -19,12 +19,6 @@ import { FixedPluginModule} from './shared/fixedplugin/fixedplugin.module';
 import { DataTablesModule } from 'angular-datatables';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
-import { TableComponent } from './table/table.component';
-import { TypographyComponent } from './typography/typography.component';
-import { IconsComponent } from './icons/icons.component';
-import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
 import { LoginComponent } from './login/login.component';
 import { ItemsComponent } from './items/items.component';
 import { ClientsComponent } from './clients/clients.component';
@@ -47,17 +41,12 @@ import { ViewOrderComponent } from './orders/view-order/view-order.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
+import { FrontStoreComponent } from './front-store/front-store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    UserComponent,
-    TableComponent,
-    TypographyComponent,
-    IconsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
     LoginComponent,
     ItemsComponent,
     ClientsComponent,
@@ -79,7 +68,8 @@ import { UpdateUserComponent } from './users/update-user/update-user.component';
     ViewOrderComponent,
     ListUsersComponent,
     CreateUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    FrontStoreComponent
   ],
   imports: [
     BrowserModule,
