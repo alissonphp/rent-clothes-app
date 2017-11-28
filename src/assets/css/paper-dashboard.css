@@ -325,7 +325,7 @@ body {
     font-family: 'Muli', Arial, sans-serif;
 }
 
-body .wrapper {
+body .wrapper-pd {
     min-height: 100vh;
     position: relative;
 }
@@ -405,7 +405,7 @@ hr {
     border-color: #F1EAE0;
 }
 
-.wrapper {
+.wrapper-pd {
     position: relative;
     top: 0;
     height: 100vh;
@@ -4108,7 +4108,7 @@ Copyright (c) 2015 Daniel Eden
     h6 {
         font-size: 1em;
     }
-    .wrapper {
+    .wrapper-pd {
         -webkit-transform: translate3d(0px, 0, 0);
         -moz-transform: translate3d(0px, 0, 0);
         -o-transform: translate3d(0px, 0, 0);
@@ -4275,7 +4275,7 @@ Copyright (c) 2015 Daniel Eden
     .nav-open .navbar .container {
         left: -230px;
     }
-    .nav-open .wrapper {
+    .nav-open .wrapper-pd {
         left: 0;
         -webkit-transform: translate3d(-230px, 0, 0);
         -moz-transform: translate3d(-230px, 0, 0);

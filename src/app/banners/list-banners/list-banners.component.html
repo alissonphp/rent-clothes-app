@@ -1,0 +1,45 @@
+<div class="header">
+    <h4 class="title">Banners Promocionais
+        <a routerLink="upload" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Upload
+        </a>
+    </h4>
+    <p class="category">{{ banners.length }} banners cadastrados </p>
+</div>
+<div class="content">
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imagem</th>
+                <th>Link</th>
+                <th>Ativo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let b of banners">
+                <td>{{ b.id }}</td>
+                <td>{{ b.file }}</td>
+                <td>{{ b.link }}</td>
+                <td>{{ b.active }}</td>
+                <td>
+                    <a [routerLink]="['update', b.id]" title="Editar" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a (click)="openModal(template, b, 'sm')" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir o banner "{{ refId.file }}"?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

@@ -24,6 +24,10 @@ import { ListUsersComponent } from 'app/users/list-users/list-users.component';
 import { UpdateUserComponent } from 'app/users/update-user/update-user.component';
 import { CreateUserComponent } from 'app/users/create-user/create-user.component';
 import { FrontStoreComponent } from 'app/front-store/front-store.component';
+import { BannersComponent } from 'app/banners/banners.component';
+import { ListBannersComponent } from 'app/banners/list-banners/list-banners.component';
+import { UploadBannersComponent } from 'app/banners/upload-banners/upload-banners.component';
+import { UpdateBannerComponent } from 'app/banners/update-banner/update-banner.component';
 
 export const AppRoutes: Routes = [
     {
@@ -114,6 +118,24 @@ export const AppRoutes: Routes = [
                     {
                         path: 'view/:id',
                         component: ViewOrderComponent
+                    }
+                ]
+            },
+            {
+                path: 'banners',
+                component: BannersComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListBannersComponent
+                    },
+                    {
+                        path: 'upload',
+                        component: UploadBannersComponent
+                    },
+                    {
+                        path: 'update/:id',
+                        component: UpdateBannerComponent
                     }
                 ]
             },

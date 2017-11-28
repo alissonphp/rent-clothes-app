@@ -42,6 +42,10 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { UpdateUserComponent } from './users/update-user/update-user.component';
 import { FrontStoreComponent } from './front-store/front-store.component';
+import { BannersComponent } from './banners/banners.component';
+import { ListBannersComponent } from './banners/list-banners/list-banners.component';
+import { UploadBannersComponent } from './banners/upload-banners/upload-banners.component';
+import { UpdateBannerComponent } from './banners/update-banner/update-banner.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { FrontStoreComponent } from './front-store/front-store.component';
     ListUsersComponent,
     CreateUserComponent,
     UpdateUserComponent,
-    FrontStoreComponent
+    FrontStoreComponent,
+    BannersComponent,
+    ListBannersComponent,
+    UploadBannersComponent,
+    UpdateBannerComponent
   ],
   imports: [
     BrowserModule,

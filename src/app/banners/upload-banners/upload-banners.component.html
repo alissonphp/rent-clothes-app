@@ -1,0 +1,89 @@
+<div class="header">
+    <h4 class="title">Upload de banners
+        <a routerLink="../" class="btn btn-primary pull-right">
+            <i class="fa fa-chevron-left"></i> voltar
+        </a>
+    </h4>
+</div>
+<div class="content">
+    <div class="row">
+
+        <div class="col-md-4">
+            <h3>Selecione os banners</h3>
+            <input class="form-control" type="file" ng2FileSelect [uploader]="uploader" multiple />
+        </div>
+
+        <div class="col-md-8" *ngIf="uploader?.queue?.length > 0">
+
+            <h3>Acompanhamento do envio</h3>
+            <p>Arquivos a serem enviados: {{ uploader?.queue?.length }}</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="50%">Arquivo</th>
+                        <th>Tamanho</th>
+                        <th>Progresso</th>
+                        <th>Situação</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of uploader.queue">
+                        <td>
+                            <strong>{{ item?.file?.name }}</strong>
+                        </td>
+                        <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                        <td *ngIf="uploader.isHTML5">
+                            <div class="progress" style="margin-bottom: 0;">
+                                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span *ngIf="item.isSuccess">
+                <i class="glyphicon glyphicon-ok"></i>
+              </span>
+                            <span *ngIf="item.isCancel">
+                <i class="glyphicon glyphicon-ban-circle"></i>
+              </span>
+                            <span *ngIf="item.isError">
+                <i class="glyphicon glyphicon-remove"></i>
+              </span>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-success btn-xs" (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                <span class="glyphicon glyphicon-upload"></span> Enviar
+              </button>
+                            <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()" [disabled]="!item.isUploading">
+                <span class="glyphicon glyphicon-ban-circle"></span> Cancelar
+              </button>
+                            <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+                <span class="glyphicon glyphicon-trash"></span> Remover
+              </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <div>
+                    Processamento da fila:
+                    <div class="progress" style="">
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+          <span class="glyphicon glyphicon-upload"></span> Enviar todos
+        </button>
+                <button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+          <span class="glyphicon glyphicon-ban-circle"></span> Cancelar todos
+        </button>
+                <button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+          <span class="glyphicon glyphicon-trash"></span> Remover todos
+        </button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

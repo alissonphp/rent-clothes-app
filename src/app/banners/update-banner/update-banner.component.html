@@ -1,0 +1,55 @@
+<div class="header">
+    <h4 class="title">Configuração do banner</h4>
+</div>
+<div class="content" *ngIf="banner">
+    <form (ngSubmit)="update()" name="create-item" novalidate>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="img-responsive" [src]="baseUrlImg + banner.file" alt="">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Link:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="banner.link" name="link">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Janela:</label>
+                    <select required class="form-control" [(ngModel)]="banner.target" name="target">
+                      <option value="_self">Mesma janela</option>
+                      <option value="_blank">Nova janela</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Ativo:</label>
+                    <select required class="form-control" [(ngModel)]="banner.active" name="active">
+                      <option value="0">Não</option>
+                      <option value="1">Sim</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a routerLink="../../" class="btn btn-primary">
+                    <i class="fa fa-chevron-left"></i> Voltar
+                </a>
+                <button type="submit" class="btn btn-success">
+        <i class="fa fa-refresh"></i> Atualizar</button>
+
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  api: 'http://webapp36823.ip-198-58-124-241.configrapp.com',
+  api: 'https://api.damiipratii.shop/',
   version: 'v1'
 };

@@ -13,15 +13,15 @@ import { LocalStorageService } from 'ngx-webstorage';
 
 export class UploadImagesComponent implements OnInit {
 
-  constructor(
-    private localStorageService: LocalStorageService,
-    private activatedRoute: ActivatedRoute
-  ) { }
-
   refId: number
   options: any = []
 
   public uploader: FileUploader = new FileUploader({});
+
+  constructor(
+    private localStorageService: LocalStorageService,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
     // subscribe to router event
