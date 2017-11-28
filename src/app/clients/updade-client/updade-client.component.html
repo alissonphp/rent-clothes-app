@@ -42,10 +42,16 @@
                     <input type="text" required maxlength="8" (blur)="getCep()" class="form-control" [(ngModel)]="client.zipcode" name="zipcode">
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-7">
                 <div class="form-group">
                     <label>Endereço:</label>
                     <input type="text" required class="form-control" [(ngModel)]="client.address" name="address">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Bairro:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="client.neighborhood" name="neighborhood">
                 </div>
             </div>
         </div>
@@ -83,7 +89,7 @@
                     <i class="fa fa-chevron-left"></i> Voltar
                 </a>
                 <button type="submit" class="btn btn-success">
-          <i class="fa fa-refresh"></i> Atualizar</button>
+                    <i class="fa fa-refresh"></i> Atualizar</button>
 
             </div>
         </div>

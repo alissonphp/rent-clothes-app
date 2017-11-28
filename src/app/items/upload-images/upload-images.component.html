@@ -1,5 +1,6 @@
 <div class="header">
-  <h4 class="title">Upload de imagens do item
+  <h4 class="title"># {{ item.id }} - {{ item.label }}
+    <span class="label label-default">{{ item.price | currency: 'BRL' }}</span>
     <a routerLink="../../" class="btn btn-primary pull-right">
       <i class="fa fa-chevron-left"></i> voltar
     </a>
@@ -7,7 +8,17 @@
 </div>
 <div class="content">
   <div class="row">
-
+    <div class="col-md-12">
+        <h3>Imagens do item</h3>
+    </div>
+    <div class="col-md-3 text-center" *ngFor="let i of images">
+        <img alt="Item Image" class="img-thumbnail img-responsive" [src]="imgUrl + i.file">
+        <a (click)="openModal(template, i.id)" title="Delete Image" class="btn btn-danger">
+          <i class="fa fa-trash"></i>
+        </a>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-4">
       <h3>Selecione as imagens</h3>
       <input class="form-control" type="file" ng2FileSelect [uploader]="uploader" multiple />
@@ -87,3 +98,11 @@
   </div>
 
 </div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir a imagem do item?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

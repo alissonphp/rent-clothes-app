@@ -37,5 +37,19 @@ export class UploadBannersComponent implements OnInit {
     this.uploader.onAfterAddingFile = (item => {
        item.withCredentials = false;
     });
+    this.uploader.onCompleteAll = () => {
+      console.log('complete');
+      $.notify({
+        icon: 'ti-check-box',
+        message: '<span class="text-center">Imagens carregadas com sucesso!</span>'
+      }, {
+          type: 'success',
+          timer: 1500,
+          placement: {
+              from: 'top',
+              align: 'center'
+          }
+      });
+    };
  }
 }

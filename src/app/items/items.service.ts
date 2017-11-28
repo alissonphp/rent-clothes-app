@@ -43,6 +43,12 @@ export class ItemsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  deleteImg(id: number): any {
+    return this.http.delete('items/item/images/delete/' + id)
+    .map((res: Response) => res)
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   show(id: number): Observable<any> {
     return this.http.get('items/item/' + id)
     .map((res: Response) => res.json())

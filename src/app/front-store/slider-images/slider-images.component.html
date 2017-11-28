@@ -1,0 +1,29 @@
+<div class="block fullwidth full-nopad bottom-space">
+    <div class="container">
+        <!-- Main Slider -->
+        <div class="mainSlider" data-thumb="true" data-thumb-width="230" data-thumb-height="100">
+            <div class="sliderLoader">Carregando...</div>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide" *ngFor="let b of banners" data-href="b.link" data-target="b.target">
+                        <!-- _blank or _self ( _self is default )-->
+                        <div class="wrapper">
+                            <figure><img [src]="baseUrl + b.file" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+                <!-- pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- pagination thumbs -->
+                <div class="swiper-pagination-thumbs">
+                    <div class="thumbs-wrapper">
+                        <div class="thumbs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Main Slider -->
+    </div>
+</div>

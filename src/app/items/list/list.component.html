@@ -1,10 +1,13 @@
 <div class="header">
     <h4 class="title">Listagem de Itens Cadastrados
         <a routerLink="create" class="btn btn-success pull-right">
-            <i class="fa fa-plus"></i> Novo
+            <i class="fa fa-plus"></i> Novo Item
+        </a>
+        <a routerLink="categories" class="btn btn-primary pull-right">
+            <i class="fa fa-list"></i> Gerenciar Categorias
         </a>
     </h4>
-    <p class="category">218 itens</p>
+    <p class="category">{{ items.length }} itens cadastrados</p>
 </div>
 <div class="content">
     <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">

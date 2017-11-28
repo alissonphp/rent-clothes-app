@@ -46,6 +46,8 @@ import { BannersComponent } from './banners/banners.component';
 import { ListBannersComponent } from './banners/list-banners/list-banners.component';
 import { UploadBannersComponent } from './banners/upload-banners/upload-banners.component';
 import { UpdateBannerComponent } from './banners/update-banner/update-banner.component';
+import { NavHeaderBarComponent } from './front-store/nav-header-bar/nav-header-bar.component';
+import { SliderImagesComponent } from './front-store/slider-images/slider-images.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { UpdateBannerComponent } from './banners/update-banner/update-banner.com
     BannersComponent,
     ListBannersComponent,
     UploadBannersComponent,
-    UpdateBannerComponent
+    UpdateBannerComponent,
+    NavHeaderBarComponent,
+    SliderImagesComponent
   ],
   imports: [
     BrowserModule,

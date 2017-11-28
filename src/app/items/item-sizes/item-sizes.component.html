@@ -1,10 +1,10 @@
 <div class="header">
-    <h4 class="title">Tamanhos do item
+    <h4 class="title">Tamanhos: {{ item.label }} <span class="label label-default">{{ item.price | currency: 'BRL' }}</span>
         <a routerLink="../../" class="btn btn-primary pull-right">
             <i class="fa fa-chevron-left"></i> Voltar
         </a>
         <a (click)="openModal(create, itemId, 'md')" class="btn btn-success pull-right">
-            <i class="fa fa-plus"></i> Adicionar
+            <i class="fa fa-plus"></i> Adicionar tamanho
         </a>
     </h4>
 </div>

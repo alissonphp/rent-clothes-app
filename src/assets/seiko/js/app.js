@@ -602,33 +602,33 @@ $(function() {
     // fullwidth page set
     function setFullWidth() {
 
-        // var wWidth = $("body").width() - $('.sidebar-wrapper').width();
+        var wWidth = $("body").width() - $('.sidebar-wrapper').width();
 
-        // $('body:not(.fullwidth) .fullwidth, body:not(fullwidth) .fullboxed, body .boxed').each(function() {
-        //     $(this).css({
-        //         'width': '',
-        //         'margin-left': '',
-        //         'margin-right': ''
-        //     });
-        // });
+        $('body:not(.fullwidth) .fullwidth, body:not(fullwidth) .fullboxed, body .boxed').each(function() {
+            $(this).css({
+                'width': '',
+                'margin-left': '',
+                'margin-right': ''
+            });
+        });
 
-        // if ($body.hasClass('rtl')) {
-        //     $('body:not(.fullwidth) .fullwidth, body:not(.fullwidth) .fullboxed').each(function() {
-        //         $(this).css({
-        //             'width': wWidth + 'px',
-        //             'margin-right': -wWidth / 2 + 'px',
-        //             'margin-left': ''
-        //         });
-        //     });
-        // } else {
-        //     $('body:not(.fullwidth) .fullwidth, body:not(.fullwidth) .fullboxed').each(function() {
-        //         $(this).css({
-        //             'width': wWidth + 'px',
-        //             'margin-left': -wWidth / 2 + 'px',
-        //             'margin-right': ''
-        //         });
-        //     });
-        // }
+        if ($body.hasClass('rtl')) {
+            $('body:not(.fullwidth) .fullwidth, body:not(.fullwidth) .fullboxed').each(function() {
+                $(this).css({
+                    'width': wWidth + 'px',
+                    'margin-right': -wWidth / 2 + 'px',
+                    'margin-left': ''
+                });
+            });
+        } else {
+            $('body:not(.fullwidth) .fullwidth, body:not(.fullwidth) .fullboxed').each(function() {
+                $(this).css({
+                    'width': wWidth + 'px',
+                    // 'margin-left': -wWidth / 2 + 'px',
+                    'margin-right': ''
+                });
+            });
+        }
 
     }
 

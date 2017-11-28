@@ -14,6 +14,12 @@ export class BannersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  actives(): Observable<any> {
+    return this.http.get('banners/actives')
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   save(data): Observable<any> {
     const headers = new Headers();
     headers.append('Content-Type', 'multipart/form-data');
