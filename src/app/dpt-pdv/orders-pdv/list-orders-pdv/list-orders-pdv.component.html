@@ -1,0 +1,48 @@
+<div class="header">
+    <h4 class="title">Ordens de Locação
+        <a routerLink="create" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Abrir nova Ordem de Locação
+        </a>
+    </h4>
+    <p class="category">{{ orders.length }} ordens no sistema </p>
+</div>
+<div class="content">
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Código</th>
+                <th>Cliente</th>
+                <th>Saída</th>
+                <th>Retorno Esperado</th>
+                <th>Registro</th>
+                <th>Situação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of orders">
+                <td>{{ c.id }}</td>
+                <td>{{ c.code }}</td>
+                <td>{{ c.client.name }}</td>
+                <td>{{ c.output | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.expected_return | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.created_at | date: 'dd/MM/yy' }}</td>
+                <td>{{ c.status }}</td>
+                <td>
+                    <a [routerLink]="['view', c.id]" title="Visualizar" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir a ordem "{{ refId.code }}"?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

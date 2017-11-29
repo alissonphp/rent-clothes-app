@@ -1,178 +1,150 @@
-<!-- Header -->
-<header class="page-header variant-1 fullboxed sticky smart">
-    <div class="navbar">
-        <div class="container">
-            <!-- Menu Toggle -->
-            <div class="menu-toggle"><a href="index.html#" class="mobilemenu-toggle"><i class="icon icon-menu"></i></a></div>
-            <!-- /Menu Toggle -->
-            <!-- Header Cart -->
-            <div class="header-link dropdown-link header-cart variant-1">
-                <a href="cart.html"> <i class="icon icon-cart"></i> <span class="badge">3</span> </a>
-                <!-- minicart wrapper -->
-                <div class="dropdown-container right">
-                    <!-- minicart content -->
-                    <div class="block block-minicart">
-                        <div class="minicart-content-wrapper">
-                            <div class="block-title">
-                                <span>Itens na cesta:</span>
-                            </div>
-                            <a class="btn-minicart-close" title="Close">&#10060;</a>
-                            <div class="block-content">
-                                <div class="minicart-items-wrapper overflowed">
-                                    <ol class="minicart-items">
-                                        <li class="item product product-item">
-                                            <div class="product">
-                                                <a class="product-item-photo" href="index.html#" title="Long sleeve overall">
-                                                    <span class="product-image-container">
-                      <span class="product-image-wrapper">
-                      <img class="product-image-photo" src="../../assets/seiko/images/products/product-16-c1.jpg" alt="Long sleeve overall">
-                      </span>
-                                                    </span>
-                                                </a>
-                                                <div class="product-item-details">
-                                                    <div class="product-item-name">
-                                                        <a href="index.html#">Long sleeve overall</a>
-                                                    </div>
-                                                    <div class="product-item-qty">
-                                                        <label class="label">Qty</label>
-                                                        <input class="item-qty cart-item-qty" maxlength="12" value="1">
-                                                        <button class="update-cart-item" style="display: none" title="Update">
-                          <span>Update</span>
-                        </button>
-                                                    </div>
-                                                    <div class="product-item-pricing">
-                                                        <div class="price-container">
-                                                            <span class="price-wrapper">
-                            <span class="price-excluding-tax">
-                            <span class="minicart-price">
-                            <span class="price">$139.00</span> </span>
-                                                            </span>
-                                                            </span>
-                                                        </div>
-                                                        <div class="product actions">
-                                                            <div class="secondary">
-                                                                <a href="index.html#" class="action delete" title="Remove item">
-                                                                    <span>Delete</span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="primary">
-                                                                <a class="action edit" href="index.html#" title="Edit item">
-                                                                    <span>Edit</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <div class="subtotal">
-                                    <span class="label">
-                <span>Subtotal</span>
-                                    </span>
-                                    <div class="amount price-container">
-                                        <span class="price-wrapper"><span class="price">$587.00</span></span>
-                                    </div>
-                                </div>
-                                <div class="actions">
-                                    <div class="secondary">
-                                        <a href="cart.html" class="btn btn-alt">
-                                            <i class="icon icon-cart"></i><span>ver minha cesta</span>
-                                        </a>
-                                    </div>
-                                    <div class="primary">
-                                        <a class="btn" href="checkout.html">
-                                            <i class="icon icon-external-link"></i><span>finalizar pedido</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /minicart content -->
-                </div>
-                <!-- /minicart wrapper -->
-            </div>
-            <!-- /Header Cart -->
-            <!-- Header Links -->
-            <div class="header-links">
-                <!-- Header Account -->
-                <div class="header-link dropdown-link header-account">
-                    <a href="index.html#"><i class="icon icon-user"></i></a>
-                    <div class="dropdown-container right">
-                        <div class="title">Usuário registrado</div>
-                        <div class="top-text">Se você já tem uma conta, basta fazer seu login.</div>
-                        <!-- form -->
-                        <form action="index.html#">
-                            <input type="text" class="form-control" placeholder="E-mail*">
-                            <input type="text" class="form-control" placeholder="Password*">
-                            <button type="submit" class="btn">Entrar</button>
-                        </form>
-                        <!-- /form -->
-                        <div class="title">OU</div>
-                        <div class="bottom-text">Crie uma <a href="account-create.html">Nova Conta</a></div>
-                    </div>
-                </div>
-                <!-- /Header Account -->
-            </div>
-            <!-- /Header Links -->
-            <!-- Header Search -->
-            <div class="header-link header-search header-search">
-                <div class="exp-search">
-                    <form>
-                        <input class="exp-search-input " placeholder="Pesquise aqui ..." type="text" value="">
-                        <input class="exp-search-submit" type="submit" value="">
-                        <span class="exp-icon-search"><i class="icon icon-magnify"></i></span>
-                        <span class="exp-search-close"><i class="icon icon-close"></i></span>
-                    </form>
-                </div>
-            </div>
-            <!-- /Header Search -->
-            <!-- Logo -->
-            <div class="header-logo">
-                <a href="index.html" title="Logo">
-                    <img class="img-responsive" src="../assets/img/damiipratii-logo-primary.png" alt="">
-                </a>
-            </div>
-            <!-- /Logo -->
-            <!-- Mobile Menu -->
-            <div class="mobilemenu dblclick">
-                <div class="mobilemenu-header">
-                    <div class="title">MENU</div>
-                    <a href="index.html#" class="mobilemenu-toggle"></a>
-                </div>
-                <div class="mobilemenu-content">
-                    <ul class="nav">
-                        <li><a href="category.html">INÍCIO</a></li>
-                        <li><a href="index.html">CATEGORIAS</a><span class="arrow"></span>
-                            <ul>
-                                <li *ngFor="let c of categories"> <a href="index.html" title="">{{c.label}}</a> </li>
-                            </ul>
-                        </li>
-                        <li><a href="category.html">BLOG</a></li>
-                        <li><a href="category.html">FALE CONOSCO</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Mobile Menu -->
-            <!-- Mega Menu -->
-            <div class="megamenu fadein blackout">
-                <ul class="nav">
-                    <li><a href="index.html" title=""><i class="icon icon-home"></i></a></li>
-                    <li class="simple-dropdown">
-                        <a href="blog.html" title="">Categorias</a>
-                        <div class="sub-menu">
-                            <ul class="category-links">
-                                <li *ngFor="let c of categories"> <a href="index.html" title="">{{c.label}}</a> </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="blog.html" title="">Blog</a></li>
-                    <li><a href="blog.html" title="">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <!-- /Mega Menu -->
+<!-- *** TOPBAR ***
+ _________________________________________________________ -->
+<div id="top">
+    <div class="container">
+        <div class="col-md-6 offer" data-animate="fadeInDown">
+            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">(98) 98888-88888</a>
+        </div>
+        <div class="col-md-6" data-animate="fadeInDown">
+            <ul class="menu">
+                <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar</a>
+                </li>
+                <li><a href="register.html">Criar Conta</a>
+                </li>
+                <li><a href="contact.html">Fale Conosco</a>
+                </li>
+            </ul>
         </div>
     </div>
-</header>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="Login">LOGIN</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="customer-orders.html" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email-modal" placeholder="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password-modal" placeholder="password">
+                        </div>
+
+                        <p class="text-center">
+                            <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Entrar</button>
+                        </p>
+
+                    </form>
+
+                    <p class="text-center text-muted">Ainda não é registrado?</p>
+                    <p class="text-center text-muted"><a href="register.html"><strong>Crie sua conta agora</strong></a>! É fácil e bem rápido!</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- *** TOP BAR END *** -->
+
+<!-- *** NAVBAR ***
+_________________________________________________________ -->
+
+<div class="navbar navbar-default yamm" role="navigation" id="navbar">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                <img src="../assets/img/damiipratii-logo-primary.png" alt="Obaju logo" class="hidden-xs img-responsive">
+                <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Damiipratii</span>
+            </a>
+            <div class="navbar-buttons">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-align-justify"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+                <a class="btn btn-default navbar-toggle" href="basket.html">
+                    <i class="fa fa-shopping-cart"></i> <span class="hidden-xs">3 itens no carrinho</span>
+                </a>
+            </div>
+        </div>
+        <!--/.navbar-header -->
+
+        <div class="navbar-collapse collapse" id="navigation">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class="dropdown yamm-fw">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categorias <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="yamm-content">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <ul>
+                                            <li *ngFor="let c of categories">
+                                                <a href="category.html">
+                                                    <h4>{{ c.label }}</h4>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.yamm-content -->
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="index.html">Blog</a></li>
+                <li><a href="index.html">Fale Conosco</a></li>
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+
+        <div class="navbar-buttons">
+
+            <div class="navbar-collapse collapse right" id="basket-overview">
+                <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 itens no carrinho</span></a>
+            </div>
+            <!--/.nav-collapse -->
+
+            <div class="navbar-collapse collapse right" id="search-not-mobile">
+                <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="collapse clearfix" id="search">
+
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+
+        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+        </span>
+                </div>
+            </form>
+
+        </div>
+        <!--/.nav-collapse -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#navbar -->
+
+<!-- *** NAVBAR END *** -->

@@ -1,866 +1,217 @@
-<!-- Loader -->
-<div id="loader-wrapper">
-    <div class="cube-wrapper">
-        <div class="cube-folding">
-            <span class="leaf1"></span>
-            <span class="leaf2"></span>
-            <span class="leaf3"></span>
-            <span class="leaf4"></span>
+<app-nav-header-bar></app-nav-header-bar>
+<div id="all">
+    <div id="content">
+        <app-slider-images></app-slider-images>
+        <!-- *** ADVANTAGES HOMEPAGE ***
+_________________________________________________________ -->
+        <div id="advantages">
+
+            <div class="container">
+                <div class="same-height-row">
+                    <div class="col-sm-4">
+                        <div class="box same-height clickable">
+                            <div class="icon"><i class="fa fa-heart"></i>
+                            </div>
+
+                            <h3><a href="#">We love our customers</a></h3>
+                            <p>We are known to provide best possible service ever</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="box same-height clickable">
+                            <div class="icon"><i class="fa fa-tags"></i>
+                            </div>
+
+                            <h3><a href="#">Best prices</a></h3>
+                            <p>You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="box same-height clickable">
+                            <div class="icon"><i class="fa fa-thumbs-up"></i>
+                            </div>
+
+                            <h3><a href="#">100% satisfaction guaranteed</a></h3>
+                            <p>Free returns on everything for 3 months.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
         </div>
+        <!-- /#advantages -->
+
+        <!-- *** ADVANTAGES END *** -->
+        <app-news-itens></app-news-itens>
+
+
+        <!-- *** HOT END *** -->
+
     </div>
-</div>
-<!-- /Loader -->
-<div id="wrapper">
-    <!-- Page -->
-    <div class="page-wrapper">
-        <app-nav-header-bar></app-nav-header-bar>
-        <!-- /Header -->
-        <!-- Page Content -->
-        <main class="page-main">
-            <app-slider-images></app-slider-images>
-            <div class="block">
-                <div class="container">
-                    <!-- Wellcome text -->
-                    <div class="text-center bottom-space">
-                        <h1 class="size-lg no-padding">WELCOME TO <span class="logo-font custom-color">Seikō</span> STORE</h1>
-                        <div class="line-divider"></div>
-                        <p class="custom-color-alt">Lorem ipsum dolor sit amet, ex eam mundi populo accusamus, aliquam quaestio petentium te cum.
-                            <br> Vim ei oblique tacimates, usu cu iudico graeco. Graeci eripuit inimicus vel eu, eu mel unum laoreet splendide, cu integre apeirian has.
-                        </p>
-                    </div>
-                    <!-- /Wellcome text -->
-                </div>
-            </div>
-            <div class="block">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="box style2 bgcolor1 text-center">
-                                <div class="box-icon"><i class="icon icon-truck"></i></div>
-                                <h3 class="box-title">FREE SHIPPING</h3>
-                                <div class="box-text">Free shipping on all orders over $199</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="box style2 bgcolor2 text-center">
-                                <div class="box-icon"><i class="icon icon-dollar"></i></div>
-                                <h3 class="box-title">MONEY BACK</h3>
-                                <div class="box-text">100% money back guarantee</div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="box style2 bgcolor3 text-center">
-                                <div class="box-icon"><i class="icon icon-help"></i></div>
-                                <h3 class="box-title">ONLINE SUPPORT</h3>
-                                <div class="box-text">Service support fast 24/7</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="block">
-                <div class="container">
-                    <ul class="filters filters-product style2">
-                        <li><a href="index.html#" class="filter-label">Todos<span class="count"></span></a></li>
-                        <li><a href="index.html#" class="filter-label active" data-filter=".category1">Curtos<span class="count"></span></a></li>
-                        <li><a href="index.html#" class="filter-label" data-filter=".category2">Longos<span class="count"></span></a></li>
+    <!-- /#content -->
+
+    <!-- *** FOOTER ***
+_________________________________________________________ -->
+    <div id="footer" data-animate="fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Pages</h4>
+
+                    <ul>
+                        <li><a href="text.html">About us</a>
+                        </li>
+                        <li><a href="text.html">Terms and conditions</a>
+                        </li>
+                        <li><a href="faq.html">FAQ</a>
+                        </li>
+                        <li><a href="contact.html">Contact us</a>
+                        </li>
                     </ul>
-                    <div class="products-grid-wrapper isotope-wrapper">
-                        <div class="products-grid isotope four-in-row product-variant-5">
-                            <!-- Product Item -->
-                            <div class="product-item large colorvariants category2">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-sale"><span>-20%</span></div>
-                                            <!-- /Product Label -->
-                                            <!-- product main photo -->
-                                            <div class="product-item-gallery-main">
-                                                <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-16-c1.jpg" alt=""></a>
-                                                <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                            </div>
-                                            <!-- /product main photo  -->
-                                            <div class="countdown-box hidden-xs">
-                                                <div class="countdown-wrapper">
-                                                    <div class="countdown-title">special price expires in</div>
-                                                    <div class="countdown" data-promodate="2016/12/01"></div>
-                                                </div>
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="wishlist active"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Long sleeve overall" href="product.html" class="product-item-link">Long sleeve overall</a></div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="old-price">$190.00</span> <span class="special-price">$149.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <ul class="color-swatch hidden-xs">
-                                                <li class="active">
-                                                    <a data-image="../../assets/seiko/images/products/product-16-c1.jpg" href="index.html#"><img src="../../assets/seiko/images/colorswatch/color-blue.png" alt="Blue"></a>
-                                                </li>
-                                                <li>
-                                                    <a data-image="../../assets/seiko/images/products/product-16-c2.jpg" href="index.html#"><img src="../../assets/seiko/images/colorswatch/color-grey.png" alt="Gray"></a>
-                                                </li>
-                                                <li>
-                                                    <a data-image="../../assets/seiko/images/products/product-16-c3.jpg" href="index.html#"><img src="../../assets/seiko/images/colorswatch/color-red.png" alt="Red"></a>
-                                                </li>
-                                                <li>
-                                                    <a data-image="../../assets/seiko/images/products/product-16-c4.jpg" href="index.html#"><img src="../../assets/seiko/images/colorswatch/color-violet.png" alt="Violet"></a>
-                                                </li>
-                                                <li>
-                                                    <a data-image="../../assets/seiko/images/products/product-16-c5.jpg" href="index.html#"><img src="../../assets/seiko/images/colorswatch/color-green.png" alt="Green"></a>
-                                                </li>
-                                            </ul>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item large category1">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-new"><span>New</span></div>
-                                            <!-- /Product Label -->
-                                            <!-- product main photo -->
-                                            <!-- product inside carousel -->
-                                            <div class="carousel-inside slide" data-ride="carousel">
-                                                <div class="carousel-inner" role="listbox">
-                                                    <div class="item active">
-                                                        <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-20.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-20-1.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-20-2.jpg" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <a class="carousel-control next"></a>
-                                                <a class="carousel-control prev"></a>
-                                            </div>
-                                            <!-- /product inside carousel -->
-                                            <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                            <!-- /product main photo  -->
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Lace back mini dress" href="product.html" class="product-item-link">Lace back mini dress</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"><span class="price">$239.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item previews-3 large category2">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-sale"><span>-20%</span></div>
-                                            <!-- /Product Label -->
-                                            <div class="product-item-gallery">
-                                                <!-- product main photo -->
-                                                <div class="product-item-gallery-main">
-                                                    <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-26.jpg" alt=""></a>
-                                                    <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                                </div>
-                                                <!-- /product main photo  -->
-                                            </div>
-                                            <div class="countdown-box hidden-xs">
-                                                <div class="countdown-wrapper">
-                                                    <div class="countdown-title">special price expires in</div>
-                                                    <div class="countdown" data-promoperiod="100000000"></div>
-                                                </div>
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                            <!-- product carousel -->
-                                            <div class="product-item-gallery-previews-wrapper">
-                                                <div class="product-item-gallery-previews">
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-26.jpg" data-image="../../assets/seiko/images/products/product-26.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-26-1.jpg" data-image="../../assets/seiko/images/products/product-26-1.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-26-2.jpg" data-image="../../assets/seiko/images/products/product-26-2.jpg" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-arrows"></div>
-                                            </div>
-                                            <!-- /product carousel -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Grey T-shirt fashion Sportex" href="product.html" class="product-item-link">Grey T-shirt fashion Sportex</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="old-price">$300.00</span> <span class="special-price">$249.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item previews-2 large category1 category2">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-new"><span>New</span></div>
-                                            <div class="product-item-label label-sale"><span>-20%</span></div>
-                                            <!-- /Product Label -->
-                                            <!-- product main photo -->
-                                            <div class="product-item-gallery-main">
-                                                <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-25.jpg" alt=""></a>
-                                                <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                            </div>
-                                            <!-- /product main photo  -->
-                                            <div class="countdown-box hidden-xs">
-                                                <div class="countdown-wrapper">
-                                                    <div class="countdown-title">special price expires in</div>
-                                                    <div class="countdown" data-promodate="2016/12/01"></div>
-                                                </div>
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                            <!-- product carousel -->
-                                            <div class="product-item-gallery-previews-wrapper">
-                                                <div class="product-item-gallery-previews">
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-25.jpg" data-image="../../assets/seiko/images/products/product-25.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-25-1.jpg" data-image="../../assets/seiko/images/products/product-25-1.jpg" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-arrows"></div>
-                                            </div>
-                                            <!-- /product carousel -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Mesh bodycon dress" href="product.html" class="product-item-link">Mesh bodycon dress</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="old-price">$290.00</span> <span class="special-price">$229.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item previews-2 large">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <div class="product-item-gallery">
-                                                <!-- product main photo -->
-                                                <div class="product-item-gallery-main">
-                                                    <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-18.jpg" alt=""></a>
-                                                    <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                                </div>
-                                                <!-- /product main photo  -->
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                            <!-- product carousel -->
-                                            <div class="product-item-gallery-previews-wrapper">
-                                                <div class="product-item-gallery-previews">
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-18.jpg" data-image="../../assets/seiko/images/products/product-18.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-18-1.jpg" data-image="../../assets/seiko/images/products/product-18-1.jpg" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-arrows"></div>
-                                            </div>
-                                            <!-- /product carousel -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Backless mini dress" href="product.html" class="product-item-link">Backless mini dress</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="price">$89.00</span></span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item large category1">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-new"><span>New</span></div>
-                                            <!-- /Product Label -->
-                                            <div class="product-item-gallery">
-                                                <!-- product main photo -->
-                                                <div class="product-item-gallery-main">
-                                                    <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-10.jpg" alt=""></a>
-                                                    <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                                </div>
-                                                <!-- /product main photo  -->
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Longline  asymmetric midi skirt" href="product.html" class="product-item-link">Longline  asymmetric midi skirt</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="price">$210.00</span></span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item previews-3 large category1">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-new"><span>New</span></div>
-                                            <!-- /Product Label -->
-                                            <!-- product main photo -->
-                                            <div class="product-item-gallery-main">
-                                                <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-17.jpg" alt=""></a>
-                                                <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                                <a href="product.html" class="product-item-not-available">
-                                                    <span class="vert-wrapper"><span class="vert"><span class="text">Not Available</span></span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <!-- /product main photo  -->
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                            <!-- product carousel -->
-                                            <div class="product-item-gallery-previews-wrapper">
-                                                <div class="product-item-gallery-previews">
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-17.jpg" data-image="../../assets/seiko/images/products/product-17.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-17-1.jpg" data-image="../../assets/seiko/images/products/product-17-1.jpg" alt=""></a>
-                                                    </div>
-                                                    <div class="item">
-                                                        <a href="index.html#"><img src="../../assets/seiko/images/products/product-17-2.jpg" data-image="../../assets/seiko/images/products/product-17-2.jpg" alt=""></a>
-                                                    </div>
-                                                </div>
-                                                <div class="carousel-arrows"></div>
-                                            </div>
-                                            <!-- /product carousel -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Floral sleeveless dress" href="product.html" class="product-item-link">Floral sleeveless dress</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="price">$289.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                            <!-- Product Item -->
-                            <div class="product-item large category2">
-                                <div class="product-item-inside">
-                                    <div class="product-item-info">
-                                        <!-- Product Photo -->
-                                        <div class="product-item-photo">
-                                            <!-- Product Label -->
-                                            <div class="product-item-label label-sale"><span>-50%</span></div>
-                                            <!-- /Product Label -->
-                                            <div class="product-item-gallery">
-                                                <!-- product main photo -->
-                                                <div class="product-item-gallery-main">
-                                                    <a href="index.html#"><img class="product-image-photo" src="../../assets/seiko/images/products/product-27.jpg" alt=""></a>
-                                                    <a href="quick-view.html" title="Quick View" class="quick-view-link quick-view-btn"> <i class="icon icon-eye"></i><span>Quick View</span></a>
-                                                </div>
-                                                <!-- /product main photo  -->
-                                            </div>
-                                            <div class="countdown-box hidden-xs">
-                                                <div class="countdown-wrapper">
-                                                    <div class="countdown-title">special price expires in</div>
-                                                    <div class="countdown" data-promoperiod="150000000"></div>
-                                                </div>
-                                            </div>
-                                            <!-- Product Actions -->
-                                            <a href="index.html#" title="Add to Wishlist" class="no_wishlist"> <i class="icon icon-heart"></i><span>Add to Wishlist</span> </a>
-                                            <div class="product-item-actions">
-                                                <div class="share-button toBottom">
-                                                    <span class="toggle"></span>
-                                                    <ul class="social-list">
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-google google"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-fancy fancy"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-pinterest pinterest"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-twitter-logo twitter"></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="index.html#" class="icon icon-facebook-logo facebook"></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- /Product Actions -->
-                                        </div>
-                                        <!-- /Product Photo -->
-                                        <!-- Product Details -->
-                                        <div class="product-item-details">
-                                            <div class="product-item-name"> <a title="Athletic T-Shirt" href="product.html" class="product-item-link">Athletic T-Shirt</a> </div>
-                                            <div class="product-item-description">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia nonkdni numquam eius modi tempora incidunt ut labore</div>
-                                            <div class="price-box"> <span class="price-container"> <span class="price-wrapper"> <span class="old-price">$420.00</span> <span class="special-price">$210.00</span> </span>
-                                                </span>
-                                            </div>
-                                            <div class="product-item-rating"> <i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i><i class="icon icon-star-fill"></i></div>
-                                            <button class="btn add-to-cart" data-product="789123"> <i class="icon icon-cart"></i><span>Add to Cart</span> </button>
-                                        </div>
-                                        <!-- /Product Details -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Item -->
-                        </div>
-                    </div>
+
+                    <hr>
+
+                    <h4>User section</h4>
+
+                    <ul>
+                        <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li><a href="register.html">Regiter</a>
+                        </li>
+                    </ul>
+
+                    <hr class="hidden-md hidden-lg hidden-sm">
+
                 </div>
-            </div>
-        </main>
-        <!-- /Page Content -->
-        <!-- Footer -->
-        <footer class="page-footer variant4 fullboxed">
-            <div class="footer-middle">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3">
-                            <div class="footer-block collapsed-mobile">
-                                <div class="title">
-                                    <h4>INFORMATION</h4>
-                                    <div class="toggle-arrow"></div>
-                                </div>
-                                <div class="collapsed-content">
-                                    <ul class="marker-list">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="faq.html">Customer Service</a></li>
-                                        <li><a href="about.html">Privacy Policy</a></li>
-                                        <li><a href="blog.html">Our Blog</a></li>
-                                        <li><a href="search.html">Search Terms</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-lg-3">
-                            <div class="footer-block collapsed-mobile">
-                                <div class="title">
-                                    <h4>MY ACCOUNT</h4>
-                                    <div class="toggle-arrow"></div>
-                                </div>
-                                <div class="collapsed-content">
-                                    <ul class="marker-list">
-                                        <li><a href="account-create.html">My account</a></li>
-                                        <li><a href="login.html">Logination</a></li>
-                                        <li><a href="cart.html">My cart</a></li>
-                                        <li><a href="wishlist.html">My wishlist</a></li>
-                                        <li><a href="search.html">Search Terms</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-lg-3">
-                            <div class="footer-block collapsed-mobile">
-                                <div class="title">
-                                    <h4>CUSTOMER CARE</h4>
-                                    <div class="toggle-arrow"></div>
-                                </div>
-                                <div class="collapsed-content">
-                                    <ul class="marker-list">
-                                        <li><a href="blog.html">Our Blog</a></li>
-                                        <li><a href="search.html">Search Terms</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
-                                        <li><a href="faq.html">Customer Service</a></li>
-                                        <li><a href="about.html">Privacy Policy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-lg-3">
-                            <div class="footer-block collapsed-mobile">
-                                <div class="title">
-                                    <h4>CONTACT US</h4>
-                                    <div class="toggle-arrow"></div>
-                                </div>
-                                <div class="collapsed-content">
-                                    <ul class="simple-list">
-                                        <li><i class="icon icon-phone"></i>+01 234 567 89</li>
-                                        <li><i class="icon icon-close-envelope"></i><a href="mailto:support@seiko.com">support@seiko.com</a></li>
-                                        <li><i class="icon icon-clock"></i>8:00 - 19:00, Monday - Saturday</li>
-                                    </ul>
-                                    <div class="footer-social">
-                                        <a href="index.html#"><i class="icon icon-facebook-logo icon-circled"></i></a> <a href="index.html#"><i class="icon icon-twitter-logo icon-circled"></i></a> <a href="index.html#"><i class="icon icon-skype-logo icon-circled"></i></a>                                        <a href="index.html#"><i class="icon icon-vimeo icon-circled"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Top categories</h4>
+
+                    <h5>Men</h5>
+
+                    <ul>
+                        <li><a href="category.html">T-shirts</a>
+                        </li>
+                        <li><a href="category.html">Shirts</a>
+                        </li>
+                        <li><a href="category.html">Accessories</a>
+                        </li>
+                    </ul>
+
+                    <h5>Ladies</h5>
+                    <ul>
+                        <li><a href="category.html">T-shirts</a>
+                        </li>
+                        <li><a href="category.html">Skirts</a>
+                        </li>
+                        <li><a href="category.html">Pants</a>
+                        </li>
+                        <li><a href="category.html">Accessories</a>
+                        </li>
+                    </ul>
+
+                    <hr class="hidden-md hidden-lg">
+
                 </div>
-            </div>
-            <div class="footer-bot">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-8">
-                            <div class="image-banner text-center">
-                                <a href="index.html#"> <img src="../../assets/seiko/images/banners/footer-banner.jpg" alt="Footer Banner" class="img-responsive"> </a>
-                            </div>
-                        </div>
-                        <div class=" col-md-6 col-lg-4">
-                            <div class="footer-copyright text-center"> © 2017 Damiipratii. All Rights Reserved. </div>
-                            <div class="footer-payment-link text-center">
-                                <a href="index.html#"><img src="../../assets/seiko/images/payment-logo/icon-pay-1.png" alt=""></a>
-                                <a href="index.html#"><img src="../../assets/seiko/images/payment-logo/icon-pay-2.png" alt=""></a>
-                                <a href="index.html#"><img src="../../assets/seiko/images/payment-logo/icon-pay-3.png" alt=""></a>
-                                <a href="index.html#"><img src="../../assets/seiko/images/payment-logo/icon-pay-4.png" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Where to find us</h4>
+
+                    <p><strong>Obaju Ltd.</strong>
+                        <br>13/25 New Avenue
+                        <br>New Heaven
+                        <br>45Y 73J
+                        <br>England
+                        <br>
+                        <strong>Great Britain</strong>
+                    </p>
+
+                    <a href="contact.html">Go to contact page</a>
+
+                    <hr class="hidden-md hidden-lg">
+
                 </div>
+                <!-- /.col-md-3 -->
+
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <h4>Get the news</h4>
+
+                    <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <form>
+                        <div class="input-group">
+
+                            <input type="text" class="form-control">
+
+                            <span class="input-group-btn">
+
+            <button class="btn btn-default" type="button">Subscribe!</button>
+
+        </span>
+
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+
+                    <hr>
+
+                    <h4>Stay in touch</h4>
+
+                    <p class="social">
+                        <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                    </p>
+
+
+                </div>
+                <!-- /.col-md-3 -->
+
             </div>
-        </footer>
-        <!-- /Footer -->
-        <a class="back-to-top back-to-top-mobile" href="index.html#">
-            <i class="icon icon-angle-up"></i> To Top
-        </a>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
     </div>
-    <!-- /Page -->
-</div>
-<!-- ProductStack -->
-<div class="productStack disable hide_on_scroll">
-    <a href="index.html#" class="toggleStack"><i class="icon icon-cart"></i> (6) items</a>
-    <div class="productstack-content">
-        <div class="products-list-wrapper">
-            <ul class="products-list">
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-10.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a href="index.html#" class="action edit" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-11.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a class="action edit" href="index.html#" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-12.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a class="action edit" href="index.html#" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-13.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a class="action edit" href="index.html#" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-14.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a class="action edit" href="index.html#" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="product.html" title="Product Name Long Name"><img class="product-image-photo" src="../../assets/seiko/images/products/product-15.jpg" alt=""></a>
-                    <span class="item-qty">3</span>
-                    <div class="actions">
-                        <a class="action edit" href="index.html#" title="Edit item"><i class="icon icon-pencil"></i></a>
-                        <a class="action delete" href="index.html#" title="Delete item"><i class="icon icon-trash-alt"></i></a>
-                        <div class="edit-qty">
-                            <input type="number" value="3">
-                            <button type="button" class="btn">Apply</button>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="action-cart">
-            <button type="button" class="btn" title="Checkout"> <span>Checkout</span> </button>
-            <button type="button" class="btn" title="Go to Cart"> <span>Go to Cart</span> </button>
-        </div>
-        <div class="total-cart">
-            <div class="items-total">Items <span class="count">6</span></div>
-            <div class="subtotal">Subtotal <span class="price">2.150</span></div>
+    <!-- /#footer -->
+
+    <!-- *** FOOTER END *** -->
+
+
+
+
+    <!-- *** COPYRIGHT ***
+_________________________________________________________ -->
+    <div id="copyright">
+        <div class="container">
+            <div class="col-md-6">
+                <p class="pull-left">© 2015 Your name goes here.</p>
+
+            </div>
+            <div class="col-md-6">
+                <p class="pull-right">Template by <a href="https://bootstrapious.com/e-commerce-templates">Bootstrapious</a> & <a href="https://fity.cz">Fity</a>
+                    <!-- Not removing these links is part of the license conditions of the template. Thanks for understanding :) If you want to use the template without the attribution links, you can do so after supporting further themes development at https://bootstrapious.com/donate  -->
+                </p>
+            </div>
         </div>
     </div>
+    <!-- *** COPYRIGHT END *** -->
+
+
+
 </div>
-<!-- /ProductStack -->
-<!-- Modal Quick View -->
-<div class="modal quick-view zoom" id="quickView">
-    <div class="modal-dialog">
-        <div class="modalLoader-wrapper">
-            <div class="modalLoader bg-striped"></div>
-        </div>
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&#10006;</button>
-        </div>
-        <div class="modal-content">
-            <iframe></iframe>
-        </div>
-    </div>
-</div>
-<!-- /Modal Quick View -->
+<!-- /#all -->

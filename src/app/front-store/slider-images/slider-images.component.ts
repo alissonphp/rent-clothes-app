@@ -2,25 +2,23 @@ import { Component, OnInit } from '@angular/core';
 
 import { BannersService } from './../../banners/banners.service';
 import { environment } from './../../../environments/environment';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
+
+declare var $: any
 
 @Component({
   selector: 'app-slider-images',
   templateUrl: './slider-images.component.html',
-  styleUrls: ['./slider-images.component.css',
-  '../../../assets/seiko/js/vendor/swiper/swiper.min.css',
-  '../../../assets/seiko/js/vendor/nouislider/nouislider.css',
-  '../../../assets/seiko/css/animate.css',
-  '../../../assets/seiko/css/style.css',
-],
-providers: [BannersService]
+  styleUrls: ['./slider-images.component.css'],
+  providers: [BannersService]
 })
 export class SliderImagesComponent implements OnInit {
 
   banners
   errorMsg
-  baseUrl 
+  baseUrl
 
-  constructor(private bannerService: BannersService) { 
+  constructor(private bannerService: BannersService) {
     this.baseUrl = environment.api + 'drive/banners/'
   }
 
@@ -28,7 +26,7 @@ export class SliderImagesComponent implements OnInit {
     this.setAll()
   }
 
-  setAll(){
+  setAll() {
     this.bannerService.actives().subscribe(
       res => this.banners = res,
       error => this.errorMsg = error

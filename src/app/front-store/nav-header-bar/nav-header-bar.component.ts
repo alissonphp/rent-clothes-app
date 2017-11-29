@@ -4,10 +4,7 @@ import { CategoriesService } from './../../items/categories/categories.service';
 @Component({
   selector: 'app-nav-header-bar',
   templateUrl: './nav-header-bar.component.html',
-  styleUrls: ['./nav-header-bar.component.css', 
-  '../../../assets/seiko/css/style.css', 
-  '../../../assets/seiko/css/megamenu.css',
-  '../../../assets/seiko/fonts/icomoon-reg/style.css'],
+  styleUrls: ['./nav-header-bar.component.css'],
   providers: [CategoriesService]
 })
 export class NavHeaderBarComponent implements OnInit {

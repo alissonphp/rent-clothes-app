@@ -36,15 +36,17 @@ export class LoginComponent implements OnInit {
   }
 
   storeToken(data: any) {
-    this.storage.store('token',data.token)
-    this.storage.store('name',data.user.name)
-    this.storage.store('email',data.user.email)
+    this.storage.store('token', data.token)
+    this.storage.store('name', data.user.name)
+    this.storage.store('email', data.user.email)
     this.redirectTo(data.user.roles[0].role)
   }
 
   redirectTo(role: any) {
-    if(role == 'admin') {
+    if (role == 'admin') {
       this.router.navigate(['/dpt-admin/dashboard'])
+    } else if (role == 'pdv') {
+      this.router.navigate(['/dpt-pdv/dashboard'])
     }
   }
 

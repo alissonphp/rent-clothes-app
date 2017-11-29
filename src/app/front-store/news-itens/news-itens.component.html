@@ -1,0 +1,46 @@
+<!-- *** HOT PRODUCT SLIDESHOW ***
+_________________________________________________________ -->
+<div id="hot">
+
+    <div class="box">
+        <div class="container">
+            <div class="col-md-12">
+                <h2>Novidades da Semana</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item" *ngFor="let i of news">
+            <div class="product">
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <a href="detail.html">
+                                <img src="img/product1.jpg" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="back">
+                            <a href="detail.html">
+                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="detail.html" class="invisible">
+                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                </a>
+                <div class="text">
+                    <h3><a href="detail.html">{{i.label}}</a></h3>
+                    <p class="price">{{i.price | currency:"BRL"}}</p>
+                </div>
+                <!-- /.text -->
+            </div>
+            <!-- /.product -->
+        </div>
+        <!-- /.product-slider -->
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /#hot -->

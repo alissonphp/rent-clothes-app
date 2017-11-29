@@ -29,6 +29,12 @@ import { ListBannersComponent } from 'app/banners/list-banners/list-banners.comp
 import { UploadBannersComponent } from 'app/banners/upload-banners/upload-banners.component';
 import { UpdateBannerComponent } from 'app/banners/update-banner/update-banner.component';
 
+import { DptPdvComponent } from 'app/dpt-pdv/dpt-pdv.component';
+import { DashboardPdvComponent } from 'app/dpt-pdv/dashboard-pdv/dashboard-pdv.component';
+import { OrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/orders-pdv.component';
+import { CreateOrderComponent } from 'app/dpt-pdv/orders-pdv/create-order/create-order.component';
+import { ListOrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
+
 export const AppRoutes: Routes = [
     {
         path: '',
@@ -159,5 +165,56 @@ export const AppRoutes: Routes = [
             },
         ]
     },
+    {
+        path: 'dpt-pdv',
+        component: DptPdvComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'full'
+            },
+            {
+                path: 'dashboard',
+                component: DashboardPdvComponent
+            },
+            {
+                path: 'clients',
+                component: ClientsComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListClientComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateClientComponent
+                    },
+                    {
+                        path: 'update/:id',
+                        component: UpdadeClientComponent
+                    }
+                ]
+            },
+            {
+                path: 'orders',
+                component: OrdersPdvComponent,
+                children: [
+                    {
+                        path: '',
+                        component: ListOrdersPdvComponent
+                    },
+                    {
+                        path: 'view/:id',
+                        component: ViewOrderComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateOrderComponent
+                    }
+                ]
+            }
+        ]
+    }
 
 ]

@@ -55,4 +55,10 @@ export class ItemsService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  news(): Observable<any> {
+    return this.http.get('items/news')
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
 }
