@@ -13,30 +13,33 @@
                 <div class="col-md-12">
                     <div class="input-group">
                         <input type="text" class="form-control" name="searchclient" [(ngModel)]="searchClient">
-                        <span title="Pesquisar..." class="input-group-addon">
+                        <span (click)="getSearchClient()" title="Pesquisar..." class="input-group-addon">
                             <i class="fa fa-search"></i>
                         </span>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" *ngIf="loadClients">
+                <div class="col-md-12 text-center">
+                    pesquisando clientes ...
+                </div>
+            </div>
+
+            <div class="row" *ngIf="resClients">
                 <div class="col-md-12">
                     <h5>Selecione o cliente:</h5>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Dapibus ac facilisis in
-                            <span class="badge">05071</span>
+                        <a (click)="setClient(c)" class="list-group-item" *ngFor="let c of resClients">{{c.name}} <{{ c.cpf }}>
+                            <span class="badge">{{c.email}}</span>
                         </a>
-                        <a href="#" class="list-group-item">Morbi leo risus</a>
-                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" *ngIf="client">
         <div class="header">
             <h4 class="title">2 - Período de Locação</h4>
         </div>
@@ -58,7 +61,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" *ngIf="out  && return">
         <div class="header">
             <h4 class="title">3 - Itens da Ordem de Locação</h4>
         </div>
@@ -72,34 +75,47 @@
                 <div class="col-md-12">
                     <div class="input-group">
                         <input type="text" class="form-control" name="searchitem" [(ngModel)]="searchItem">
-                        <span title="Pesquisar..." class="input-group-addon">
+                        <span (click)="getSearchItem()" title="Pesquisar..." class="input-group-addon">
                             <i class="fa fa-search"></i>
                         </span>
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+            <div class="row" *ngIf="loadItens">
+                <div class="col-md-12 text-center">
+                    pesquisando itens ...
+                </div>
+            </div>
+
+            <div class="row" *ngIf="resItens">
                 <div class="col-md-12">
                     <h5>Selecione o(s) iten(s):</h5>
-                    <table class="table table-hover table-condensed">
+                    <table class="table table-hover table-condensed table-bordered">
                         <thead>
                             <tr>
                                 <th></th>
                                 <th>#</th>
                                 <th>Cod.</th>
                                 <th>Item</th>
+                                <th>Descr. Curta</th>
                                 <th>Valor</th>
                                 <th>Tamanho</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
-                                <td>x</td>
+                            <tr *ngFor="let i of resItens">
+                                <td align="center">
+                                    <a href="" class="btn btn-success">
+                                        <i class="fa fa-plus-circle"></i>
+                                    </a>
+                                </td>
+                                <td align="center">{{ i.id }}</td>
+                                <td align="center">{{ i.code }}</td>
+                                <td align="center">{{ i.label }}</td>
+                                <td align="center">{{ i.short_description }}</td>
+                                <td align="center">{{ i.price | currency: "BRL" }}</td>
+                                <td align="center">{{ i.size }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -108,7 +124,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" *ngIf="itens">
         <div class="header">
             <h4 class="title">4 - Forma de Pagamento</h4>
         </div>
@@ -125,13 +141,13 @@
         </div>
     </div>
     <div class="card">
-            <div class="header">
-                <h4 class="title">5 - Resumo</h4>
-            </div>
-            <div class="content">
-                
-            </div>
+        <div class="header">
+            <h4 class="title">5 - Resumo</h4>
         </div>
+        <div class="content">
+
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-12 text-center">
