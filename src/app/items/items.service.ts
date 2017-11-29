@@ -14,6 +14,12 @@ export class ItemsService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  search(term: any): Observable<any> {
+    return this.http.get('items/item/search/' + term)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   save(data): Observable<any> {
     return this.http.post('items/item', data)
     .map((res: Response) => res.json())

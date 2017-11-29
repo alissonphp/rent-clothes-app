@@ -15,6 +15,12 @@ export class ClientsService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  search(term: any): Observable<any> {
+    return this.http.get('clients/search/' + term)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   show(id: number): Observable<any> {
     return this.http.get('clients/' + id)
      .map((res: Response) => res.json())
