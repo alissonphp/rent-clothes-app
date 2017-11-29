@@ -1,97 +1,146 @@
-<div class="header">
-    <h4 class="title">Registro de Ordem de Locação</h4>
-</div>
 <div class="content">
-    <form (ngSubmit)="store()" name="create-item" novalidate>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>CPF: *somente números</label>
-                    <input type="text" class="form-control" required [(ngModel)]="client.cpf" name="cpf">
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label>Nome:</label>
-                    <input type="text" class="form-control" required [(ngModel)]="client.name" name="name">
-                </div>
-            </div>
-
+    <div class="card">
+        <div class="header">
+            <h4 class="title">1 - Dados do Cliente</h4>
         </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Pesquisar por nome ou cpf (somente números):</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" [(ngModel)]="search">
+                        <span title="Pesquisar..." class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="row">
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label>E-mail:</label>
-                    <input type="email" required class="form-control" [(ngModel)]="client.email" name="email">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Telefone:</label>
-                    <input type="tel" required class="form-control" [(ngModel)]="client.phone" name="phone">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label>CEP:</label>
-                    <input type="text" required maxlength="8" (blur)="getCep()" class="form-control" [(ngModel)]="client.zipcode" name="zipcode">
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="form-group">
-                    <label>Endereço:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.address" name="address">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group">
-                    <label>Bairro:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.neighborhood" name="neighborhood">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Selecione o cliente:</h5>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Dapibus ac facilisis in
+                            <span class="badge">05071</span>
+                        </a>
+                        <a href="#" class="list-group-item">Morbi leo risus</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label>Número:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.number" name="number">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">2 - Período de Locação</h4>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Retirada:</label>
+                        <input type="date" required class="form-control" [(ngModel)]="out" name="out">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Complemento:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.complement" name="complement">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Cidade:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.city" name="city">
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <label>UF:</label>
-                    <input type="text" required class="form-control" [(ngModel)]="client.uf" name="uf">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Devolução:</label>
+                        <input type="date" required class="form-control" [(ngModel)]="return" name="return">
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <a routerLink="../" class="btn btn-primary">
-                    <i class="fa fa-chevron-left"></i> Voltar
-                </a>
-                <button type="submit" class="btn btn-success">
-                    <i class="fa fa-save"></i> Salvar</button>
-
+    <div class="card">
+        <div class="header">
+            <h4 class="title">3 - Itens da Ordem de Locação</h4>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Pesquisar por código ou nome do item:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="search" [(ngModel)]="search">
+                        <span title="Pesquisar..." class="input-group-addon">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Selecione o(s) iten(s):</h5>
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>#</th>
+                                <th>Cod.</th>
+                                <th>Item</th>
+                                <th>Valor</th>
+                                <th>Tamanho</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+
+    <div class="card">
+        <div class="header">
+            <h4 class="title">4 - Forma de Pagamento</h4>
+        </div>
+        <div class="content">
+            <div class="form-group">
+                <label for="">Selecione:</label>
+                <select class="form-control" name="payment" [(ngModel)]="payment_method">
+                    <option value="Débito">Débito</option>
+                    <option value="Crédito">Crédito</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+            <div class="header">
+                <h4 class="title">5 - Resumo</h4>
+            </div>
+            <div class="content">
+                
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a routerLink="../" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i> Voltar
+            </a>
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-save"></i> GERAR ORDEM</button>
+
+        </div>
+    </div>
 </div>
