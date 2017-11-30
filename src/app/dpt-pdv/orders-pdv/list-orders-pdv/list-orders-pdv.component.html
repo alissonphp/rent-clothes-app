@@ -1,7 +1,7 @@
 <div class="header">
     <h4 class="title">Ordens de Locação
         <a routerLink="create" class="btn btn-success pull-right">
-            <i class="fa fa-plus"></i> Abrir nova Ordem de Locação
+            <i class="fa fa-plus"></i> GERAR NOVA OL
         </a>
     </h4>
     <p class="category">{{ orders.length }} ordens no sistema </p>
@@ -13,8 +13,8 @@
                 <th>ID</th>
                 <th>Código</th>
                 <th>Cliente</th>
-                <th>Saída</th>
-                <th>Retorno Esperado</th>
+                <th>De</th>
+                <th>Até</th>
                 <th>Registro</th>
                 <th>Situação</th>
                 <th>Ações</th>
@@ -30,8 +30,20 @@
                 <td>{{ c.created_at | date: 'dd/MM/yy' }}</td>
                 <td>{{ c.status }}</td>
                 <td>
-                    <a [routerLink]="['view', c.id]" title="Visualizar" class="btn btn-primary">
+                    <a [routerLink]="['view', c.id]" title="Visualizar" class="btn btn-default">
                         <i class="fa fa-search"></i>
+                    </a>
+                    <a (click)="openModal(payment, c)" title="Registrar pagamento" class="btn btn-default">
+                        <i class="fa fa-usd"></i>
+                    </a>
+                    <a [routerLink]="['view', c.id]" title="Saída do(s) item(s)" class="btn btn-default">
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+                    <a (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
+                        <i class="ti-close"></i>
+                    </a>
+                    <a (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
+                        <i class="fa fa-check"></i>
                     </a>
                 </td>
             </tr>
@@ -39,10 +51,64 @@
     </table>
 </div>
 
-<ng-template #template>
+<ng-template #payment>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Recebimento de Valores - OL # {{ reference.code }}</h5>
+        </div>
+        <div class="modal-body">
+            <p>
+                {{ reference.client.name }}, CPF: {{ reference.client.cpf }}
+            </p>
+            <p>Registrada em: {{ reference.created_at | date: 'dd/MM/yy' }}</p>
+            <br>
+            <p>Resumo:</p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Ordem de Locação</td>
+                    <td>{{ reference.code }}</td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>{{ reference.subtotal | currency: "BRL" }}</td>
+                </tr>
+                <tr>
+                    <td>Multa</td>
+                    <td>{{ reference.fines | currency: "BRL" }}</td>
+                </tr>
+                <tr>
+                    <td>Juros</td>
+                    <td>{{ reference.interest | currency: "BRL" }}</td>
+                </tr>
+                <tr>
+                    <td>Desconto</td>
+                    <td>{{ reference.discount | currency: "BRL" }}</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>{{ reference.total | currency: "BRL" }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
+            <button type="button" class="btn btn-success">Confirmar Recebimento</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #finish>
     <div class="modal-body text-center">
-        <p>Deseja mesmo excluir a ordem "{{ refId.code }}"?</p>
-        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
-        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+        <p>Deseja mesmo FINALIZAR essa OL # {{ reference.code }}?</p>
+        <button type="button" class="btn btn-success" (click)="setStatus('Finalizado')">SIM</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Cancelar</button>
+    </div>
+</ng-template>
+
+<ng-template #cancel>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo CANCELAR essa OL # {{ reference.code }}?</p>
+        <button type="button" class="btn btn-danger" (click)="setStatus('Cancelado')">SIM</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Cancelar</button>
     </div>
 </ng-template>

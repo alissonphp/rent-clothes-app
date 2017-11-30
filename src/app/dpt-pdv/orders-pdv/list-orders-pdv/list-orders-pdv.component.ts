@@ -21,7 +21,7 @@ export class ListOrdersPdvComponent implements OnInit {
   dtTrigger = new Subject();
   orders: any = [];
   errorMsg
-  refId: any
+  reference: any
   modalRef: BsModalRef
 
   constructor(private orderService: OrdersService, private modalService: BsModalService) { }
@@ -39,13 +39,14 @@ export class ListOrdersPdvComponent implements OnInit {
         'excel',
       ]
     };
-    this.all()
+    this.all(true)
   }
 
-  all() {
+  all(initTable: boolean) {
     this.orderService.list().subscribe(
       res => {
         this.orders = res
+        if(initTable) 
         this.dtTrigger.next();
       },
       error => this.errorMsg = error
@@ -53,8 +54,19 @@ export class ListOrdersPdvComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>, ref: any, size) {
-    this.refId = ref;
+    this.reference = ref;
     this.modalRef = this.modalService.show(template, {class: 'modal-' + size});
+  }
+
+  setStatus(status: string) {
+    this.orderService.status(this.reference.id, status).subscribe(
+      res => {
+        this.modalRef.hide()
+        this.all(false)
+        this.successMsg('success','Situação da OL atualizada para ' + res.status,'ti-check-box')
+      },
+      error => this.errorMsg = error
+    )
   }
 
   successMsg(type, data, icon) {
@@ -71,16 +83,16 @@ export class ListOrdersPdvComponent implements OnInit {
     });
   }
 
-  confirmDelete() {
-    this.orderService.delete(this.refId.id).subscribe(
-      res => {
-        const index: number = this.orders.indexOf(this.refId)
-        this.modalRef.hide()
-        this.successMsg('info', 'Ordem excluída!', 'ti-info-alt')
-        this.orders.splice(index, 1)
-       },
-      error => this.errorMsg = error
-    )
-  }
+  // confirmDelete() {
+  //   this.orderService.delete(this.refId.id).subscribe(
+  //     res => {
+  //       const index: number = this.orders.indexOf(this.refId)
+  //       this.modalRef.hide()
+  //       this.successMsg('info', 'Ordem excluída!', 'ti-info-alt')
+  //       this.orders.splice(index, 1)
+  //      },
+  //     error => this.errorMsg = error
+  //   )
+  // }
 
 }
