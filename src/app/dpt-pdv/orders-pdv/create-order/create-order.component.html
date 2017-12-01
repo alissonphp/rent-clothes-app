@@ -48,13 +48,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Retirada:</label>
-                        <input type="date" required class="form-control" [(ngModel)]="out" name="out">
+                        <input type="date" [min]="today" class="form-control" [(ngModel)]="out" name="out">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" *ngIf="out">
                     <div class="form-group">
                         <label>Devolução:</label>
-                        <input type="date" required class="form-control" [(ngModel)]="return" name="return">
+                        <input type="date" [min]="today" (change)="calcDiff()" class="form-control" [(ngModel)]="return" name="return">
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                         <tbody>
                             <tr *ngFor="let i of resItens">
                                 <td align="center">
-                                    <a href="" class="btn btn-success">
+                                    <a (click)="addOrderItem(i)" class="btn btn-success">
                                         <i class="fa fa-plus-circle"></i>
                                     </a>
                                 </td>
@@ -124,9 +124,112 @@
         </div>
     </div>
 
-    <div class="card" *ngIf="itens">
+    <div class="card" *ngIf="itens.length > 0">
         <div class="header">
-            <h4 class="title">4 - Forma de Pagamento</h4>
+            <h4 class="title">4 - Resumo</h4>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-xs-6">
+                    <address>
+                        <strong>Cliente:</strong><br>
+                  {{client.id}} # {{client.name}}<br>
+                  {{client.address}}<br>
+                  {{client.complement}}<br>
+                  {{client.city}} / {{client.uf}}<br>
+                  {{client.email}} / {{client.phone}}
+                        </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <address>
+                            <strong>Forma de Pagamento:</strong><br>
+                            {{payment_method}}<br>
+                            
+                        </address>
+                </div>
+                <div class="col-xs-6 text-right">
+                    <address>
+                                <strong>Data de retirada dos itens:</strong><br>
+                                {{out | date: "dd/MM/yyyy"}}<br><br>
+                  <strong>Data de devolução esperada:</strong><br>
+                            {{return | date: "dd/MM/yyyy"}}<br><br>
+                        </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Descritivo de itens</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <td><strong>#</strong></td>
+                                            <td><strong>Item</strong></td>
+                                            <td class="text-center"><strong>Tamanho</strong></td>
+                                            <td class="text-center"><strong>Diária</strong></td>
+                                            <td class="text-center"><strong>Dias</strong></td>
+                                            <td class="text-right"><strong>Total</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- foreach ($order->lineItems as $line) or some such thing here -->
+                                        <tr *ngFor="let i of itens">
+                                            <td>
+                                                <a href="javascript:void(0)" class="text-danger" (click)="rmItem(i)">
+                                                    <i class="fa fa-trash-o"></i></a> {{i.code}}
+                                            </td>
+                                            <td>{{i.label}}</td>
+                                            <td class="text-center">{{i.size}}</td>
+                                            <td class="text-center">{{i.price | currency: "BRL"}}</td>
+                                            <td class="text-center">{{ i.days }}</td>
+                                            <td class="text-right">{{i.subtotal | currency: "BRL"}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line"></td>
+                                            <td class="thick-line text-center"><strong>Subtotal</strong></td>
+                                            <td class="thick-line text-right"> {{ subtotal | currency: "BRL"}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Desconto</strong></td>
+                                            <td class="text-right">
+                                                <input type="text" name="off" (change)="setTotal()" class="form-control text-right" [(ngModel)]="discount">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line"></td>
+                                            <td class="no-line text-center"><strong>Total</strong></td>
+                                            <td class="text-right"><strong>{{ total | currency: "BRL"}}</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" *ngIf="itens.length > 0">
+        <div class="header">
+            <h4 class="title">5 - Forma de Pagamento</h4>
         </div>
         <div class="content">
             <div class="form-group">
@@ -140,23 +243,30 @@
             </div>
         </div>
     </div>
-    <div class="card">
+    <div class="card" *ngIf="itens.length > 0">
         <div class="header">
-            <h4 class="title">5 - Resumo</h4>
+            <h4 class="title">6 - Observações</h4>
         </div>
         <div class="content">
-
+            <div class="form-group">
+                <textarea name="obs" [(ngModel)]="obs" class="form-control" rows="5"></textarea>
+            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <a routerLink="../" class="btn btn-primary">
-                <i class="fa fa-chevron-left"></i> Voltar
-            </a>
-            <button type="submit" class="btn btn-success">
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <a routerLink="../" class="btn btn-primary">
+            <i class="fa fa-chevron-left"></i> Voltar
+        </a>
+        <button type="submit" *ngIf="payment_method" class="btn btn-success">
                 <i class="fa fa-save"></i> GERAR ORDEM</button>
+        <br><br>
 
-        </div>
     </div>
+
 </div>
