@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemsService } from './../../../items/items.service';
 import { OrdersService } from './../../../orders/orders.service';
 import { ClientsService } from './../../../clients/clients.service';
+import { Router } from '@angular/router';
 
 declare var moment: any
 declare var $: any
@@ -31,11 +32,15 @@ export class CreateOrderComponent implements OnInit {
   private loadClients = false
   private loadItens = false
   today = moment().format('YYYY-MM-DD')
+  obs: any
+  payment_method: any
 
-  constructor(private clientService: ClientsService, private itemService: ItemsService, private orderService: OrdersService) { }
+  constructor(private clientService: ClientsService, 
+    private itemService: ItemsService,
+    private router: Router,
+    private orderService: OrdersService) { }
 
   ngOnInit() {
-
   }
 
   getSearchClient() {
@@ -49,7 +54,7 @@ export class CreateOrderComponent implements OnInit {
     )
   }
   calcDiff() {
-    this.days = moment(this.return).diff(this.out, 'days') + 1
+    this.days = moment(this.return).diff(this.out, 'days')
   }
   getSearchItem() {
     this.loadItens = true
@@ -102,6 +107,28 @@ export class CreateOrderComponent implements OnInit {
             align: 'center'
         }
     });
+  }
+
+  createOrder() {
+    const data = {
+      clients_id: this.client.id,
+      output: this.out,
+      expected_return: this.return,
+      subtotal: this.subtotal,
+      payment_method: this.payment_method,
+      discount: this.discount,
+      total: this.total,
+      obs: this.obs,
+      itens: this.itens,
+      days: this.days
+    }
+    this.orderService.save(data).subscribe(
+      res => {
+        this.popMsg('success','Ordem de Locação Num. ' + res.code + ' gerada com sucesso!', 'ti-check-box')
+        this.router.navigate(['dpt-pdv/orders/view', res.id])
+      },
+      error => this.popMsg('error','Ocorreu um problema ao gerar a ordem', 'ti-info')
+    )
   }
 
 }

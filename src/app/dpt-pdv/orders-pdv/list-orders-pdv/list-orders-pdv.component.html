@@ -33,16 +33,16 @@
                     <a [routerLink]="['view', c.id]" title="Visualizar" class="btn btn-default">
                         <i class="fa fa-search"></i>
                     </a>
-                    <a (click)="openModal(payment, c)" title="Registrar pagamento" class="btn btn-default">
+                    <a *ngIf="c.status == 'Aguardando Confirmação' || c.status == 'Alugado'" (click)="openModal(payment, c)" title="Registrar pagamento"
+                        class="btn btn-default">
                         <i class="fa fa-usd"></i>
                     </a>
-                    <a [routerLink]="['view', c.id]" title="Saída do(s) item(s)" class="btn btn-default">
-                        <i class="fa fa-sign-out"></i>
-                    </a>
-                    <a (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
+                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Finalizado com Atraso'" (click)="openModal(cancel, c)"
+                        title="Cancelar" class="btn btn-danger">
                         <i class="ti-close"></i>
                     </a>
-                    <a (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
+                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Aguardando Confirmação' && c.status != 'Finalizado com Atraso'" (click)="openModal(finish, c)"
+                        title="Finalizar" class="btn btn-success">
                         <i class="fa fa-check"></i>
                     </a>
                 </td>
@@ -74,11 +74,15 @@
                 </tr>
                 <tr>
                     <td>Multa</td>
-                    <td>{{ reference.fines | currency: "BRL" }}</td>
+                    <td>
+                        <input type="text" name="fines" class="form-control" [(ngModel)]="reference.fines">
+                    </td>
                 </tr>
                 <tr>
                     <td>Juros</td>
-                    <td>{{ reference.interest | currency: "BRL" }}</td>
+                    <td>
+                        <input type="text" name="fines" class="form-control" [(ngModel)]="reference.interest">
+                    </td>
                 </tr>
                 <tr>
                     <td>Desconto</td>

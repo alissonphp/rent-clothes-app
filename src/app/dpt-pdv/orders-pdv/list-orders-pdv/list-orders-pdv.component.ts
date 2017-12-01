@@ -58,6 +58,13 @@ export class ListOrdersPdvComponent implements OnInit {
     this.modalRef = this.modalService.show(template, {class: 'modal-' + size});
   }
 
+  payment() {
+    
+  }
+
+  calcTotal() {
+  }
+
   setStatus(status: string) {
     this.orderService.status(this.reference.id, status).subscribe(
       res => {
