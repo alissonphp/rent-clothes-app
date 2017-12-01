@@ -75,13 +75,13 @@
                 <tr>
                     <td>Multa</td>
                     <td>
-                        <input type="text" name="fines" class="form-control" [(ngModel)]="reference.fines">
+                        <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.fines">
                     </td>
                 </tr>
                 <tr>
                     <td>Juros</td>
                     <td>
-                        <input type="text" name="fines" class="form-control" [(ngModel)]="reference.interest">
+                        <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.interest">
                     </td>
                 </tr>
                 <tr>
