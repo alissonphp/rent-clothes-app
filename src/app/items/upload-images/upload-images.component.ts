@@ -21,7 +21,7 @@ declare var $: any
 
 export class UploadImagesComponent implements OnInit {
 
-  refId: number
+  refId: any
   options: any = []
   errorMsg
   item = {
@@ -86,13 +86,13 @@ export class UploadImagesComponent implements OnInit {
 
  }
 
- openModal(template: TemplateRef<any>, id: number) {
-  this.refId = id;
+ openModal(template: TemplateRef<any>, item: any) {
+  this.refId = item;
   this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
 }
 
 confirmDelete() {
-  this.itemService.deleteImg(this.refId).subscribe(
+  this.itemService.deleteImg(this.refId.id).subscribe(
     res => {
       const index: number = this.images.indexOf(this.refId)
       this.modalRef.hide()

@@ -13,7 +13,7 @@
     </div>
     <div class="col-md-3 text-center" *ngFor="let i of images">
         <img alt="Item Image" class="img-thumbnail img-responsive" [src]="imgUrl + i.file">
-        <a (click)="openModal(template, i.id)" title="Delete Image" class="btn btn-danger">
+        <a (click)="openModal(template, i)" title="Delete Image" class="btn btn-danger">
           <i class="fa fa-trash"></i>
         </a>
     </div>

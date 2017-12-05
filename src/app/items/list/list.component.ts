@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
 
   items: any = [];
   errorMsg: any;
-  refId: number
+  refId: any
   dtOptions: any = {};
   dtTrigger = new Subject();
   modalRef: BsModalRef
@@ -49,8 +49,8 @@ export class ListComponent implements OnInit {
     )
   }
 
-  openModal(template: TemplateRef<any>, id: number) {
-    this.refId = id;
+  openModal(template: TemplateRef<any>, item: any) {
+    this.refId = item;
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
@@ -69,7 +69,7 @@ export class ListComponent implements OnInit {
   }
 
   confirmDelete() {
-    this.itemsService.delete(this.refId).subscribe(
+    this.itemsService.delete(this.refId.id).subscribe(
       res => {
         const index: number = this.items.indexOf(this.refId)
         this.modalRef.hide()

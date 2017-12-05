@@ -20,7 +20,7 @@ export class CategoriesComponent implements OnInit {
   dtOptions: any = {};
   dtTrigger = new Subject();
   modalRef: BsModalRef;
-  refId: number;
+  refId: any;
 
   constructor(private categoriesService: CategoriesService, private modalService: BsModalService) { }
 
@@ -50,15 +50,18 @@ export class CategoriesComponent implements OnInit {
     )
   }
 
-  openModal(template: TemplateRef<any>, id: number) {
-    this.refId = id;
+  openModal(template: TemplateRef<any>, item: any) {
+    this.refId = item;
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
   confirmDelete() {
-    this.categoriesService.delete(this.refId).subscribe(
+    this.categoriesService.delete(this.refId.id).subscribe(
       res => {
-        console.log(res)
+        const index: number = this.categories.indexOf(this.refId)
+        this.modalRef.hide()
+        this.successMsg()
+        this.categories.splice(index, 1)
        },
       error => this.errorMsg = error
     )

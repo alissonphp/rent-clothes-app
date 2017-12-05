@@ -23,7 +23,7 @@ export class CategoriesService {
 
   delete(id: number): any {
     return this.http.delete('items/category/' + id)
-    .map((res: Response) => res.json())
+    .map((res: Response) => res)
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
