@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label>Categoria:</label>
                     <select *ngIf="categories" required class="form-control" name="categorys_id" [(ngModel)]="item.categorys_id">
-                      <option *ngFor="let c of categories" value="c.id">{{ c.label }}</option>
+                      <option *ngFor="let c of categories" [value]="c.id">{{ c.label }}</option>
                     </select>
                 </div>
             </div>

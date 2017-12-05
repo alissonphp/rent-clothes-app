@@ -59,6 +59,7 @@ import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { ItemConsultComponent } from './dpt-seller/item-consult/item-consult.component';
 import { GoalsComponent } from './dpt-seller/goals/goals.component';
 import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-seller.component';
+import { FooterComponent } from './front-store/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-sell
     DptSellerComponent,
     ItemConsultComponent,
     GoalsComponent,
-    SidebarSellerComponent
+    SidebarSellerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -28,9 +28,10 @@ export class SliderImagesComponent implements OnInit {
 
   setAll() {
     this.bannerService.actives().subscribe(
-      res => this.banners = res,
+      res => {
+        this.banners = res
+      },
       error => this.errorMsg = error
     )
   }
-
 }

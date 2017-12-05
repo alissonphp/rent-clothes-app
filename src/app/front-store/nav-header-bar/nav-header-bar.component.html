@@ -1,150 +1,121 @@
-<!-- *** TOPBAR ***
- _________________________________________________________ -->
-<div id="top">
-    <div class="container">
-        <div class="col-md-6 offer" data-animate="fadeInDown">
-            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">(98) 98888-88888</a>
-        </div>
-        <div class="col-md-6" data-animate="fadeInDown">
-            <ul class="menu">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar</a>
-                </li>
-                <li><a href="register.html">Criar Conta</a>
-                </li>
-                <li><a href="contact.html">Fale Conosco</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="Login">LOGIN</h4>
+<div id="header" class="style2">
+    <!-- Top Bar Start-->
+    <nav id="top" class="htop">
+        <div class="container">
+            <div class="row"> <span class="drop-icon visible-sm visible-xs"><i class="fa fa-align-justify"></i></span>
+                <div class="pull-left flip left-top">
+                    <div class="links">
+                        <ul>
+                            <li class="mobile"><i class="fa fa-phone"></i>+91 9898777656</li>
+                            <li class="email"><a href="mailto:contato@damiipratii.com.br"><i class="fa fa-envelope"></i>contato@damiipratii.com.br</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form action="customer-orders.html" method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="email-modal" placeholder="email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="password-modal" placeholder="password">
-                        </div>
-
-                        <p class="text-center">
-                            <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Entrar</button>
-                        </p>
-
-                    </form>
-
-                    <p class="text-center text-muted">Ainda não é registrado?</p>
-                    <p class="text-center text-muted"><a href="register.html"><strong>Crie sua conta agora</strong></a>! É fácil e bem rápido!</p>
-
+                <div id="top-links" class="nav pull-right flip">
+                    <ul>
+                        <li><a href="login.html">Entrar</a></li>
+                        <li><a href="register.html">Cadastrar-se</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-</div>
-
-<!-- *** TOP BAR END *** -->
-
-<!-- *** NAVBAR ***
-_________________________________________________________ -->
-
-<div class="navbar navbar-default yamm" role="navigation" id="navbar">
-    <div class="container">
-        <div class="navbar-header">
-
-            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                <img src="../assets/img/damiipratii-logo-primary.png" alt="Obaju logo" class="hidden-xs img-responsive">
-                <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Damiipratii</span>
-            </a>
-            <div class="navbar-buttons">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <i class="fa fa-align-justify"></i>
-                </button>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                    <span class="sr-only">Toggle search</span>
-                    <i class="fa fa-search"></i>
-                </button>
-                <a class="btn btn-default navbar-toggle" href="basket.html">
-                    <i class="fa fa-shopping-cart"></i> <span class="hidden-xs">3 itens no carrinho</span>
-                </a>
+    </nav>
+    <!-- Top Bar End-->
+    <!-- Header Start-->
+    <header class="header-row">
+        <div class="container">
+            <div class="table-container">
+                <!-- Mini Cart Start-->
+                <div class="col-table-cell col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
+                    <div id="cart">
+                        <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="heading dropdown-toggle"> <span class="cart-icon pull-left flip"></span> <span id="cart-total">2 item(s) - $1,132.00</span></button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">
+                                                <a href="product.html"><img class="img-thumbnail" title="Xitefun Causal Wear Fancy Shoes" alt="Xitefun Causal Wear Fancy Shoes" src="./assets/front/image/product/sony_vaio_1-50x75.jpg"></a>
+                                            </td>
+                                            <td class="text-left"><a href="product.html">Xitefun Causal Wear Fancy Shoes</a></td>
+                                            <td class="text-right">x 1</td>
+                                            <td class="text-right">$902.00</td>
+                                            <td class="text-center"><button class="btn btn-danger btn-xs remove" title="Remove" onClick="" type="button"><i class="fa fa-times"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>
+                                <div>
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Sub-Total</strong></td>
+                                                <td class="text-right">$940.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                                <td class="text-right">$4.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                <td class="text-right">$188.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Total</strong></td>
+                                                <td class="text-right">$1,132.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="checkout"><a href="cart.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Meu carrinho</a>&nbsp;&nbsp;&nbsp;<a href="checkout.html" class="btn btn-primary"><i class="fa fa-share"></i> Checkout</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Mini Cart End-->
+                <!-- Logo Start -->
+                <div class="col-table-cell col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div id="logo">
+                        <a href="index.html"><img class="img-responsive" width="280" src="./assets/img/damiipratii-logo-primary.png" title="Damiipratii" alt="Damiipratii" /></a>
+                    </div>
+                </div>
+                <!-- Logo End -->
+                <!-- Search Start-->
+                <div class="col-table-cell col-lg-3 col-md-3 col-sm-12 col-xs-12 inner">
+                    <div id="search" class="input-group">
+                        <input id="filter_name" type="text" name="search" value="" placeholder="Pesquisar..." class="form-control input-lg" />
+                        <button type="button" class="button-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <!-- Search End-->
             </div>
         </div>
-        <!--/.navbar-header -->
-
-        <div class="navbar-collapse collapse" id="navigation">
-
-            <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown yamm-fw">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categorias <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <ul>
-                                            <li *ngFor="let c of categories">
-                                                <a href="category.html">
-                                                    <h4>{{ c.label }}</h4>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+    </header>
+    <!-- Header End-->
+    <!-- Main Menu Start-->
+    <nav id="menu" class="navbar">
+        <div class="navbar-header"> <span class="visible-xs visible-sm"> Menu <b></b></span></div>
+        <div class="container">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="home_link" title="Home" routerLink="/">Home</a></li>
+                    <li class="mega-menu dropdown"><a href="">Vestidos</a>
+                        <div class="dropdown-menu-ft">
+                            <div class="column col-lg-2 col-md-3">
+                                <div>
+                                    <ul>
+                                        <li *ngFor="let c of categories"><a href="">{{c.label}}</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <!-- /.yamm-content -->
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="index.html">Blog</a></li>
-                <li><a href="index.html">Fale Conosco</a></li>
-            </ul>
-
-        </div>
-        <!--/.nav-collapse -->
-
-        <div class="navbar-buttons">
-
-            <div class="navbar-collapse collapse right" id="basket-overview">
-                <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 itens no carrinho</span></a>
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="">Blog</a></li>
+                    <li class="dropdown"><a href="">Fale Conosco</a></li>
+                </ul>
             </div>
-            <!--/.nav-collapse -->
-
-            <div class="navbar-collapse collapse right" id="search-not-mobile">
-                <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                    <span class="sr-only">Toggle search</span>
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-
         </div>
-
-        <div class="collapse clearfix" id="search">
-
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="input-group-btn">
-
-        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-
-        </span>
-                </div>
-            </form>
-
-        </div>
-        <!--/.nav-collapse -->
-
-    </div>
-    <!-- /.container -->
+    </nav>
+    <!-- Main Menu End-->
 </div>
-<!-- /#navbar -->
-
-<!-- *** NAVBAR END *** -->

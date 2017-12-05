@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from 'app/items/items.service';
-
+import { environment } from 'environments/environment';
+declare var $: any
 @Component({
   selector: 'app-news-itens',
   templateUrl: './news-itens.component.html',
@@ -9,10 +10,13 @@ import { ItemsService } from 'app/items/items.service';
 })
 export class NewsItensComponent implements OnInit {
 
-  private news: any
+  public news: any
   errorMsg
+  baseUrl
 
-  constructor(private itemService: ItemsService) { }
+  constructor(private itemService: ItemsService) {
+    this.baseUrl = environment.api + 'drive/products/'
+  }
 
   ngOnInit() {
     this.getNews()
@@ -24,5 +28,4 @@ export class NewsItensComponent implements OnInit {
       error => this.errorMsg = error
     )
   }
-
 }

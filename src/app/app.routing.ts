@@ -41,11 +41,12 @@ import { GoalsComponent } from 'app/dpt-seller/goals/goals.component';
 export const AppRoutes: Routes = [
     {
         path: '',
-        component: FrontStoreComponent
+        component: FrontStoreComponent,
+        pathMatch: 'full'
     },
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
     },
     {
         path: 'dpt-admin',
@@ -66,7 +67,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListComponent
+                        component: ListComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'create',
@@ -104,7 +106,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListClientComponent
+                        component: ListClientComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'create',
@@ -122,7 +125,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListOrdersComponent
+                        component: ListOrdersComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'view/:id',
@@ -136,7 +140,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListBannersComponent
+                        component: ListBannersComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'upload',
@@ -154,7 +159,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListUsersComponent
+                        component: ListUsersComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'create',
@@ -206,7 +212,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListClientComponent
+                        component: ListClientComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'create',
@@ -224,7 +231,8 @@ export const AppRoutes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ListOrdersPdvComponent
+                        component: ListOrdersPdvComponent,
+                        pathMatch: 'full'
                     },
                     {
                         path: 'view/:id',

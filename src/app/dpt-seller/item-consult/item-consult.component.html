@@ -1,3 +1,64 @@
-<p>
-  item-consult works!
-</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Consultar de item:</h4>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Pesquisar por código ou nome do item:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="searchitem" [(ngModel)]="searchItem">
+                                <span (click)="getSearchItem()" title="Pesquisar..." class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="loadItens">
+                        <div class="col-md-12 text-center">
+                            pesquisando itens ...
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="resItens">
+                        <div class="col-md-12">
+                            <h5>Selecione o(s) iten(s):</h5>
+                            <table class="table table-hover table-condensed table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Cod.</th>
+                                        <th>Item</th>
+                                        <th>Descr. Curta</th>
+                                        <th>Valor</th>
+                                        <th>Tamanho</th>
+                                        <th>Disponíveis</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let i of resItens">
+                                        <td align="center">{{ i.id }}</td>
+                                        <td align="center">{{ i.code }}</td>
+                                        <td>{{ i.label }}</td>
+                                        <td>{{ i.short_description }}</td>
+                                        <td align="center">{{ i.price | currency: "BRL" }}</td>
+                                        <td align="center">{{ i.size }}</td>
+                                        <td align="center">{{ i.available }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

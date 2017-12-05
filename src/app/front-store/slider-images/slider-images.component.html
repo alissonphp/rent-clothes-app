@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container pd-top">
     <div class="col-md-12">
-        <carousel interval="5500">
+        <carousel interval="6500" [noWrap]="noWrapSlides">
             <slide *ngFor="let b of banners; let index=index">
                 <a [href]="b.link" [target]="b.target">
                     <img [src]="baseUrl + b.file" alt="image slide" style="display: block; width: 100%;">

@@ -16,21 +16,21 @@ declare var $: any
 })
 export class CreateOrderComponent implements OnInit {
 
-  private searchClient
-  private searchItem
-  private client
-  private itens: any = []
-  private resClients: any
-  private resItens: any
-  private errorMsg
-  private discount: any = 0.00
-  private out
-  private return
-  private days
-  private subtotal
-  private total
-  private loadClients = false
-  private loadItens = false
+  searchClient
+  searchItem
+  client
+  itens: any = []
+  resClients: any
+  resItens: any
+  errorMsg
+  discount: any = 0.00
+  out
+  return
+  days
+  subtotal
+  total
+  loadClients = false
+  loadItens = false
   today = moment().format('YYYY-MM-DD')
   obs: any
   payment_method: any

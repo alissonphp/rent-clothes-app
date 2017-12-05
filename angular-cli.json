@@ -29,7 +29,11 @@
             "../node_modules/chartist/dist/chartist.js",
             "../node_modules/bootstrap-notify/bootstrap-notify.js",
             "../node_modules/datatables.net/js/jquery.dataTables.js",
-            "../node_modules/moment/moment.js"
+            "../node_modules/moment/moment.js",
+            "../src/assets/front/js/jquery.easing-1.3.min.js",
+            "../src/assets/front/js/jquery.dcjqaccordion.min.js",
+            "../src/assets/front/js/owl.carousel.min.js",
+            "../src/assets/front/js/custom.js"
         ],
         "environmentSource": "environments/environment.ts",
         "environments": {

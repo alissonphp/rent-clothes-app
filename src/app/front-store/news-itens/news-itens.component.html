@@ -1,46 +1,48 @@
-<!-- *** HOT PRODUCT SLIDESHOW ***
-_________________________________________________________ -->
-<div id="hot">
-
-    <div class="box">
-        <div class="container">
-            <div class="col-md-12">
-                <h2>Novidades da Semana</h2>
-            </div>
-        </div>
-    </div>
-
+<div id="container">
     <div class="container">
-        <div class="item" *ngFor="let i of news">
-            <div class="product">
-                <div class="flip-container">
-                    <div class="flipper">
-                        <div class="front">
-                            <a href="detail.html">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
+        <div class="row">
+            <!-- Feature Box Start-->
+            <div class="container">
+                <div class="custom-feature-box row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="feature-box fbox_1">
+                            <div class="title">Free Shipping</div>
+                            <p>Free shipping on order over $1000</p>
                         </div>
-                        <div class="back">
-                            <a href="detail.html">
-                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                            </a>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="feature-box fbox_2">
+                            <div class="title">Easy Return</div>
+                            <p>Easy return in 24 days after purchasing</p>
                         </div>
                     </div>
                 </div>
-                <a href="detail.html" class="invisible">
-                    <img src="img/product1.jpg" alt="" class="img-responsive">
-                </a>
-                <div class="text">
-                    <h3><a href="detail.html">{{i.label}}</a></h3>
-                    <p class="price">{{i.price | currency:"BRL"}}</p>
-                </div>
-                <!-- /.text -->
             </div>
-            <!-- /.product -->
+            <!-- Feature Box End-->
         </div>
-        <!-- /.product-slider -->
     </div>
-    <!-- /.container -->
-
+    <div class="container">
+        <div class="row">
+            <!--Middle Part Start-->
+            <div id="content" class="col-xs-12">
+                <div class="col-md-3 text-center" *ngFor="let n of news">
+                    <div class="product-thumb clearfix">
+                        <div class="image">
+                            <a href="product.html"><img [src]="baseUrl + n.images[0].file" [alt]="n.label" [title]="n.label" class="img-responsive" /></a>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="product.html">{{n.label}}</a></h4>
+                            <p class="price"><span class="price-new">{{n.price | currency:"BRL" }}</span>
+                                <!-- <span class="saving">-10%</span> -->
+                            </p>
+                        </div>
+                        <div class="button-group">
+                            <button class="btn-primary" type="button"><span>Adicionar ao carrinho</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Middle Part End-->
+        </div>
+    </div>
 </div>
-<!-- /#hot -->

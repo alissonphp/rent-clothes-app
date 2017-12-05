@@ -113,12 +113,13 @@
                                 <th>Descr. Curta</th>
                                 <th>Valor</th>
                                 <th>Tamanho</th>
+                                <th>Disponíveis</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let i of resItens">
                                 <td align="center">
-                                    <a (click)="addOrderItem(i)" class="btn btn-success">
+                                    <a (click)="addOrderItem(i)" *ngIf="i.available > 0" class="btn btn-success">
                                         <i class="fa fa-plus-circle"></i>
                                     </a>
                                 </td>
@@ -128,6 +129,7 @@
                                 <td align="center">{{ i.short_description }}</td>
                                 <td align="center">{{ i.price | currency: "BRL" }}</td>
                                 <td align="center">{{ i.size }}</td>
+                                <td align="center">{{ i.available }}</td>
                             </tr>
                         </tbody>
                     </table>
