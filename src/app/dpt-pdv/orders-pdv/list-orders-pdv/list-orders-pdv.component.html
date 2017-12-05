@@ -43,8 +43,8 @@
                         title="Cancelar" class="btn btn-danger">
                         <i class="ti-close"></i>
                     </a>
-                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Aguardando Confirmação' && c.status != 'Finalizado com Atraso'" (click)="openModal(finish, c)"
-                        title="Finalizar" class="btn btn-success">
+                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Aguardando Confirmação' && c.status != 'Finalizado com Atraso'"
+                        (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
                         <i class="fa fa-check"></i>
                     </a>
                 </td>
@@ -71,10 +71,10 @@
                     <td>{{ reference.code }}</td>
                 </tr>
                 <tr>
-                    <td>Subtotal</td>
-                    <td>{{ reference.subtotal | currency: "BRL" }}</td>
+                    <td class="text-info">Subtotal</td>
+                    <td class="text-info">{{ reference.subtotal | currency: "BRL" }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Multa</td>
                     <td>
                         <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.fines">
@@ -85,20 +85,30 @@
                     <td>
                         <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.interest">
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Desconto</td>
-                    <td>{{ reference.discount | currency: "BRL" }}</td>
+                    <td>- {{ reference.discount | currency: "BRL" }}</td>
                 </tr>
                 <tr>
-                    <td>Total</td>
-                    <td>{{ reference.total | currency: "BRL" }}</td>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{ reference.total | currency: "BRL" }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-success">Valor pago:</td>
+                    <td class="text-success">({{ reference.paid | currency: "BRL" }})</td>
+                </tr>
+                <tr>
+                    <td>Efetuar o pagamento de:</td>
+                    <td>
+                        <input type="text" name="pay" class="form-control" [(ngModel)]="reference.total_pay">
+                    </td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
-            <button type="button" class="btn btn-success">Confirmar Recebimento</button>
+            <button type="button" class="btn btn-success" (click)="orderPay()">Confirmar Recebimento</button>
         </div>
     </div>
 </ng-template>

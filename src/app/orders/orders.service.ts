@@ -20,6 +20,12 @@ export class OrdersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  pay(data: any): Observable<any> {
+    return this.http.post('orders/payment', data)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json() || 'Server error'));
+  }
+
   save(data: any): Observable<any> {
     return this.http.post('orders', data)
      .map((res: Response) => res.json())

@@ -13,7 +13,7 @@ declare var $: any
   selector: 'app-list-orders-pdv',
   templateUrl: './list-orders-pdv.component.html',
   styleUrls: ['./list-orders-pdv.component.css'],
-  providers: [ OrdersService ]
+  providers: [OrdersService]
 })
 export class ListOrdersPdvComponent implements OnInit {
 
@@ -46,31 +46,47 @@ export class ListOrdersPdvComponent implements OnInit {
     this.orderService.list().subscribe(
       res => {
         this.orders = res
-        if(initTable) 
-        this.dtTrigger.next();
+        if (initTable)
+          this.dtTrigger.next();
       },
       error => this.errorMsg = error
     )
   }
 
   openModal(template: TemplateRef<any>, ref: any, size) {
-    this.reference = ref;
-    this.modalRef = this.modalService.show(template, {class: 'modal-' + size});
+    this.reference = ref
+    this.calcPaid()
+    this.reference.total_pay = ref.total - this.reference.paid    
+    this.modalRef = this.modalService.show(template, { class: 'modal-' + size });
   }
 
-  payment() {
-    
+  orderPay() {
+    this.orderService.pay(this.reference).subscribe(
+      res => {
+        this.modalRef.hide()
+        this.all(false)
+        this.successMsg('success', 'Recebimento de valores registrado!', 'ti-check-box')
+      },
+      error => {
+        this.modalRef.hide()
+        this.successMsg('danger', 'Erro: ' + error.error, 'ti-alert')
+      }
+    )
   }
 
-  calcTotal() {
+  calcPaid() {
+    this.reference.paid = this.reference.pays.reduce(
+      (sub, item) => sub + item.value, 0
+    )
   }
+
 
   setStatus(status: string) {
     this.orderService.status(this.reference.id, status).subscribe(
       res => {
         this.modalRef.hide()
         this.all(false)
-        this.successMsg('success','Situação da OL atualizada para ' + res.status,'ti-check-box')
+        this.successMsg('success', 'Situação da OL atualizada para ' + res.status, 'ti-check-box')
       },
       error => this.errorMsg = error
     )
@@ -84,10 +100,10 @@ export class ListOrdersPdvComponent implements OnInit {
         type: type,
         timer: 1500,
         placement: {
-            from: 'top',
-            align: 'center'
+          from: 'top',
+          align: 'center'
         }
-    });
+      });
   }
 
   // confirmDelete() {
