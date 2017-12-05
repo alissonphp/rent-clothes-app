@@ -55,6 +55,10 @@ import { DashboardPdvComponent } from './dpt-pdv/dashboard-pdv/dashboard-pdv.com
 import { OrdersPdvComponent } from './dpt-pdv/orders-pdv/orders-pdv.component';
 import { CreateOrderComponent } from './dpt-pdv/orders-pdv/create-order/create-order.component';
 import { ListOrdersPdvComponent } from './dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
+import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
+import { ItemConsultComponent } from './dpt-seller/item-consult/item-consult.component';
+import { GoalsComponent } from './dpt-seller/goals/goals.component';
+import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-seller.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +98,11 @@ import { ListOrdersPdvComponent } from './dpt-pdv/orders-pdv/list-orders-pdv/lis
     DashboardPdvComponent,
     OrdersPdvComponent,
     CreateOrderComponent,
-    ListOrdersPdvComponent
+    ListOrdersPdvComponent,
+    DptSellerComponent,
+    ItemConsultComponent,
+    GoalsComponent,
+    SidebarSellerComponent
   ],
   imports: [
     BrowserModule,

@@ -47,6 +47,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/dpt-admin/dashboard'])
     } else if (role == 'pdv') {
       this.router.navigate(['/dpt-pdv/dashboard'])
+    } else if (role == 'seller') {
+      this.router.navigate(['/dpt-seller/'])
     }
   }
 

@@ -1,3 +1,4 @@
+import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -34,6 +35,8 @@ import { DashboardPdvComponent } from 'app/dpt-pdv/dashboard-pdv/dashboard-pdv.c
 import { OrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/orders-pdv.component';
 import { CreateOrderComponent } from 'app/dpt-pdv/orders-pdv/create-order/create-order.component';
 import { ListOrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
+import { ItemConsultComponent } from 'app/dpt-seller/item-consult/item-consult.component';
+import { GoalsComponent } from 'app/dpt-seller/goals/goals.component';
 
 export const AppRoutes: Routes = [
     {
@@ -163,6 +166,25 @@ export const AppRoutes: Routes = [
                     }
                 ]
             },
+        ]
+    },
+    {
+        path: 'dpt-seller',
+        component: DptSellerComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'consult',
+                pathMatch: 'full'
+            },
+            {
+                path: 'consult',
+                component: ItemConsultComponent
+            },
+            {
+                path: 'goals',
+                component: GoalsComponent,
+            }
         ]
     },
     {
