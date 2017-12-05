@@ -46,19 +46,27 @@
         </div>
         <div class="content">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="">Selecione o atendente:</label>
+                        <select class="form-control" name="seller_id" [(ngModel)]="seller_id">
+                            <option *ngFor="let s of sellers" [value]="s.id">{{s.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div *ngIf="seller_id" class="col-md-3">
                     <div class="form-group">
                         <label>Retirada:</label>
                         <input type="date" [min]="today" class="form-control" [(ngModel)]="out" name="out">
                     </div>
                 </div>
-                <div class="col-md-4" *ngIf="out">
+                <div class="col-md-3" *ngIf="out">
                     <div class="form-group">
                         <label>Devolução:</label>
                         <input type="date" [min]="today" (change)="calcDiff()" class="form-control" [(ngModel)]="return" name="return">
                     </div>
                 </div>
-                <div class="col-md-4" *ngIf="return">
+                <div class="col-md-3" *ngIf="return">
                     <div class="form-group">
                         <label for="">Selecione a forma de pagamento:</label>
                         <select class="form-control" name="payment" [(ngModel)]="payment_method">
@@ -161,7 +169,6 @@
                         <strong>Forma de Pagamento:</strong>
                         <br> {{payment_method}}
                         <br>
-
                     </address>
                 </div>
                 <div class="col-xs-6 text-right">

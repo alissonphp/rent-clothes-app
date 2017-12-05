@@ -13,6 +13,7 @@
                 <th>ID</th>
                 <th>Código</th>
                 <th>Cliente</th>
+                <th>Atendente</th>
                 <th>De</th>
                 <th>Até</th>
                 <th>Registro</th>
@@ -25,6 +26,7 @@
                 <td>{{ c.id }}</td>
                 <td>{{ c.code }}</td>
                 <td>{{ c.client.name }}</td>
+                <td>{{ c.user.name }}</td>
                 <td>{{ c.output | date: 'dd/MM/yy' }}</td>
                 <td>{{ c.expected_return | date: 'dd/MM/yy' }}</td>
                 <td>{{ c.created_at | date: 'dd/MM/yy' }}</td>

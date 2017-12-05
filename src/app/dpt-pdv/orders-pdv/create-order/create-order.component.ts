@@ -19,7 +19,9 @@ export class CreateOrderComponent implements OnInit {
   searchClient
   searchItem
   client
+  seller_id
   itens: any = []
+  sellers: any = []
   resClients: any
   resItens: any
   errorMsg
@@ -41,6 +43,10 @@ export class CreateOrderComponent implements OnInit {
     private orderService: OrdersService) { }
 
   ngOnInit() {
+    this.orderService.sellers().subscribe(
+      res => this.sellers = res,
+      error => this.errorMsg = error
+    )
   }
 
   getSearchClient() {
@@ -112,6 +118,7 @@ export class CreateOrderComponent implements OnInit {
   createOrder() {
     const data = {
       clients_id: this.client.id,
+      users_id: this.seller_id,
       output: this.out,
       expected_return: this.return,
       subtotal: this.subtotal,

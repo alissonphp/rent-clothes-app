@@ -14,6 +14,12 @@ export class OrdersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  sellers(): Observable<any> {
+    return this.http.get('orders/sellers')
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   save(data: any): Observable<any> {
     return this.http.post('orders', data)
      .map((res: Response) => res.json())
