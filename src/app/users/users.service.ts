@@ -14,6 +14,12 @@ export class UsersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  role(roleid: number): Observable<any> {
+    return this.http.get('users/role/'+roleid)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   save(user: any): Observable<any> {
     return this.http.post('users', user)
      .map((res: Response) => res.json())

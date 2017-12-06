@@ -37,6 +37,7 @@ import { CreateOrderComponent } from 'app/dpt-pdv/orders-pdv/create-order/create
 import { ListOrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
 import { ItemConsultComponent } from 'app/dpt-seller/item-consult/item-consult.component';
 import { GoalsComponent } from 'app/dpt-seller/goals/goals.component';
+import { CashierComponent } from 'app/cashier/cashier.component';
 
 export const AppRoutes: Routes = [
     {
@@ -205,6 +206,10 @@ export const AppRoutes: Routes = [
             {
                 path: 'dashboard',
                 component: DashboardPdvComponent
+            },
+            {
+                path: 'cashier',
+                component: CashierComponent
             },
             {
                 path: 'clients',

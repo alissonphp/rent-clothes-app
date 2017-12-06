@@ -61,6 +61,7 @@ import { GoalsComponent } from './dpt-seller/goals/goals.component';
 import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-seller.component';
 import { FooterComponent } from './front-store/footer/footer.component';
 import { SidebarSellerModule } from 'app/dpt-seller/sidebar-seller/sidebar-seller.module';
+import { CashierComponent } from './cashier/cashier.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { SidebarSellerModule } from 'app/dpt-seller/sidebar-seller/sidebar-selle
     ItemConsultComponent,
     GoalsComponent,
     SidebarSellerComponent,
-    FooterComponent
+    FooterComponent,
+    CashierComponent
   ],
   imports: [
     BrowserModule,

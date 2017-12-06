@@ -11,9 +11,9 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: 'dpt-pdv/dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-    // { path: 'dpt-pdv/items', title: 'Produtos',  icon: 'ti-shopping-cart', class: '' },
     { path: 'dpt-pdv/clients', title: 'Clientes',  icon: 'fa fa-users', class: '' },
     { path: 'dpt-pdv/orders', title: 'Ordens',  icon: 'ti-view-list-alt', class: '' },
+    { path: 'dpt-pdv/cashier', title: 'Caixa',  icon: 'ti-money', class: '' },
 ];
 
 @Component({
