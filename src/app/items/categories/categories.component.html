@@ -27,7 +27,7 @@
                     <a title="Editar" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a (click)="openModal(template, c.id)" title="Excluir" class="btn btn-danger">
+                    <a (click)="openModal(template, c)" title="Excluir" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>
@@ -38,7 +38,7 @@
 
 <ng-template #template>
     <div class="modal-body text-center">
-        <p>Deseja mesmo excluir a categoria? Ao confirmar os itens vinculados a ela serão excluídos!</p>
+        <p>Deseja mesmo excluir a categoria "{{ refId.label }}"? Ao confirmar os itens vinculados a ela serão excluídos!</p>
         <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
         <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
     </div>

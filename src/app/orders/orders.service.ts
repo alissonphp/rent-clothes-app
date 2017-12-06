@@ -20,6 +20,12 @@ export class OrdersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  pay(data: any): Observable<any> {
+    return this.http.post('orders/payment', data)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json() || 'Server error'));
+  }
+
   save(data: any): Observable<any> {
     return this.http.post('orders', data)
      .map((res: Response) => res.json())
@@ -34,6 +40,11 @@ export class OrdersService {
 
   status(id: number, status: string): Observable<any> {
     return this.http.get('orders/status/' + id + '/' + status)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+  itemsituation(id: number, situation: number): Observable<any> {
+    return this.http.get('orders/items-situation/' + id + '/' + situation)
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

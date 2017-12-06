@@ -10,7 +10,6 @@
     <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Código</th>
                 <th>Cliente</th>
                 <th>Atendente</th>
@@ -18,12 +17,12 @@
                 <th>Até</th>
                 <th>Registro</th>
                 <th>Situação</th>
+                <th>Itens</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let c of orders">
-                <td>{{ c.id }}</td>
                 <td>{{ c.code }}</td>
                 <td>{{ c.client.name }}</td>
                 <td>{{ c.user.name }}</td>
@@ -31,20 +30,24 @@
                 <td>{{ c.expected_return | date: 'dd/MM/yy' }}</td>
                 <td>{{ c.created_at | date: 'dd/MM/yy' }}</td>
                 <td>{{ c.status }}</td>
+                <td>{{ c.items_situation }}</td>
                 <td>
                     <a [routerLink]="['view', c.id]" title="Visualizar" class="btn btn-default">
                         <i class="fa fa-search"></i>
                     </a>
-                    <a *ngIf="c.status == 'Aguardando Confirmação' || c.status == 'Alugado'" (click)="openModal(payment, c)" title="Registrar pagamento"
-                        class="btn btn-default">
+                    <a *ngIf="c.status == 'Aberta' || c.status == 'Paga (parcial)'" (click)="openModal(payment, c)" title="Registrar pagamento" class="btn btn-default">
                         <i class="fa fa-usd"></i>
                     </a>
-                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Finalizado com Atraso'" (click)="openModal(cancel, c)"
-                        title="Cancelar" class="btn btn-danger">
+                    <a *ngIf="c.status != 'Finalizada' && c.status != 'Cancelada' && c.items_situation == 'Aguardando'" (click)="openModal(itemLoc, c)" title="Registrar Saída dos Itens" class="btn btn-default">
+                        <i class="fa fa-cart-arrow-down"></i>
+                    </a>
+                    <a *ngIf="c.status != 'Finalizada' && c.status != 'Cancelada' && c.items_situation == 'Em locação'" (click)="openModal(itemRet, c)" title="Informar recebimento dos Itens" class="btn btn-default">
+                        <i class="fa fa-upload"></i>
+                    </a>
+                    <a *ngIf="c.status != 'Cancelada' && c.status != 'Finalizada' && c.status != 'Paga (total)'" (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
                         <i class="ti-close"></i>
                     </a>
-                    <a *ngIf="c.status != 'Cancelado' && c.status != 'Finalizado' && c.status != 'Aguardando Confirmação' && c.status != 'Finalizado com Atraso'" (click)="openModal(finish, c)"
-                        title="Finalizar" class="btn btn-success">
+                    <a *ngIf="c.status == 'Paga (total)'" (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
                         <i class="fa fa-check"></i>
                     </a>
                 </td>
@@ -71,10 +74,10 @@
                     <td>{{ reference.code }}</td>
                 </tr>
                 <tr>
-                    <td>Subtotal</td>
-                    <td>{{ reference.subtotal | currency: "BRL" }}</td>
+                    <td class="text-info">Subtotal</td>
+                    <td class="text-info">{{ reference.subtotal | currency: "BRL" }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Multa</td>
                     <td>
                         <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.fines">
@@ -85,20 +88,62 @@
                     <td>
                         <input type="text" name="fines" (keypress)="calcTotal()" class="form-control" [(ngModel)]="reference.interest">
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Desconto</td>
-                    <td>{{ reference.discount | currency: "BRL" }}</td>
+                    <td>- {{ reference.discount | currency: "BRL" }}</td>
                 </tr>
                 <tr>
-                    <td>Total</td>
-                    <td>{{ reference.total | currency: "BRL" }}</td>
+                    <td><strong>Total</strong></td>
+                    <td><strong>{{ reference.total | currency: "BRL" }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-success">Valor pago:</td>
+                    <td class="text-success">({{ reference.paid | currency: "BRL" }})</td>
+                </tr>
+                <tr>
+                    <td>Efetuar o pagamento de:</td>
+                    <td>
+                        <input type="text" name="pay" class="form-control" [(ngModel)]="reference.total_pay">
+                    </td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
-            <button type="button" class="btn btn-success">Confirmar Recebimento</button>
+            <button type="button" class="btn btn-success" (click)="orderPay()">Confirmar Recebimento</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #itemLoc>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Situação dos Itens - OL # {{ reference.code }}</h5>
+        </div>
+        <div class="modal-body">
+            <p>Atualmente os itens dessa OL estão definidos como "{{ reference.items_situation }}", você deseja informar a LOCAÇÃO DOS ITENS (saída de loja)?</p>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
+            <button type="button" class="btn btn-success" (click)="setItemsSituation('2')">Sim, Confirmar Saída</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #itemRet>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Situação dos Itens - OL # {{ reference.code }}</h5>
+        </div>
+        <div class="modal-body">
+            <p>Atualmente os itens dessa OL estão definidos como "{{ reference.items_situation }}", você deseja informar a DEVOLUÇÃO DOS ITENS (retorno à loja)?</p>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancelar</button>
+            <button type="button" class="btn btn-success" (click)="setItemsSituation('3')">Sim, Confirmar Devolução</button>
         </div>
     </div>
 </ng-template>
@@ -106,7 +151,7 @@
 <ng-template #finish>
     <div class="modal-body text-center">
         <p>Deseja mesmo FINALIZAR essa OL # {{ reference.code }}?</p>
-        <button type="button" class="btn btn-success" (click)="setStatus('Finalizado')">SIM</button>
+        <button type="button" class="btn btn-success" (click)="setStatus('Finalizada')">SIM</button>
         <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Cancelar</button>
     </div>
 </ng-template>
@@ -114,7 +159,7 @@
 <ng-template #cancel>
     <div class="modal-body text-center">
         <p>Deseja mesmo CANCELAR essa OL # {{ reference.code }}?</p>
-        <button type="button" class="btn btn-danger" (click)="setStatus('Cancelado')">SIM</button>
+        <button type="button" class="btn btn-danger" (click)="setStatus('Cancelada')">SIM</button>
         <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Cancelar</button>
     </div>
 </ng-template>
