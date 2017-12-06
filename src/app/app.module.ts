@@ -60,6 +60,7 @@ import { ItemConsultComponent } from './dpt-seller/item-consult/item-consult.com
 import { GoalsComponent } from './dpt-seller/goals/goals.component';
 import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-seller.component';
 import { FooterComponent } from './front-store/footer/footer.component';
+import { SidebarSellerModule } from 'app/dpt-seller/sidebar-seller/sidebar-seller.module';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { FooterComponent } from './front-store/footer/footer.component';
     JsonpModule,
     SidebarModule,
     SidebarPdvModule,
+    SidebarSellerModule,
     NavbarModule,
     FormsModule,
     FileUploadModule,
