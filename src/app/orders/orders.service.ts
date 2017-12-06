@@ -43,6 +43,11 @@ export class OrdersService {
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+  itemsituation(id: number, situation: number): Observable<any> {
+    return this.http.get('orders/items-situation/' + id + '/' + situation)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
   delete(id: number): any {
     return this.http.delete('orders/' + id)

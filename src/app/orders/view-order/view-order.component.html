@@ -34,7 +34,7 @@
                 <div class="col-xs-6">
                     <address>
                         <strong>Atendente:</strong>
-                        <br> # {{order.user.id + ' - ' + order.user.name }}
+                        <br> {{order.user.id + ' - ' + order.user.name }}
                         <br>
                     </address>
                     <address>
@@ -47,6 +47,9 @@
                     <address>
                         <strong>Data de abertura:</strong>
                         <br> {{order.created_at | date: "dd/MM/yyyy 'às' H:m:s"}}
+                        <br>
+                        <strong>Última atualização:</strong>
+                        <br> {{order.updated_at | date: "dd/MM/yyyy 'às' H:m:s"}}
                         <br>
                         <strong>Data de saída do(s) item(s):</strong>
                         <br> {{order.output | date: "dd/MM/yyyy"}}
@@ -156,6 +159,44 @@
                                     <td class="text-right">
                                         <strong>{{order.total | currency: "BRL"}}</strong>
                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="order.pays.length > 0">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <strong>Histórico de pagamento(s)</strong>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <strong>#</strong>
+                                    </td>
+                                    <td>
+                                        <strong>Data</strong>
+                                    </td>
+                                    <td class="text-center">
+                                        <strong>Valor</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of order.pays">
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.created_at | date: "dd/MM/yyyy hh:mm" }}</td>
+                                    <td class="text-center">{{p.value | currency: "BRL"}}</td>
                                 </tr>
                             </tbody>
                         </table>
