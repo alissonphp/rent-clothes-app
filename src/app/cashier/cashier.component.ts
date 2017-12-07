@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'app/users/users.service';
 import { CashierService } from 'app/cashier/cashier-service.service';
 
+declare var moment: any
+
 @Component({
   selector: 'app-cashier',
   templateUrl: './cashier.component.html',
@@ -13,8 +15,8 @@ export class CashierComponent implements OnInit {
 
   filter: any = {
     user: 'all',
-    start: '',
-    end: ''
+    start: moment().format('YYYY-MM-DD'),
+    end: moment().format('YYYY-MM-DD')
   }
   users: any
   results: any = []
@@ -24,6 +26,7 @@ export class CashierComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers()
+    this.applyFilter()
   }
 
   getUsers() {
