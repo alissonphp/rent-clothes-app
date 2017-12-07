@@ -17,10 +17,8 @@ export const ROUTES: RouteInfo[] = [
     { path: 'dpt-admin/orders', title: 'Ordens',  icon: 'ti-view-list-alt', class: '' },
     { path: 'dpt-admin/cashier', title: 'Caixa',  icon: 'ti-money', class: '' },
     { path: 'dpt-admin/users', title: 'Usuários',  icon: 'ti-user', class: '' },
-    // { path: 'maps', title: 'Financeiro',  icon: 'ti-money', class: '' },
-    // { path: 'notifications', title: 'Metas',  icon: 'ti-stats-up', class: '' },
-    // { path: 'notifications', title: 'Relatórios',  icon: 'ti-pie-chart', class: '' },
-    // { path: 'upgrade', title: 'Upgrade to PRO',  icon:'ti-export', class: 'active-pro' },
+    { path: 'dpt-admin/config', title: 'Configurações',  icon: 'ti-settings', class: '' }
+
 ];
 
 @Component({

@@ -107,7 +107,7 @@ import { CashierComponent } from './cashier/cashier.component';
     GoalsComponent,
     SidebarSellerComponent,
     FooterComponent,
-    CashierComponent
+    CashierComponent,
   ],
   imports: [
     BrowserModule,
