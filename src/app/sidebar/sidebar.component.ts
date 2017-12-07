@@ -17,7 +17,8 @@ export const ROUTES: RouteInfo[] = [
     { path: 'dpt-admin/orders', title: 'Ordens',  icon: 'ti-view-list-alt', class: '' },
     { path: 'dpt-admin/cashier', title: 'Caixa',  icon: 'ti-money', class: '' },
     { path: 'dpt-admin/users', title: 'Usuários',  icon: 'ti-user', class: '' },
-    { path: 'dpt-admin/goals', title: 'Metas',  icon: 'ti-bar-chart', class: '' }
+    { path: 'dpt-admin/goals', title: 'Metas',  icon: 'ti-bar-chart', class: '' },
+    { path: 'logout', title: 'Sair',  icon: 'ti-close', class: '' }
 
 ];
 

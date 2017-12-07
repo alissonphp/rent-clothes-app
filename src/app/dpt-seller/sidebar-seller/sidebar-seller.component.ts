@@ -12,6 +12,7 @@ export interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: 'dpt-seller/consult', title: 'Consultar Item',  icon: 'fa fa-search', class: '' },
     { path: 'dpt-seller/goals', title: 'Metas',  icon: 'fa fa-line-chart', class: '' },
+    { path: 'logout', title: 'Sair',  icon: 'ti-close', class: '' }
 ];
 
 @Component({

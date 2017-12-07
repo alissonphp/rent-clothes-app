@@ -65,6 +65,7 @@ import { CashierComponent } from './cashier/cashier.component';
 import { GoalsListComponent } from './goals/goals-list/goals-list.component';
 import { GoalsCreateComponent } from './goals/goals-create/goals-create.component';
 import { GoalsUpdateComponent } from './goals/goals-update/goals-update.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +115,7 @@ import { GoalsUpdateComponent } from './goals/goals-update/goals-update.componen
     GoalsListComponent,
     GoalsCreateComponent,
     GoalsUpdateComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

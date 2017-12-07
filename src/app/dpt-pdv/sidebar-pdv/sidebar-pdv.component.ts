@@ -14,6 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'dpt-pdv/clients', title: 'Clientes',  icon: 'fa fa-users', class: '' },
     { path: 'dpt-pdv/orders', title: 'Ordens',  icon: 'ti-view-list-alt', class: '' },
     { path: 'dpt-pdv/cashier', title: 'Caixa',  icon: 'ti-money', class: '' },
+    { path: 'logout', title: 'Sair',  icon: 'ti-close', class: '' }
 ];
 
 @Component({
