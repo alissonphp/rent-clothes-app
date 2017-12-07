@@ -1,80 +1,82 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="header">
-          <h4 class="title">Caixa</h4>
-          <p class="category">Selecione as opções de filtro para listar as operações:</p>
-        </div>
-        <div class="content">
-          <div class="row">
-            <div class="col-md-12">
-              <form (ngSubmit)="applyFilter()" ngNativeValidate>
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>Início:</label>
-                      <input required type="date" [(ngModel)]="filter.start" name="start" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>Até:</label>
-                      <input required type="date" [(ngModel)]="filter.end" name="end" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label>Vendedor:</label>
-                      <select class="form-control" [(ngModel)]="filter.seller" name="seller">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Caixa</h4>
+                    <p class="category">Selecione as opções de filtro para listar as operações:</p>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form (ngSubmit)="applyFilter()" ngNativeValidate>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Início:</label>
+                                            <input required type="date" [(ngModel)]="filter.start" name="start" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Até:</label>
+                                            <input required type="date" [(ngModel)]="filter.end" name="end" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Atendente:</label>
+                                            <select class="form-control" [(ngModel)]="filter.user" name="user">
                         <option value="all" selected>Todos</option>
                         <option *ngFor="let s of users" [value]="s.id">{{s.name}}</option>
                       </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-default btn-block" type="submit">APLICAR FILTRO</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                  </div>
+                    <div class="row" *ngIf="results.length > 0">
+                        <div class="col-md-12">
+                            <h4>Movimentações de Caixa:</h4>
+                            <p> {{ results.length }} listadas </p>
+                        </div>
+                        <div class="col-md-12">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Usuário</th>
+                                        <th>Valor</th>
+                                        <th>Data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let p of results">
+                                        <td>
+                                            <a [routerLink]="['../orders/view', p.order.id]">{{ p.order.code }} <i class="fa fa-search"></i></a>
+                                        </td>
+                                        <td>{{ p.user.name }}</td>
+                                        <td>{{ p.total | currency: "BRL" }}</td>
+                                        <td>{{ p.created_at | date: "dd/MM/yyyy" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-right">Total:</td>
+                                        <td>{{ totalCashier | currency: "BRL" }}</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <button class="btn btn-default btn-block" type="submit">APLICAR FILTRO</button>
-                  </div>
-                </div>
-              </form>
             </div>
-          </div>
-          <div class="row" *ngIf="results.length > 0">
-            <div class="col-md-12">
-                <h4>Movimentações de Caixa:</h4>
-                <p> {{ results.length }} listadas </p>
-            </div>
-            <div class="col-md-12">
-              <table class="table table-condensed">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Usuário</th>
-                    <th>Valor</th>
-                    <th>Data</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let p of results">
-                    <td>{{ p.order.code }}</td>
-                    <td>{{ p.user.name }}</td>
-                    <td>{{ p.total | currency: "BRL" }}</td>
-                    <td>{{ p.created_at | date: "dd/MM/yyyy" }}</td>
-                  </tr>
-                  <tr>
-                      <td></td>
-                      <td class="text-right">Total:</td>
-                      <td>{{ totalCashier | currency: "BRL" }}</td>
-                      <td></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

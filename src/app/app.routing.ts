@@ -63,6 +63,10 @@ export const AppRoutes: Routes = [
                 component: DashboardComponent
             },
             {
+                path: 'cashier',
+                component: CashierComponent
+            },
+            {
                 path: 'items',
                 component: ItemsComponent,
                 children: [

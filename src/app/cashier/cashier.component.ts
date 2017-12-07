@@ -12,7 +12,7 @@ import { CashierService } from 'app/cashier/cashier-service.service';
 export class CashierComponent implements OnInit {
 
   filter: any = {
-    seller: 'all',
+    user: 'all',
     start: '',
     end: ''
   }
