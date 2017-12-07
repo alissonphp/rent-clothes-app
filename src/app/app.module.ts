@@ -57,11 +57,14 @@ import { CreateOrderComponent } from './dpt-pdv/orders-pdv/create-order/create-o
 import { ListOrdersPdvComponent } from './dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
 import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { ItemConsultComponent } from './dpt-seller/item-consult/item-consult.component';
-import { GoalsComponent } from './dpt-seller/goals/goals.component';
+import { GoalsComponent } from './goals/goals.component';
 import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-seller.component';
 import { FooterComponent } from './front-store/footer/footer.component';
 import { SidebarSellerModule } from 'app/dpt-seller/sidebar-seller/sidebar-seller.module';
 import { CashierComponent } from './cashier/cashier.component';
+import { GoalsListComponent } from './goals/goals-list/goals-list.component';
+import { GoalsCreateComponent } from './goals/goals-create/goals-create.component';
+import { GoalsUpdateComponent } from './goals/goals-update/goals-update.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +111,9 @@ import { CashierComponent } from './cashier/cashier.component';
     SidebarSellerComponent,
     FooterComponent,
     CashierComponent,
+    GoalsListComponent,
+    GoalsCreateComponent,
+    GoalsUpdateComponent,
   ],
   imports: [
     BrowserModule,

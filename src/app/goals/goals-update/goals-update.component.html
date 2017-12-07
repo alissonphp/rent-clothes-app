@@ -1,0 +1,77 @@
+<div class="header">
+    <h4 class="title">Atualização de Meta e Comissão</h4>
+</div>
+<div class="content">
+    <form (ngSubmit)="update()" name="create-item" ngNativeValidate>
+
+        <div class="row" *ngIf="goal">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Mês:</label>
+                    <select class="form-control" required name="month" [(ngModel)]="goal.month">
+                      <option value="1">Janeiro</option>
+                      <option value="2">Fevereiro</option>
+                      <option value="3">Março</option>
+                      <option value="4">Abril</option>
+                      <option value="5">Maio</option>
+                      <option value="6">Junho</option>
+                      <option value="7">Julho</option>
+                      <option value="8">Agosto</option>
+                      <option value="9">Setembro</option>
+                      <option value="10">Outubro</option>
+                      <option value="11">Novembro</option>
+                      <option value="12">Dezembro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Ano:</label>
+                    <input type="text" class="form-control" required [(ngModel)]="goal.year" name="year">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Meta de vendedor:</label>
+                    <input type="text"  required class="form-control" [(ngModel)]="goal.goal_seller" name="goal_seller">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Comissão sob Venda:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="goal.commission_seller" name="commission_seller">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Meta da Loja:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="goal.goal_store" name="goal_store">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Comissão sob meta da loja alcançada:</label>
+                    <input type="text" required class="form-control" [(ngModel)]="goal.commission_store" name="commission_seller">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a routerLink="../../" class="btn btn-primary">
+                    <i class="fa fa-chevron-left"></i> Voltar
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="fa fa-save"></i> Salvar</button>
+
+            </div>
+        </div>
+    </form>
+</div>

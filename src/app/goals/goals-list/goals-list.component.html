@@ -1,0 +1,52 @@
+<div class="header">
+    <h4 class="title">Metas e Comissões
+        <a routerLink="create" class="btn btn-success pull-right">
+            <i class="fa fa-plus"></i> Definir nova meta
+        </a>
+    </h4>
+</div>
+<div class="content">
+    <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Mês</th>
+                <th>Ano</th>
+                <th>Meta Vendedores</th>
+                <th>Comissão Vendedores</th>
+                <th>Meta Loja</th>
+                <th>Comissão Loja</th>
+                <th>Registro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let g of goals ">
+                <td>{{ g.id }}</td>
+                <td>{{ g.month }}</td>
+                <td>{{ g.year }}</td>
+                <td>{{ g.goal_seller | currency: "BRL" }}</td>
+                <td>{{ g.commission_seller }}%</td>
+                <td>{{ g.goal_store | currency: "BRL" }}</td>
+                <td>{{ g.commission_store }}%</td>
+                <td>{{ g.created_at | date:"dd/MM/yyyy" }}</td>
+                <td>
+                    <a [routerLink]="['update', g.id]" title="Editar" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a (click)="openModal(template, g, 'sm')" title="Excluir" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #template>
+    <div class="modal-body text-center">
+        <p>Deseja mesmo excluir a meta de "{{ ref.month + '/' + ref.year }}"?</p>
+        <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
+        <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+    </div>
+</ng-template>

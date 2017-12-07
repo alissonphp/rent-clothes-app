@@ -1,4 +1,3 @@
-import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -36,8 +35,12 @@ import { OrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/orders-pdv.component'
 import { CreateOrderComponent } from 'app/dpt-pdv/orders-pdv/create-order/create-order.component';
 import { ListOrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/list-orders-pdv/list-orders-pdv.component';
 import { ItemConsultComponent } from 'app/dpt-seller/item-consult/item-consult.component';
-import { GoalsComponent } from 'app/dpt-seller/goals/goals.component';
+import { GoalsComponent } from 'app/goals/goals.component';
 import { CashierComponent } from 'app/cashier/cashier.component';
+import { GoalsListComponent } from 'app/goals/goals-list/goals-list.component';
+import { GoalsUpdateComponent } from './goals/goals-update/goals-update.component';
+import { GoalsCreateComponent } from './goals/goals-create/goals-create.component';
+import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 
 export const AppRoutes: Routes = [
     {
@@ -174,6 +177,25 @@ export const AppRoutes: Routes = [
                     {
                         path: 'update/:id',
                         component: UpdateUserComponent
+                    }
+                ]
+            },
+            {
+                path: 'goals',
+                component: GoalsComponent,
+                children: [
+                    {
+                        path: '',
+                        component: GoalsListComponent,
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'create',
+                        component: GoalsCreateComponent
+                    },
+                    {
+                        path: 'update/:id',
+                        component: GoalsUpdateComponent
                     }
                 ]
             },
