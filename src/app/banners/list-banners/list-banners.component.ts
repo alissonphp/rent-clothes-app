@@ -4,6 +4,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService } from 'ngx-bootstrap/modal/bs-modal.service';
 import { BannersService } from 'app/banners/banners.service';
 import { TemplateRef } from '@angular/core/src/linker/template_ref';
+import { environment } from 'environments/environment';
 
 declare var $: any
 
@@ -19,6 +20,7 @@ export class ListBannersComponent implements OnInit {
   dtTrigger = new Subject();
   banners: any = [];
   errorMsg
+  baseUrlImg = environment.api + 'drive/banners/'
   refId: any
   modalRef: BsModalRef
 

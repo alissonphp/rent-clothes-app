@@ -10,8 +10,8 @@
     <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Imagem</th>
+                <th>Preview</th>
+                <th>Arquivo</th>
                 <th>Link</th>
                 <th>Ativo</th>
                 <th>Ações</th>
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let b of banners">
-                <td>{{ b.id }}</td>
+                <td width="20%"><img class="img-responsive" [src]="baseUrlImg + b.file" alt=""></td>
                 <td>{{ b.file }}</td>
                 <td>{{ b.link }}</td>
                 <td>{{ b.active }}</td>

@@ -56,6 +56,12 @@ export class ItemSizesComponent implements OnInit {
         this.modalRef.hide()
         this.item.sizes.push(res)
         this.successMsg('success', 'Novo tamanho cadastrado!', 'ti-check-box')
+        this.size = {
+          code: '',
+          size: '',
+          items_id: '',
+          available: '',
+        }
       },
       error => this.errorMsg = error
     )

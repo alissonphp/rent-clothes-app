@@ -1,4 +1,4 @@
-<div class="header">
+<div *ngIf="item" class="header">
     <h4 class="title">Tamanhos: {{ item.label }} <span class="label label-default">{{ item.price | currency: 'BRL' }}</span>
         <a routerLink="../../" class="btn btn-primary pull-right">
             <i class="fa fa-chevron-left"></i> Voltar

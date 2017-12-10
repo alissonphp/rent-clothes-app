@@ -1,6 +1,6 @@
-<div class="header">
+<div class="header" *ngIf="categories">
     <h4 class="title">Categoria de Produtos
-        <a routerLink="create" class="btn btn-success pull-right">
+        <a routerLink="../categories-create" class="btn btn-success pull-right">
             <i class="fa fa-plus"></i> Nova Categoria
         </a>
         <a routerLink="../" class="btn btn-default pull-right">
@@ -10,7 +10,7 @@
     <p class="category">{{categories.lenth}} categorias</p>
 
 </div>
-<div class="content">
+<div class="content" *ngIf="categories">
     <table class="table table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <thead>
             <tr>

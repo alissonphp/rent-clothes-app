@@ -38,6 +38,7 @@ import { ListOrdersPdvComponent } from 'app/dpt-pdv/orders-pdv/list-orders-pdv/l
 import { ItemConsultComponent } from 'app/dpt-seller/item-consult/item-consult.component';
 import { GoalsComponent } from 'app/dpt-seller/goals/goals.component';
 import { CashierComponent } from 'app/cashier/cashier.component';
+import { RememberPasswordComponent } from 'app/remember-password/remember-password.component';
 
 export const AppRoutes: Routes = [
     {
@@ -48,6 +49,10 @@ export const AppRoutes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
+    },
+    {
+        path: 'remember-password',
+        component: RememberPasswordComponent,
     },
     {
         path: 'dpt-admin',
@@ -100,8 +105,8 @@ export const AppRoutes: Routes = [
                         component: CategoriesComponent
                     },
                     {
-                        path: 'categories/create',
-                        component: CreateCategoryComponent
+                        path: 'categories-create',
+                        component: CreateCategoryComponent,
                     }
                 ]
             },

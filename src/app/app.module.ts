@@ -62,6 +62,7 @@ import { SidebarSellerComponent } from './dpt-seller/sidebar-seller/sidebar-sell
 import { FooterComponent } from './front-store/footer/footer.component';
 import { SidebarSellerModule } from 'app/dpt-seller/sidebar-seller/sidebar-seller.module';
 import { CashierComponent } from './cashier/cashier.component';
+import { RememberPasswordComponent } from './remember-password/remember-password.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import { CashierComponent } from './cashier/cashier.component';
     SidebarSellerComponent,
     FooterComponent,
     CashierComponent,
+    RememberPasswordComponent,
   ],
   imports: [
     BrowserModule,
