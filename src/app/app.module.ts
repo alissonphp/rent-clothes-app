@@ -67,6 +67,7 @@ import { GoalsListComponent } from './goals/goals-list/goals-list.component';
 import { GoalsCreateComponent } from './goals/goals-create/goals-create.component';
 import { GoalsUpdateComponent } from './goals/goals-update/goals-update.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,12 @@ import { LogoutComponent } from './logout/logout.component';
     SidebarSellerComponent,
     FooterComponent,
     CashierComponent,
+    GoalsListComponent,
+    GoalsCreateComponent,
+    GoalsUpdateComponent,
+    LogoutComponent,
+    RememberPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
