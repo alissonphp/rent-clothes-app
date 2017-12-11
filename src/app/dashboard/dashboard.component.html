@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row"  *ngIf="data">
         <div class="col-lg-3 col-sm-6">
             <div class="card">
                 <div class="content">
@@ -12,14 +12,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Produtos</p>
-                                89
+                                {{data.items}}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-reload"></i> Último registro a 2 dias
+                            <i class="ti-reload"></i> Cadastrados no sistema
                         </div>
                     </div>
                 </div>
@@ -37,14 +37,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Clientes</p>
-                                265
+                                {{data.clients}}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-calendar"></i> Último cadastro feito 4 horas atrás
+                            <i class="ti-calendar"></i> Registrados na base
                         </div>
                     </div>
                 </div>
@@ -62,14 +62,14 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Cancelamentos</p>
-                                2
+                                {{data.cancels}}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-timer"></i> Hoje
+                            <i class="ti-timer"></i> Até o momento
                         </div>
                     </div>
                 </div>
@@ -87,21 +87,21 @@
                         <div class="col-xs-7">
                             <div class="numbers">
                                 <p>Ordens</p>
-                                21
+                                {{data.orders}}
                             </div>
                         </div>
                     </div>
                     <div class="footer">
                         <hr />
                         <div class="stats">
-                            <i class="ti-reload"></i> Durante essa semana
+                            <i class="ti-reload"></i> Geradas
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
 
         <div class="col-md-12">
             <div class="card">
@@ -121,32 +121,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Email Statistics</h4>
-                    <p class="category">Last Campaign Performance</p>
+                    <h4 class="title">Visão Geral das Ordens de Locação</h4>
+                    <p class="category">Por situação atual</p>
                 </div>
                 <div class="content">
-                    <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
-
+                    <!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div> -->
+                    preparando gráfico...
                     <div class="footer">
-                        <div class="chart-legend">
-                            <i class="fa fa-circle text-info"></i> Open
-                            <i class="fa fa-circle text-danger"></i> Bounce
-                            <i class="fa fa-circle text-warning"></i> Unsubscribe
-                        </div>
                         <hr>
                         <div class="stats">
-                            <i class="ti-timer"></i> Campaign sent 2 days ago
+                            <i class="ti-timer"></i> atualizado agora
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="card ">
                 <div class="header">
                     <h4 class="title">2015 Sales</h4>
@@ -167,6 +162,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
