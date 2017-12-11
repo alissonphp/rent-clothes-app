@@ -68,6 +68,7 @@ import { GoalsCreateComponent } from './goals/goals-create/goals-create.componen
 import { GoalsUpdateComponent } from './goals/goals-update/goals-update.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LogoutComponent,
     RememberPasswordComponent,
     ResetPasswordComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

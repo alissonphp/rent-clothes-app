@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Meu Perfil</h4>
+                    <p class="category">Você pode editar suas informações:</p>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form (ngSubmit)="updateProfile()" ngNativeValidate>
+                              <div class="row">
+                                <div class="col-md-2 col-md-offset-5 text-center">
+                                  <img src="" class="img-responsive" alt="">
+                                </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Nome:</label>
+                                          <input required type="date" [(ngModel)]="infos.name" name="name" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-5">
+                                      <div class="form-group">
+                                          <label>E-mail:</label>
+                                          <input required type="email" disabled [(ngModel)]="infos.email" name="email" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <div class="form-group">
+                                          <label>Foto:</label>
+                                          <input type="file" class="form-control">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                      <button class="btn btn-default btn-block" type="submit">ATUALIZAR</button>
+                                  </div>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
