@@ -81,6 +81,17 @@ export class ItemSizesComponent implements OnInit {
     });
   }
 
+  updateSize() {
+    this.itemService.updateSize(this.refId).subscribe(
+      res => {
+        this.modalRef.hide()
+        this.successMsg('info', 'Tamanho atualizado!', 'ti-info-alt')
+        this.getItem()
+       },
+      error => this.errorMsg = error
+    )
+  }
+
   confirmDelete() {
     this.itemService.deleteSize(this.refId.id).subscribe(
       res => {

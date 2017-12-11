@@ -119,7 +119,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     GoalsUpdateComponent,
     LogoutComponent,
     RememberPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

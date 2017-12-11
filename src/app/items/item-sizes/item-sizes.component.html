@@ -1,5 +1,6 @@
 <div *ngIf="item" class="header">
-    <h4 class="title">Tamanhos: {{ item.label }} <span class="label label-default">{{ item.price | currency: 'BRL' }}</span>
+    <h4 class="title">Tamanhos: {{ item.label }}
+        <span class="label label-default">{{ item.price | currency: 'BRL' }}</span>
         <a routerLink="../../" class="btn btn-primary pull-right">
             <i class="fa fa-chevron-left"></i> Voltar
         </a>
@@ -26,7 +27,7 @@
                 <td>{{ s.size }}</td>
                 <td>{{ s.available }}</td>
                 <td>
-                    <a title="Editar" class="btn btn-primary">
+                    <a (click)="openModal(update, s, 'md')" title="Editar" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a (click)="openModal(template, s, 'sm')" title="Excluir" class="btn btn-danger">
@@ -77,6 +78,42 @@
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" (click)="modalRef.hide()" class="btn btn-default">Cancelar</button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #update>
+    <form (ngSubmit)="updateSize()" ngNativeValidate>
+        <div class="modal-header">
+            <h4 class="modal-title">Atualziar o tamanho do produto</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Código</label>
+                        <input type="text" name="code" [(ngModel)]="refId.code" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Tamanho</label>
+                        <input type="text" name="size" [(ngModel)]="refId.size" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Unidades disponíveis</label>
+                        <input type="number" name="available" [(ngModel)]="refId.available" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Atualizar</button>
             <button type="button" (click)="modalRef.hide()" class="btn btn-default">Cancelar</button>
         </div>
     </form>

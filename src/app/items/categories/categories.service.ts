@@ -21,6 +21,12 @@ export class CategoriesService {
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  update(data): Observable<any> {
+    return this.http.put('items/category/' + data.id, data)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   delete(id: number): any {
     return this.http.delete('items/category/' + id)
     .map((res: Response) => res)

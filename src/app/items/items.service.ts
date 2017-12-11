@@ -37,6 +37,13 @@ export class ItemsService {
     .map((res: Response) => res.json())
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+
+  updateSize(size): Observable<any> {
+    return this.http.put('items/size/' + size.id, size)
+    .map((res: Response) => res.json())
+    .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   deleteSize(id: number): any {
     return this.http.delete('items/size/' + id)
     .map((res: Response) => res)

@@ -24,7 +24,7 @@
                 <td>{{ c.id }}</td>
                 <td>{{ c.label }}</td>
                 <td>
-                    <a title="Editar" class="btn btn-primary">
+                    <a (click)="openModal(update, c)" title="Editar" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a (click)="openModal(template, c)" title="Excluir" class="btn btn-danger">
@@ -42,4 +42,26 @@
         <button type="button" class="btn btn-danger" (click)="confirmDelete()">Sim</button>
         <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
     </div>
+</ng-template>
+
+<ng-template #update>
+    <form (ngSubmit)="updateCategory()" ngNativeValidate>
+        <div class="modal-header">
+            <h4 class="modal-title">Alterar categoria: "{{ refId.label }}"</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Categoria:</label>
+                        <input type="text" name="newlabel" [(ngModel)]="refId.newlabel" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="button" (click)="modalRef.hide()" class="btn btn-default">Cancelar</button>
+        </div>
+    </form>
 </ng-template>

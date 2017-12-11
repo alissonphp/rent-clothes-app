@@ -37,14 +37,16 @@ export class CategoriesComponent implements OnInit {
         'excel',
       ]
     };
-    this.listAllItems();
+    this.listAllItems(true);
   }
 
-  listAllItems() {
+  listAllItems(trig: boolean) {
     this.categoriesService.all().subscribe(
       res => {
         this.categories = res
-        this.dtTrigger.next();
+        if(trig) {
+          this.dtTrigger.next();
+        }
       },
       error => this.errorMsg = error
     )
@@ -60,18 +62,28 @@ export class CategoriesComponent implements OnInit {
       res => {
         const index: number = this.categories.indexOf(this.refId)
         this.modalRef.hide()
-        this.successMsg()
+        this.successMsg('Categoria excluída!')
         this.categories.splice(index, 1)
        },
       error => this.errorMsg = error
     )
   }
 
-  successMsg() {
+  updateCategory() {
+    this.categoriesService.update(this.refId).subscribe(
+      res => {
+        this.successMsg('Categoria Atualizada!')
+        this.listAllItems(false)
+      },
+      error => this.errorMsg = error
+    )
+  }
+
+  successMsg(msg: any) {
     this.modalRef.hide()
     $.notify({
       icon: 'ti-check-box',
-      message: '<span class="text-center">Categoria excluída!</span>'
+      message: '<span class="text-center">' + msg + '</span>'
     }, {
         type: 'success',
         timer: 1500,
