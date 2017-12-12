@@ -47,7 +47,7 @@
                     <a *ngIf="c.status != 'Cancelada' && c.status != 'Finalizada' && c.status != 'Paga (total)'" (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
                         <i class="ti-close"></i>
                     </a>
-                    <a *ngIf="c.status == 'Paga (total)'" (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
+                    <a *ngIf="c.status == 'Paga (total)' && c.items_situation == 'Devolvidos'" (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
                         <i class="fa fa-check"></i>
                     </a>
                 </td>
