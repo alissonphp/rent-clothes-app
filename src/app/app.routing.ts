@@ -45,6 +45,7 @@ import { GoalsCreateComponent } from './goals/goals-create/goals-create.componen
 import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { LogoutComponent } from 'app/logout/logout.component';
 import { ResetPasswordComponent } from 'app/reset-password/reset-password.component';
+import { GoalsSellerComponent } from 'app/dpt-seller/goals-seller/goals-seller.component';
 
 export const AppRoutes: Routes = [
     {
@@ -236,7 +237,7 @@ export const AppRoutes: Routes = [
             },
             {
                 path: 'goals',
-                component: GoalsComponent,
+                component: GoalsSellerComponent,
             }
         ]
     },

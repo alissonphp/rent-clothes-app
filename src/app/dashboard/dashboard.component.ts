@@ -12,7 +12,7 @@ declare var $:any;
 })
 
 export class DashboardComponent implements OnInit {
-  data: any  
+  data: any
   constructor(private dashboardService: DashboardService) {}
 
     ngOnInit() {
