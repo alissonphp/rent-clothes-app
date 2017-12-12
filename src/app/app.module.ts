@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { FileUploadModule } from 'ng2-file-upload';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { RouterModule } from '@angular/router';
 
@@ -127,8 +129,10 @@ import { GoalsSellerComponent } from './dpt-seller/goals-seller/goals-seller.com
   ],
   imports: [
     BrowserModule,
+    NgxChartsModule,
     RouterModule.forRoot(AppRoutes),
     ModalModule.forRoot(),
+    BrowserAnimationsModule,
     CarouselModule.forRoot(),
     Ng2Webstorage.forRoot({
       prefix: 'dmpt',
