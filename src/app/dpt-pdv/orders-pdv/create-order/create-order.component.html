@@ -109,7 +109,7 @@
             </div>
 
             <div class="row" *ngIf="resItens">
-                <div class="col-md-12">
+                <div class="col-md-12" *ngIf="resItens.length > 0">
                     <h5>Selecione o(s) iten(s):</h5>
                     <table class="table table-hover table-condensed table-bordered">
                         <thead>
@@ -141,6 +141,9 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="col-md-12" *ngIf="resItens.length == 0">
+                    <h4>Nenhum item encontrado na pesquisa...</h4>
                 </div>
             </div>
         </div>
