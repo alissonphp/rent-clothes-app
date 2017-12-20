@@ -46,6 +46,7 @@ import { DptSellerComponent } from './dpt-seller/dpt-seller.component';
 import { LogoutComponent } from 'app/logout/logout.component';
 import { ResetPasswordComponent } from 'app/reset-password/reset-password.component';
 import { GoalsSellerComponent } from 'app/dpt-seller/goals-seller/goals-seller.component';
+import { PrintContractComponent } from 'app/orders/print-contract/print-contract.component';
 
 export const AppRoutes: Routes = [
     {
@@ -68,6 +69,11 @@ export const AppRoutes: Routes = [
     {
         path: 'remember/token/:token',
         component: ResetPasswordComponent,
+    },
+    {
+        path: 'contract/print/:id',
+        component: PrintContractComponent,
+        pathMatch: 'full'
     },
     {
         path: 'dpt-admin',
@@ -232,6 +238,10 @@ export const AppRoutes: Routes = [
                 pathMatch: 'full'
             },
             {
+                path: 'profile',
+                component: UserProfileComponent
+            },
+            {
                 path: 'consult',
                 component: ItemConsultComponent
             },
@@ -249,6 +259,10 @@ export const AppRoutes: Routes = [
                 path: '',
                 redirectTo: 'dashboard',
                 pathMatch: 'full'
+            },
+            {
+                path: 'profile',
+                component: UserProfileComponent
             },
             {
                 path: 'dashboard',

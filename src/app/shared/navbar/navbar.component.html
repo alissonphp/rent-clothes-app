@@ -28,7 +28,8 @@
                 </li> -->
                 <li>
                     <a routerLink="profile">
-                        <i class="ti-user"></i>
+                        <i *ngIf="!userAvatar" class="ti-user"></i>
+                        <img *ngIf="userAvatar" style="margin-left: 10px !important;" width="30" class="img-circle pull-right" height="30" [src]="userAvatarUrl" alt="Profile">
                         <p>{{userName}}</p>
                     </a>
                 </li>

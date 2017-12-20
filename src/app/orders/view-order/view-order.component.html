@@ -6,7 +6,11 @@
         <div class="col-xs-12">
             <div class="invoice-title">
                 <h2>Ordem de Locação</h2>
-                <h3 class="pull-right"># {{ order.code }}</h3>
+                <h3 class="pull-right"># {{ order.code }}
+                    <p>
+                        <a [routerLink]="['//contract/print', order.id]" target="_blank" class="btn btn-success">IMPRIMIR CONTRATO</a>
+                    </p>
+                </h3>
             </div>
             <hr>
             <div class="row">

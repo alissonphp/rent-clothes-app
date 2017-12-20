@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Injectable()
 export class UsersService {
 
-  constructor(private http: Http) { }
+private headers
+private options
+
+  constructor(private http: Http, private localStorage: LocalStorageService) { }
 
   list(): Observable<any> {
     return this.http.get('users')
@@ -15,7 +19,7 @@ export class UsersService {
   }
 
   role(roleid: number): Observable<any> {
-    return this.http.get('users/role/'+roleid)
+    return this.http.get('users/role/' + roleid)
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
@@ -32,8 +36,24 @@ export class UsersService {
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
+  profile(user: any): Observable<any> {
+    return this.http.post('users/profile', user, new RequestOptions({
+      headers: new Headers({
+        'Authorization': 'Bearer ' + this.localStorage.retrieve('token')
+      })
+    }))
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
   show(id: number): Observable<any> {
-    return this.http.get('users/' + id)
+    return this.http.get('users/show/' + id)
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+
+  current(): Observable<any> {
+    return this.http.get('users/active')
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

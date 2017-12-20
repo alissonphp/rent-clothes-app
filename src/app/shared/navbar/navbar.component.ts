@@ -3,6 +3,7 @@ import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { LocalStorageService } from 'ngx-webstorage';
+import { environment } from 'environments/environment';
 
 @Component({
     moduleId: module.id,
@@ -17,6 +18,9 @@ export class NavbarComponent implements OnInit{
     private toggleButton;
     private sidebarVisible: boolean;
     public userName;
+    public userAvatar;
+    public userAvatarUrl;
+    imgUrl = environment.api + 'drive/avatars/'
 
     @ViewChild("navbar-cmp") button;
 
@@ -31,6 +35,8 @@ export class NavbarComponent implements OnInit{
         var navbar : HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
         this.userName = this.storage.retrieve('name')
+        this.userAvatar = this.storage.retrieve('avatar')
+        this.userAvatarUrl = this.imgUrl + this.userAvatar
     }
     getTitle(){
         var titlee = window.location.pathname;

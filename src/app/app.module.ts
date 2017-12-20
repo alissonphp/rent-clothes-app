@@ -72,6 +72,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GoalsSellerComponent } from './dpt-seller/goals-seller/goals-seller.component';
+import { PrintContractComponent } from './orders/print-contract/print-contract.component';
 
 @NgModule({
   declarations: [
@@ -126,6 +127,7 @@ import { GoalsSellerComponent } from './dpt-seller/goals-seller/goals-seller.com
     ResetPasswordComponent,
     UserProfileComponent,
     GoalsSellerComponent,
+    PrintContractComponent,
   ],
   imports: [
     BrowserModule,

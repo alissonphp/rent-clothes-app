@@ -1,0 +1,178 @@
+<div class="header">
+    <h2 class="text-center">INSTRUMENTO PARTICULAR DE CONTRATO DE LOCAÇÃO</h2>
+</div>
+<div class="content" *ngIf="order">
+    <h4>IDENTIFICAÇÃO DAS PARTES</h4>
+    <p><strong>CONTRATADA:</strong> CAMILAMITO VESTUARIOS EIRELI-ME , CNPJ: 24.448.344/0001-26 , localizada na: AV SAMBAQUIS, 5 - São Luis-MA.</p>
+    <p><strong>CONTRATANTE:</strong> {{order.client.name | uppercase }} , CPF: {{order.client.cpf}} , Telefone: {{order.client.phone}} , domiciliado na: {{order.client.address}} , {{order.client.number}} - {{order.client.city}}/{{order.client.uf}}.</p>
+    <p><strong>As partes identificadas acima têm, entre si, justo e acertado o presente Contrato de Locação de Artigos de Vestuário, que se regerá pelas cláusulas seguintes e pelas condições de preço, forma e termo de pagamento descritas no presente.</strong></p>
+    <h4>DO OBJETO DO CONTRATO</h4>
+    <p>É objeto do presente contrato a locação dos seguintes itens:</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+                    <strong>#</strong>
+                </td>
+                <td>
+                    <strong>Item</strong>
+                </td>
+                <td class="text-center">
+                    <strong>Tamanho</strong>
+                </td>
+                <td class="text-center">
+                    <strong>Diária</strong>
+                </td>
+                <td class="text-center">
+                    <strong>Dias</strong>
+                </td>
+                <td class="text-right">
+                    <strong>Total</strong>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- foreach ($order->lineItems as $line) or some such thing here -->
+            <tr *ngFor="let i of order.order_items">
+                <td>{{i.itemsize.code}}</td>
+                <td>{{i.itemsize.item.label}}</td>
+                <td class="text-center">{{i.itemsize.size}}</td>
+                <td class="text-center">{{i.itemsize.item.price | currency: "BRL"}}</td>
+                <td class="text-center">{{i.days}}</td>
+                <td class="text-right">{{i.subtotal | currency: "BRL"}}</td>
+            </tr>
+
+            <tr>
+                <td class="thick-line"></td>
+                <td class="thick-line"></td>
+                <td class="thick-line"></td>
+                <td class="thick-line"></td>
+                <td class="thick-line text-center">
+                    <strong>Subtotal</strong>
+                </td>
+                <td class="thick-line text-right">{{order.subtotal | currency: "BRL"}}</td>
+            </tr>
+            <tr>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line text-center">
+                    <strong>Desconto</strong>
+                </td>
+                <td class="text-right">{{order.discount | currency: "BRL"}}</td>
+            </tr>
+            <tr>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line"></td>
+                <td class="no-line text-center">
+                    <strong>Total</strong>
+                </td>
+                <td class="text-right">
+                    <strong>{{order.total | currency: "BRL"}}</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>DO PREÇO E DAS CONDIÇÕES DE PAGAMENTO</h4>
+    <p>A presente locação será remunerada pela quantia total de {{order.total | currency:"BRL" }} , pelo período informado de acordo com cada item locado e informado neste contrato.</p>
+    <p>Cl&aacute;usula 1&ordf; - Objeto&nbsp;<br /><br />1.1. O presente&nbsp;contrato&nbsp;tem como objeto a loca&ccedil;&atilde;o por prazo certo e determinado de vestido(s) e/ou acess&oacute;rio(s) de propriedade &uacute;nica e exclusiva da LOCADORA,
+        disponibilizado(s) no Instagram &ldquo;@damiipratii&rdquo; e selecionados pela LOCAT&Aacute;RIA, de acordo com a disponibilidade dos Produtos (&ldquo;Loca&ccedil;&atilde;o&rdquo;).<br /><br />Cl&aacute;usula 2&ordf; &ndash; Valor e Forma de Pagamento
+        da Loca&ccedil;&atilde;o<br /><br />2.1. O valor da Loca&ccedil;&atilde;o &eacute; previamente informado &agrave; LOCAT&Aacute;RIA no ato da contrata&ccedil;&atilde;o de acordo com (i) o valor do aluguel do(s) Produto(s), (ii) o prazo da Loca&ccedil;&atilde;o,
+        (iii) o local de entrega e (iv) a forma de devolu&ccedil;&atilde;o do(s) Produto(s), sendo de responsabilidade &uacute;nica e exclusiva da LOCAT&Aacute;RIA a escolha do(s) Produto(s), o local de entrega e a forma de devolu&ccedil;&atilde;o do(s)
+        Produto(s) locado(s), cujo custo do respectivo frete de devolu&ccedil;&atilde;o poder&aacute; ser acrescido ao valor da Loca&ccedil;&atilde;o.<br /><br />2.2. Para efetiva&ccedil;&atilde;o da contrata&ccedil;&atilde;o da Loca&ccedil;&atilde;o
+        pretendida, a LOCAT&Aacute;RIA dever&aacute; realizar o pagamento total do valor total da Loca&ccedil;&atilde;o do(s) Produto(s), atrav&eacute;s de transfer&ecirc;ncia eletr&ocirc;nica banc&aacute;ria e/ou cart&atilde;o de cr&eacute;dito, cujos
+        dados dever&atilde;o ser disponibilizados &agrave; LOCADORA para efetiva&ccedil;&atilde;o das cobran&ccedil;as decorrentes da Loca&ccedil;&atilde;o.<br /><br />2.3. No caso de loca&ccedil;&atilde;o &agrave; dist&acirc;ncia a LOCAT&Aacute;RIA dar&aacute;
+        autoriza&ccedil;&atilde;o de d&eacute;bito de cart&atilde;o de cr&eacute;dito no valor de varejo do(s) Produto(s), sendo devolvida referida autoriza&ccedil;&atilde;o assim que a LOCADORA receber de volta os produtos locados em perfeito estado.<br
+        /><br />2.4. A quita&ccedil;&atilde;o do valor total do(s) Produto(s) locados deve ser feita com anteced&ecirc;ncia de: (i) 07 (sete) dias &uacute;teis &agrave; data do evento, no caso de loca&ccedil;&atilde;o dentro da cidade de S&atilde;o Lu&iacute;s;
+        (ii) 15 (quinze) dias &uacute;teis de anteced&ecirc;ncia &agrave; data do ENVIO, no caso de loca&ccedil;&atilde;o &agrave; dist&acirc;ncia.<br /><br />Cl&aacute;usula 3&ordf; &ndash; Prazo da Loca&ccedil;&atilde;o<br /><br />3.1. O prazo da Loca&ccedil;&atilde;o
+        ser&aacute; aquele escolhido pela LOCAT&Aacute;RIA no ato da contrata&ccedil;&atilde;o, de acordo com as op&ccedil;&otilde;es disponibilizadas pela LOCADORA.&nbsp;<br /><br />3.2. &Eacute; facultado &agrave; LOCAT&Aacute;RIA solicitar por e-mail
+        ou telefone a extens&atilde;o do prazo de Loca&ccedil;&atilde;o do(s) Produto(s) &agrave; LOCADORA, que aprovar&aacute; ou n&atilde;o tal solicita&ccedil;&atilde;o, de acordo com a disponibilidade do(s) Produto(s) e mediante o pagamento do valor
+        do aluguel adicional decorrente da extens&atilde;o do prazo da Loca&ccedil;&atilde;o.<br /><br />Cl&aacute;usula 4&ordf; &ndash; Entrega do(s) Produto(s) Locado(s)<br /><br />4.1. O(s) Produto(s) locado(s) ser&aacute;(&atilde;o) entregue(s) pela
+        LOCADORA &agrave; LOCAT&Aacute;RIA limpo(s), em adequado estado de conserva&ccedil;&atilde;o e pronto(s) para utiliza&ccedil;&atilde;o, da forma e na data solicitada at&eacute; 01 (um) dia da data do evento, (dependendo do prazo de loca&ccedil;&atilde;o)
+        sendo certo que, caso a LOCADORA venha a realizar a entrega antecipada &agrave;quela solicitada pela LOCAT&Aacute;RIA, n&atilde;o haver&aacute; qualquer cobran&ccedil;a adicional.<br /><br />4.2. A LOCAT&Aacute;RIA est&aacute; ciente de que o
+        vestido pode ser locado antes por outras clientes, em caso de a cliente anterior danificar o vestido A LOCADORA deve entrar em contato com a LOCAT&Aacute;RIA &nbsp;e inform&aacute;-la do ocorrido. A LOCAT&Aacute;RIA por sua vez pode optar pela
+        troca do vestido ou o estorno/devolu&ccedil;&atilde;o do valor pago.<br /><br />4.3. A LOCAT&Aacute;RIA assume a responsabilidade integral pela recep&ccedil;&atilde;o do(s) Produto(s) locado(s) e declara estar ciente que caso o endere&ccedil;o
+        de entrega n&atilde;o seja considerado seguro ou esteja sujeito a condi&ccedil;&otilde;es especiais de entrega de acordo com a defini&ccedil;&atilde;o dos Correios, poder&aacute; ocorrer atraso e eventuais taxas adicionais para efetiva&ccedil;&atilde;o
+        da entrega, cujos eventuais custos adicionais ser&atilde;o cobrados e arcados pela LOCAT&Aacute;RIA. Al&eacute;m disto a LOCAT&Aacute;RIA esta ciente de que os correios podem entrar em greve a qualquer momento acarretando na n&atilde;o entrega
+        do produto.<br /><br />4.4. Na eventual impossibilidade da entrega do(s) Produto(s) locado(s), o valor do aluguel, ser&aacute; integralmente restitu&iacute;do &agrave; LOCAT&Aacute;RIA.<br /><br />4.5. Caso a&nbsp;LOCAT&Aacute;RIA&nbsp;encontre
+        algum problema ou tenha alguma insatisfa&ccedil;&atilde;o com o(s) Produto(s) locado(s), ela se compromete a informar a LOCADORA na mesma data de recebimento&nbsp;via e-mail ou telefone. Ap&oacute;s esta data n&atilde;o ser&aacute;&nbsp;vi&aacute;vel&nbsp;qualquer
+        a&ccedil;&atilde;o pela&nbsp;LOCAT&Aacute;RIA.&nbsp;<br /><br />Cl&aacute;usula 5&ordf; &ndash; Obriga&ccedil;&otilde;es e Responsabilidades da LOCAT&Aacute;RIA<br /><br />5.1. Ap&oacute;s o recebimento, a LOCAT&Aacute;RIA assume o compromisso
+        e a responsabilidade pela guarda, cuidado e utiliza&ccedil;&atilde;o com zelo do(s) Produto(s) locado(s), como se fosse(m) de sua propriedade, responsabilizando-se por eventual perda, destrui&ccedil;&atilde;o, rasgos, manchas e/ou quaisquer danos
+        que ocorram com o(s) Produto(s), al&eacute;m do desgaste natural decorrente da sua utiliza&ccedil;&atilde;o normal, sendo expressamente proibido a LOCAT&Aacute;RIA lavar o(s) Produto(s) locado(s).<br /><br />5.2. Diante da responsabilidade assumida
+        no item 5.1 acima, a LOCAT&Aacute;RIA desde j&aacute; concorda em reparar todos e quaisquer danos eventualmente causados ao(s) Produto(s) da LOCADORA, e, para tanto, autoriza desde j&aacute;, que os valores decorrentes da repara&ccedil;&atilde;o
+        do(s)&nbsp;dano(s) causados ao(s) Produto(s), sejam descontados do seu cart&atilde;o de cr&eacute;dito ou daquele&nbsp;utilizado para a realiza&ccedil;&atilde;o da Loca&ccedil;&atilde;o, sendo certo que na hip&oacute;tese de dano irrepar&aacute;vel,
+        ser&aacute;&nbsp;devido e cobrado pela LOCADORA &agrave; LOCAT&Aacute;RIA, o valor de varejo do(s) Produto(s), hip&oacute;tese&nbsp;em que a LOCAT&Aacute;RIA poder&aacute; permanecer com o(s) Produto(s) danificado, ap&oacute;s devido o pagamento.&nbsp;<br
+        /><br />5.3- Considera-se dano irrepar&aacute;vel qualquer dano que que comprometa a estrutura, forma, comprimento, qualidade e colora&ccedil;&atilde;o do tecido. Desse modo, rasg&otilde;es, desde que irrevers&iacute;veis s&atilde;o considerados
+        danos irrepar&aacute;veis.<br /><br />5.4- Estipula-se por valor de varejo, 4 vezes o valor da loca&ccedil;&atilde;odo produto, n&atilde;o considerados eventuais descontos.
+        <br /><br />5.5- A LOCAT&Aacute;RIA &eacute; respons&aacute;vel pelas medidas que informa &agrave; LOCADORA, n&atilde;o sendo de responsabilidade desta, ajustes feitos em conson&acirc;ncia com as medidas erradas.<br /><br />Cl&aacute;usula 6&ordf;
+        &ndash; Devolu&ccedil;&atilde;o do(s) Produto(s) Locado(s)<br /><br />6.1. A LOCAT&Aacute;RIA se compromete e responsabiliza-se em realizar a devolu&ccedil;&atilde;o do(s) Produto(s) locado(s),&nbsp; 01 (hum) dia &uacute;til ap&oacute;s a data
+        do evento, sob pena da incid&ecirc;ncia das multas estabelecidas na Cl&aacute;usula 7&ordf; abaixo.<br /><br />6.2. A devolu&ccedil;&atilde;o dever&aacute; ser realizada da seguinte forma:<br /><br />(i) Devolu&ccedil;&atilde;o na loja: A LOCAT&Aacute;RIA
+        poder&aacute; realizar a devolu&ccedil;&atilde;o do(s)&nbsp;Produto(s) locado(s), diretamente no Atelier da LOCADORA at&eacute; &agrave;s 18hs (dezoito horas) da data do&nbsp;t&eacute;rmino do prazo da Loca&ccedil;&atilde;o;&nbsp;<br /><br />(ii)
+        Coleta no Endere&ccedil;o de Entrega: A LOCAT&Aacute;RIA poder&aacute; realizar a devolu&ccedil;&atilde;o&nbsp;atrav&eacute;s da solicita&ccedil;&atilde;o no ato da contrata&ccedil;&atilde;o de coleta do(s) Produto(s)&nbsp;locado(s) no endere&ccedil;o
+        de entrega. Para tanto, a LOCAT&Aacute;RIA dever&aacute;&nbsp;disponibilizar o(s) Produto(s) para retirada no local da entrega, em hor&aacute;rio&nbsp;comercial (das 9hs &agrave;s 18hs) na data do t&eacute;rmino do prazo da Loca&ccedil;&atilde;o
+        ao&nbsp;respons&aacute;vel pela coleta (Correios ou prestador de servi&ccedil;o de log&iacute;stica ou&nbsp;profissional da LOCADORA). Caso o(s) Produto(s) n&atilde;o esteja(m)&nbsp;dispon&iacute;vel(is) para retirada na data determinada, a LOCAT&Aacute;RIA
+        ficar&aacute; sujeita ao pagamento de nova taxa de frete para o reagendamento da coleta, e a&nbsp;multa correspondente ao valor proporcional a 02 (duas) di&aacute;rias da Loca&ccedil;&atilde;o,&nbsp;por dia de atraso, cujo valor ser&aacute; cobrado
+        diretamente do cart&atilde;o de cr&eacute;dito da&nbsp;LOCAT&Aacute;RIA ou daquele utilizado para a realiza&ccedil;&atilde;o da Loca&ccedil;&atilde;o.&nbsp;<br /><br />(ii) Devolu&ccedil;&atilde;o via Correios: A LOCAT&Aacute;RIA poder&aacute;
+        realizar a devolu&ccedil;&atilde;o do(s) Produto(s) locado(s), atrav&eacute;s de, Gollog, Azul, TAM Cargo- op&ccedil;&atilde;o Pr&oacute;ximo Voo, SEDEX- 10, ou em n&atilde;o havendo essas op&ccedil;&otilde;es, por SEDEX convencional, diretamente
+        em qualquer Ag&ecirc;ncia dos Correios at&eacute; &agrave;s 17hs (dezessete horas) da data do t&eacute;rmino do prazo da Loca&ccedil;&atilde;o, remetendo-os ao endere&ccedil;o indicado pela LOCADORA.<br /><br />&nbsp;6.3. A LOCAT&Aacute;RIA dever&aacute;
+        realizar a devolu&ccedil;&atilde;o do(s) Produto(s) na mesma embalagem que o recebeu, informando o respectivo c&oacute;digo de rastreamento, no mesmo dia do envio, sob pena da multa indicada na Cl&aacute;usula 7&ordf; abaixo.<br /><br />Cl&aacute;usula
+        7&ordf; &ndash; Atraso na Devolu&ccedil;&atilde;o do(s) Produto(s) Locado(s)<br /><br />7.1. A LOCAT&Aacute;RIA se compromete a informar imediatamente a LOCADORA, todo e qualquer poss&iacute;vel atraso que possa ocorrer na devolu&ccedil;&atilde;o
+        do(s) Produto(s) locado(s), via e-mail ou telefone, para que possa ser verificada a possibilidade de extens&atilde;o da Loca&ccedil;&atilde;o como indicado no item 3.2 acima.<br /><br />7.2. Caso a extens&atilde;o do prazo da Loca&ccedil;&atilde;o
+        n&atilde;o seja poss&iacute;vel, o atraso na devolu&ccedil;&atilde;o do(s) Produto(s) locado(s) acarretar&aacute; a cobran&ccedil;a pela LOCADORA de multa correspondente a 15% do valor de loca&ccedil;&atilde;o, por dia de atraso.<br /><br />7.3.
+        Fica estabelecido que caso o atraso na devolu&ccedil;&atilde;o do(s) Produto(s) locado(s) seja superior a 05 (cinco) dias, ser&aacute; devido pela LOCAT&Aacute;RIA &agrave; LOCADORA o valor de varejo do(s) Produto(s), que ser&aacute; cobrado na
+        forma indicada no item 5.4 acima, sem preju&iacute;zo do procedimento de coleta indicado no item 6.2.<br /><br />Cl&aacute;usula 8&ordf; &ndash; Cancelamento da Loca&ccedil;&atilde;o<br /><br />8.1. N&atilde;o pode haver cancelamento da loca&ccedil;&atilde;o,
+        exceto nos casos de loca&ccedil;&atilde;o &agrave; dist&acirc;ncia.<br /><br />8.2. A LOCAT&Aacute;RIA, nos casos de loca&ccedil;&atilde;o &agrave; dist&acirc;ncia, poder&aacute; realizar a solicita&ccedil;&atilde;o de cancelamento da Loca&ccedil;&atilde;o,
+        via telefone, no mesmo dia do recebimento do produto, nesta hip&oacute;tese a LOCAT&Aacute;RIA poder&aacute; optar:<br />(i) Pela restitui&ccedil;&atilde;o do valor integral da Loca&ccedil;&atilde;o, mediante o estorno no cart&atilde;o de cr&eacute;dito
+        utilizado para realiza&ccedil;&atilde;o da Loca&ccedil;&atilde;o ou devolu&ccedil;&atilde;o do valor depositado em conta corrente para conta indicada pela LOCAT&Aacute;RIA.&nbsp;<br />No caso de transfer&ecirc;ncia banc&aacute;ria, a restitui&ccedil;&atilde;o
+        se dar&aacute; dentro de 72 (setenta e duas horas) &uacute;teis, na conta indicada pela LOCAT&Aacute;RIA;<br />(ii) Pelo recebimento de um voucher com cr&eacute;dito do valor total da Loca&ccedil;&atilde;o cancelada, para utiliza&ccedil;&atilde;o
+        em uma nova Loca&ccedil;&atilde;o no prazo de at&eacute; &nbsp;24 (vinte e quatro) meses da data de sua emiss&atilde;o.<br /><br />Cl&aacute;usula 9&ordf; &ndash; Troca de Produto(s)<br /><br />9.1. A troca do(s) Produto(s) locado(s), poder&aacute;
+        ser realizada uma &uacute;nica vez e somente se a solicita&ccedil;&atilde;o de troca for realizada pela LOCAT&Aacute;RIA via e-mail ou telefone, na mesma data de recebimento do(s) Produto(s) locado(s). A LOCAT&Aacute;RIA fica respons&aacute;vel
+        pelo custo de frete da nova entrega.<br /><br />9.2. Para efetiva&ccedil;&atilde;o da troca, a LOCAT&Aacute;RIA dever&aacute; devolver o(s) Produto(s) locado(s) &agrave; LOCADORA em at&eacute; 24 (vinte e quatro) horas (exceto domingos e feriados)
+        da data de entrega do(s) Produto(s).<br /><br />9.2.1 Ap&oacute;s o recebimento e verifica&ccedil;&atilde;o da n&atilde;o utiliza&ccedil;&atilde;o do(s) Produto(s), a LOCADORA emitir&aacute; um voucher com cr&eacute;dito do valor da respectiva
+        Loca&ccedil;&atilde;o, para utiliza&ccedil;&atilde;o pela LOCAT&Aacute;RIA em uma nova Loca&ccedil;&atilde;o no prazo de at&eacute; 24 (vinte e quatro) meses da data de sua emiss&atilde;o, sendo certo que caso a LOCADORA verifique que o(s) Produto(s)
+        foi(ram) utilizado(s), n&atilde;o haver&aacute; a emiss&atilde;o do voucher.<br /><br />Cl&aacute;usula 10&ordf; &ndash; Das taxas<br /><br />10.1. Caso haja op&ccedil;&atilde;o por coleta no endere&ccedil;o, nos casos de loca&ccedil;&otilde;es
+        na cidade de S&atilde;o Lu&iacute;s, sera devida taxa de R$ 30,00 (trinta reais), a ser paga no momento da assinatura deste.
+        <br /><br />Cl&aacute;usula 11&ordf; - Cl&aacute;usula Demais Disposi&ccedil;&otilde;es<br /><br />11.1. Este&nbsp;Contrato&nbsp;constitui o acordo integral entre as partes.<br /><br />11.2. Se qualquer disposi&ccedil;&atilde;o deste&nbsp;Contrato&nbsp;for
+        considerada ilegal, inv&aacute;lida ou em conflito com qualquer lei de qualquer autoridade que tenha jurisdi&ccedil;&atilde;o sobre o presente&nbsp;Contrato, a validade das demais disposi&ccedil;&otilde;es permanecer&atilde;o v&aacute;lidas em
+        pleno vigor e efeito.<br /><br />11.3. A responsabilidade da LOCADORA por eventual falha na entrega do(s) Produto(s) &eacute; limitada ao valor da Loca&ccedil;&atilde;o, raz&atilde;o pela qual a locadora n&atilde;o ser&aacute; respons&aacute;vel
+        por eventuais danos diretos ou indiretos decorrentes da Loca&ccedil;&atilde;o objeto deste&nbsp;contrato, em qualquer hip&oacute;tese.<br /><br />11.4. Todas as cobran&ccedil;as decorrentes do presente&nbsp;Contrato&nbsp;est&atilde;o sujeitas
+        a protesto e a inclus&atilde;o do nome do devedor nos cadastros dos &oacute;rg&atilde;os de prote&ccedil;&atilde;o ao cr&eacute;dito, sendo que os custos decorrentes de cobran&ccedil;as, incluindo, sem limita&ccedil;&atilde;o, honor&aacute;rios
+        advocat&iacute;cios ser&atilde;o de responsabilidade do devedor.<br /><br />11.5. Em caso de viola&ccedil;&atilde;o de qualquer disposi&ccedil;&atilde;o deste&nbsp;Contrato, a LOCADORA reserva-se o direito de n&atilde;o realizar novas loca&ccedil;&otilde;es
+        &agrave; LOCAT&Aacute;RIA inadimplente, bem como o de alterar ou cancelar o presente&nbsp;Contrato&nbsp;a qualquer momento, a seu exclusivo crit&eacute;rio.<br /><br />11.6. As Partes elegem o Foro Central da Comarca de S&atilde;o Lu&iacute;s/MA,
+        como o competente para dirimir quaisquer d&uacute;vidas oriundas do presente&nbsp;contrato, com exclus&atilde;o de qualquer outro, por mais privilegiado que possa ser.<br /><br />Cl&aacute;usula 12&ordf; &ndash; Vestido(s) Iguail(s) Em Uma Mesma
+        Festa&nbsp;
+        <br /><br />12.1 &ndash; A LOCADORA n&atilde;o garante que o modelo de vestido locado pela LOCAT&Aacute;RIA n&atilde;o estar&aacute; em uma mesma festa. Como a LOCADORA trabalha com vestidos de grandes estilistas, qualquer pessoa pode compr&aacute;-lo,
+        sendo assim, n&atilde;o h&aacute; garantia nesse sentido. &nbsp;<br /><br />12.2 &ndash; No momento da loca&ccedil;&atilde;o, a LOCADORA solicitar&aacute; informa&ccedil;&otilde;es sobre o evento da LOCAT&Aacute;RIA para n&atilde;o ocorrer que
+        o mesmo vestido da empresa esteja no mesmo evento. Caso a LOCAT&Aacute;RIA n&atilde;o forne&ccedil;a os dados ou que o mesmo esteja incompleto, a LOCADORA n&atilde;o garantir&aacute; que esse imprevisto aconte&ccedil;a.&nbsp;&nbsp;</p>
+    <br><br><br>
+    <table width="100%" cellpadding="10" cellspacing="10">
+        <tr>
+            <td align="center" width="50%">
+                <h4>CONTRATANTE</h4>
+                <p>{{ order.client.name | uppercase }}</p>
+                <p>CPF: {{ order.client.cpf }}</p>
+            </td>
+            <td align="center" width="50%">
+                <h4>CONTRATADA</h4>
+                <p>CAMILAMITO VESTUARIOS EIRELI-ME</p>
+                <p>CNPJ: 24.448.344/0001-26</p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" width="50%">
+                <h4>TESTEMUNHA 1</h4>
+                <p>Nome</p>
+                <p>CPF</p>
+            </td>
+            <td align="center" width="50%">
+                <h4>TESTEMUNHA 2</h4>
+                <p>Nome</p>
+                <p>CPF</p>
+            </td>
+        </tr>
+    </table>
+
+</div>

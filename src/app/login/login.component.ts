@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
     this.storage.store('token', data.token)
     this.storage.store('name', data.user.name)
     this.storage.store('email', data.user.email)
+    this.storage.store('avatar', data.user.avatar)
     this.redirectTo(data.user.roles[0].role)
   }
 
