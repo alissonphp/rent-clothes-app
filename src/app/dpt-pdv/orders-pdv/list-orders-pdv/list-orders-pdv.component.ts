@@ -65,6 +65,7 @@ export class ListOrdersPdvComponent implements OnInit {
     this.reference = ref
     this.calcPaid()
     this.reference.total_pay = ref.total - this.reference.paid
+    this.reference.method = 'Dinheiro'
     this.modalRef = this.modalService.show(template, { class: 'modal-' + size });
   }
 

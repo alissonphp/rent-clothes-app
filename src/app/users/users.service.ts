@@ -64,8 +64,8 @@ private options
     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  goalSeller(): Observable<any> {
-    return this.http.get('users/current/seller/goals')
+  goalSeller(month?: number): Observable<any> {
+    return this.http.get('users/current/seller/goals/' + month)
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }

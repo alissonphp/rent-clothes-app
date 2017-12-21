@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from 'app/users/users.service';
 
+declare var moment: any
+declare var $: any
+
 @Component({
   selector: 'app-goals-seller',
   templateUrl: './goals-seller.component.html',
@@ -25,6 +28,7 @@ export class GoalsSellerComponent implements OnInit {
   xAxisLabel = 'Metas';
   showYAxisLabel = true;
   yAxisLabel = 'Valor (R$)';
+  month = moment().format('M')
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -34,9 +38,23 @@ export class GoalsSellerComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userService.goalSeller().subscribe(
+    this.loadData(this.month)
+
+  }
+
+  getTotalCashier(goals) {
+    this.totalCashier = goals.commissions.reduce(
+      (sub, item) => sub + parseFloat(item.cashier.total), 0
+    )
+    this.totalCommission = goals.commissions.reduce(
+      (sub, item) => sub + parseFloat(item.commission), 0
+    )
+  }
+
+  loadData(month: number) {
+    this.userService.goalSeller(month).subscribe(
       res => {
-        this.goals = res,
+        this.goals = res
         this.getTotalCashier(res)
         this.multi = [
           {
@@ -66,19 +84,31 @@ export class GoalsSellerComponent implements OnInit {
             ]
           },
         ];
+        this.popMsg('success', 'Dados atualizados para o mês de referência ' + this.month, 'ti-check-box')
       },
-      error => console.log(error)
+      error => {
+        this.popMsg('danger', 'Não existem dados de referência para o mês ' + this.month, 'ti-alert')
+        console.log(error)
+      }
     )
-
   }
 
-  getTotalCashier(goals) {
-    this.totalCashier = goals.commissions.reduce(
-      (sub, item) => sub + parseFloat(item.cashier.total), 0
-    )
-    this.totalCommission = goals.commissions.reduce(
-      (sub, item) => sub + parseFloat(item.commission), 0
-    )
+  setReference() {
+    this.loadData(this.month)
+  }
+
+  popMsg(type, data, icon) {
+    $.notify({
+      icon: icon,
+      message: '<span class="text-center">' + data + '</span>'
+    }, {
+        type: type,
+        timer: 1500,
+        placement: {
+            from: 'top',
+            align: 'center'
+        }
+    });
   }
 
 }

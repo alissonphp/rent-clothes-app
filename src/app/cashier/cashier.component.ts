@@ -21,6 +21,9 @@ export class CashierComponent implements OnInit {
   users: any
   results: any = []
   totalCashier
+  totalMoney
+  totalDebit
+  totalCredit
 
   constructor(private userService: UsersService, private cashierService: CashierService) { }
 
@@ -39,7 +42,7 @@ export class CashierComponent implements OnInit {
   applyFilter() {
     this.cashierService.filter(this.filter).subscribe(
       res => {
-        this.results = res,
+        this.results = res
         this.calcTotal()
       },
       error => console.log(error)
@@ -48,6 +51,15 @@ export class CashierComponent implements OnInit {
 
   calcTotal() {
     this.totalCashier = this.results.reduce(
+      (sub, item) => sub + parseFloat(item.total), 0
+    )
+  }
+
+  calcTotalMethod(method: string) {
+    const test = this.results.filter(
+      (item) => item.method === method
+    )
+    return test.reduce(
       (sub, item) => sub + parseFloat(item.total), 0
     )
   }

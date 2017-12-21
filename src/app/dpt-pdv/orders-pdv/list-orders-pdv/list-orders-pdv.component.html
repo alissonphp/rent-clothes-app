@@ -44,9 +44,9 @@
                     <a *ngIf="c.status != 'Finalizada' && c.status != 'Cancelada' && c.items_situation == 'Em locação'" (click)="openModal(itemRet, c)" title="Informar recebimento dos Itens" class="btn btn-default">
                         <i class="fa fa-upload"></i>
                     </a>
-                    <a *ngIf="c.status != 'Cancelada' && c.status != 'Finalizada' && c.status != 'Paga (total)'" (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
+                    <!-- <a *ngIf="c.status != 'Cancelada' && c.status != 'Finalizada' && c.status != 'Paga (total)'" (click)="openModal(cancel, c)" title="Cancelar" class="btn btn-danger">
                         <i class="ti-close"></i>
-                    </a>
+                    </a> -->
                     <a *ngIf="c.status == 'Paga (total)' && c.items_situation == 'Devolvidos'" (click)="openModal(finish, c)" title="Finalizar" class="btn btn-success">
                         <i class="fa fa-check"></i>
                     </a>
@@ -100,6 +100,16 @@
                 <tr>
                     <td class="text-success">Valor pago:</td>
                     <td class="text-success">({{ reference.paid | currency: "BRL" }})</td>
+                </tr>
+                <tr>
+                    <td>Forma de pagamento:</td>
+                    <td>
+                        <select class="form-control" name="method" [(ngModel)]="reference.method">
+                            <option value="Dinheiro" selected>Dinheiro</option>
+                            <option value="Crédito">Crédito</option>
+                            <option value="Débito">Débito</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Efetuar o pagamento de:</td>

@@ -52,6 +52,8 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Usuário</th>
+                                        <th>Vendedor</th>
+                                        <th>Forma Pgto.</th>
                                         <th>Valor</th>
                                         <th>Data</th>
                                     </tr>
@@ -62,13 +64,41 @@
                                             <a [routerLink]="['../orders/view', p.order.id]">{{ p.order.code }} <i class="fa fa-search"></i></a>
                                         </td>
                                         <td>{{ p.user.name }}</td>
+                                        <td>{{ p.order.user.name }}</td>
+                                        <td>{{ p.method }}</td>
                                         <td>{{ p.total | currency: "BRL" }}</td>
                                         <td>{{ p.created_at | date: "dd/MM/yyyy" }}</td>
                                     </tr>
                                     <tr>
                                         <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td class="text-right">Total:</td>
                                         <td>{{ totalCashier | currency: "BRL" }}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right">Total Dinheiro:</td>
+                                        <td>{{ calcTotalMethod('Dinheiro') | currency: "BRL" }}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right">Total Débito:</td>
+                                        <td>{{ calcTotalMethod('Débito') | currency: "BRL" }}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-right">Total Crédito:</td>
+                                        <td>{{ calcTotalMethod('Crédito') | currency: "BRL" }}</td>
                                         <td></td>
                                     </tr>
                                 </tbody>

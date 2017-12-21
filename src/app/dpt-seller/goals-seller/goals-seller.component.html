@@ -1,6 +1,29 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12" *ngIf="multi">
+        <div class="col-md-4 col-sm-12 pull-right">
+            <div class="card">
+                <div class="content">
+                    <label>Referência:</label>
+                    <select name="month" [(ngModel)]="month" (change)="setReference()" class="form-control">
+                            <option value="1">Janeiro</option>
+                            <option value="2">Fevereiro</option>
+                            <option value="3">Março</option>
+                            <option value="4">Abril</option>
+                            <option value="6">Maio</option>
+                            <option value="6">Junho</option>
+                            <option value="7">Julho</option>
+                            <option value="8">Agosto</option>
+                            <option value="9">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngIf="multi">
             <div class="card">
                 <div class="header">
                     <h4 class="title">Metas do mês:</h4>
@@ -8,56 +31,53 @@
                 <div class="content">
                     <div class="row">
                         <div class="col-md-12">
-                            <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis"
-                                [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-                                [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+                            <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                                [yAxisLabel]="yAxisLabel">
                             </ngx-charts-bar-vertical-2d>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-            <div class="col-md-12" *ngIf="goals">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">Comissões do Mês:</h4>
-                    </div>
-                    <div class="content">
-                        <div class="row">
-                            <div class="col-md-12">
-                               <table class="table table-condensed table-hovered">
-                                   <thead> 
-                                       <tr>
-                                           <th>#</th>
-                                           <th>Entrada</th>
-                                           <th>Comissão</th>
-                                           <th>Registro</th>
-                                           <th>Ref. Pgto. Ordem</th>
-                                       </tr>
-                                   </thead>
-                                   <tbody>
-                                       <tr *ngFor="let c of goals.commissions">
-                                           <td>{{ c.id }}</td>
-                                           <td>{{ c.cashier.total | currency: "BRL" }}</td>
-                                           <td>{{ c.commission | currency: "BRL" }}</td>
-                                           <td>{{ c.created_at | date:"dd/MM/yyyy"}}</td>
-                                           <td># {{ c.cashier.order.code }}</td>
-                                       </tr>
-                                       <tr>
-                                           <td></td>
-                                           <td><strong>{{ totalCashier | currency: "BRL" }}</strong></td>
-                                           <td><strong>{{ totalCommission | currency: "BRL" }}</strong></td>
-                                           <td></td>
-                                           <td></td>
-                                       </tr>
-                                   </tbody>
-                               </table>
-                            </div>
+        <div class="col-md-6" *ngIf="goals">
+            <div class="card">
+                <div class="header">
+                    <h4 class="title">Comissões do Mês:</h4>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-condensed table-hovered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Entrada</th>
+                                        <th>Comissão</th>
+                                        <th>Registro</th>
+                                        <th>Ref. Pgto. Ordem</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let c of goals.commissions">
+                                        <td>{{ c.id }}</td>
+                                        <td>{{ c.cashier.total | currency: "BRL" }}</td>
+                                        <td>{{ c.commission | currency: "BRL" }}</td>
+                                        <td>{{ c.created_at | date:"dd/MM/yyyy"}}</td>
+                                        <td># {{ c.cashier.order.code }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><strong>{{ totalCashier | currency: "BRL" }}</strong></td>
+                                        <td><strong>{{ totalCommission | currency: "BRL" }}</strong></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </div>
