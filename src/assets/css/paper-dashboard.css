@@ -3366,7 +3366,7 @@ Copyright (c) 2015 Daniel Eden
 .ct-series-a .ct-line,
 .ct-series-a .ct-bar,
 .ct-series-a .ct-slice-donut {
-    stroke: #68B3C8;
+    stroke: rgb(165, 207, 14);
 }
 
 .ct-series-a .ct-slice-pie,
@@ -3378,7 +3378,7 @@ Copyright (c) 2015 Daniel Eden
 .ct-series-b .ct-line,
 .ct-series-b .ct-bar,
 .ct-series-b .ct-slice-donut {
-    stroke: #F3BB45;
+    stroke: rgb(69, 194, 243);
 }
 
 .ct-series-b .ct-slice-pie,

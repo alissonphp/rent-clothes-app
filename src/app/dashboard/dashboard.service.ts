@@ -13,4 +13,9 @@ export class DashboardService {
      .map((res: Response) => res.json())
      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
   }
+  graph(): Observable<any> {
+    return this.http.get('goals/graphic')
+     .map((res: Response) => res.json())
+     .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
 }
