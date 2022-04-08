@@ -33,7 +33,7 @@
         "datatables.net-dt": "^1.10.16",
         "inputmask": "^3.3.11",
         "jquery": "^1.12.4",
-        "moment": "^2.19.3",
+        "moment": "^2.29.2",
         "ng2-file-upload": "^1.2.1",
         "ngx-bootstrap": "^2.0.0-beta.8",
         "ngx-webstorage": "^2.0.0",
